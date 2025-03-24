@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>Hexo • Posts by &#34;python&#34; category</title>
+    <link href="http://example.com" />
+    <updated>2025-03-23T16:00:00.000Z</updated>
+    <category term="教程" />
+    <entry>
+        <id>http://example.com/2025/03/24/computer-science/python/2/</id>
+        <title>笔记：PyTorch深度学习快速入门教程(1)</title>
+        <link rel="alternate" href="http://example.com/2025/03/24/computer-science/python/2/"/>
+        <content type="html">&lt;h1 id=&#34;加载数据的方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#加载数据的方式&#34;&gt;#&lt;/a&gt; 加载数据的方式&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Dataset&lt;br&gt;
+ 提供一种方式去获取数据及其 label&lt;br&gt;
+ 如何获取每一个数据及其 label&lt;br&gt;
+ 告诉我们总共有多少的数据&lt;/li&gt;
+&lt;li&gt;Dataloader&lt;br&gt;
+ 为后面网络提供不同的数据形式&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <updated>2025-03-23T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2025/03/23/computer-science/python/1/</id>
+        <title>笔记：PyTorch深度学习快速入门教程</title>
+        <link rel="alternate" href="http://example.com/2025/03/23/computer-science/python/1/"/>
+        <content type="html">&lt;h1 id=&#34;pytorch学习准备&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pytorch学习准备&#34;&gt;#&lt;/a&gt; PyTorch 学习准备&lt;/h1&gt;
+&lt;p&gt;本章包含了学习 pytorch 需要安装的软件及其配置&lt;/p&gt;
+&lt;h1 id=&#34;课程信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程信息&#34;&gt;#&lt;/a&gt; 课程信息&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;课程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;我是土堆&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWhFNDExdDdSTi8/c3BtX2lkX2Zyb209MzMzLjMzNy5zZWFyY2gtY2FyZC5hbGwuY2xpY2smdmRfc291cmNlPTIxYTg4NDRlZGE0MTE4N2M2ZTIxYzhmYTdjNTNiZThl&#34; data-background-image=&#34;https://www.bilibili.com/favicon.ico&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWhFNDExdDdSTi8/c3BtX2lkX2Zyb209MzMzLjMzNy5zZWFyY2gtY2FyZC5hbGwuY2xpY2smdmRfc291cmNlPTIxYTg4NDRlZGE0MTE4N2M2ZTIxYzhmYTdjNTNiZThl&#34;&gt;PyTorch深度学习快速入门教程&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;PyTorch深度学习&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;课程资料&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;我是土堆&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMUN2VElqdVhUNHRNb25HMFdsdEYtdlE/cHdkPWpubnA=&#34; data-background-image=&#34;http://www.baidu.com/img/baidu_logo.gif&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMUN2VElqdVhUNHRNb25HMFdsdEYtdlE/cHdkPWpubnA=&#34;&gt;课程资源&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;PyTorch深度学习快速入门教程的课程资源&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&#34;代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h1&gt;
+&lt;h2 id=&#34;pytorch环境的配置及安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pytorch环境的配置及安装&#34;&gt;#&lt;/a&gt; PyTorch 环境的配置及安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;用 conda 指令建造一个 python（3.6）的 conda 环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;conda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;create&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;-n&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;pytorch&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;python=3.6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;pytorch 是 conda 环境的名字&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;激活创建的 conda 环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;conda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;activate&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;pytorch&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;查看 GPUA 的版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```cmd&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;nvidia-smi&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;安装 pytorch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;pip3&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;torch&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;torchvision&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;torchaudio&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;-i&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;https://pypi.tuna.tsinghua.edu.cn/simple&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;博主推荐 windows 安装 pytorch 使用 conda&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;判断是否安装成功&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;pip&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;list&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果存在 torch 等即安装成功&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查 PyTorch 是否支持 CUDA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;torch&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;print(torch.cuda.is_available())&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;python编辑器的选择安装及配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#python编辑器的选择安装及配置&#34;&gt;#&lt;/a&gt; python 编辑器的选择，安装及配置&lt;/h2&gt;
+&lt;h3 id=&#34;pycharm&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pycharm&#34;&gt;#&lt;/a&gt; PyCharm&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;下载地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Copyright © 2025 JetBrains s.r.o. JetBrains and the JetBrains logo are trademarks of JetBrains s.r.o.&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS9weWNoYXJtLw==&#34; data-background-image=&#34;https://resources.jetbrains.com.cn/storage/products/company/brand/logos/jetbrains.png&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS9weWNoYXJtLw==&#34;&gt;PyCharm&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;PyCharm下载地址&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;高版本创建项目之后选择系统解释器，按照 up 主的地址找到 python.exe&lt;/p&gt;
+&lt;h3 id=&#34;jupyter&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jupyter&#34;&gt;#&lt;/a&gt; Jupyter&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装 nb_conda_kernels&lt;br&gt;
+nb_conda 包要求的 Python 版本范围是：&lt;br&gt;
+Python 2.7&lt;br&gt;
+Python 3.5&lt;br&gt;
+Python 3.6&lt;br&gt;
+Python 3.7&lt;br&gt;
+Python 3.8&lt;br&gt;
+ 超过以上范围的可以使用 nb_conda_kernels, 提供了 nb_conda 类似的功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;activate&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;环境名称&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;conda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;nb_conda&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;conda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ipykernel&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;conda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;-n&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;环境名称&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ipykernel&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;python&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;-m&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ipykernel&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;--user&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;--name&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;环境名称&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;测试是否安装好 jupyter&lt;br&gt;
+ 进入 home&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;jupyter&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;notebook&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;点击 new，选择 pytorch，输入以下内容并运行（Shift+Enter），返回 true 即是成功&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```Anaconda&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Prompt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;torch&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;torch.cuda.is_available()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;python学习中的需要的两个函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#python学习中的需要的两个函数&#34;&gt;#&lt;/a&gt; Python 学习中的需要的两个函数&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;dir () 打开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;dir(pytorch)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;dir(pytorch.cuda)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;dir(pytorch.cuda.is_available())&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;知道列出的输出是具体的函数（&lt;strong&gt;XXX&lt;/strong&gt;）即可使用 help 来查看使用方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;help () 说明书&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;help(pytorch.cuda.is_available)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;使用对比&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用对比&#34;&gt;#&lt;/a&gt; 使用对比&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;python 文件&lt;br&gt;
+ python 文件运行的话，块是所有代码，每次运行都是从头开始运行&lt;br&gt;
+优点：通用，传播方便，适用于大型项目&lt;br&gt;
+缺点：需要从头运行&lt;/li&gt;
+&lt;li&gt;pycharm 控制台&lt;br&gt;
+ python 控制台以每一行（任意行）为一块（Shift+Enter）&lt;br&gt;
+优点：可以显示每个变量属性&lt;br&gt;
+缺点：不利于代码阅读及修改&lt;/li&gt;
+&lt;li&gt;jupyter&lt;br&gt;
+Jupyter 以任意行为块运行的&lt;br&gt;
+优点：利于代码阅读及修改&lt;br&gt;
+缺点：环境据要配置&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <updated>2025-03-22T16:00:00.000Z</updated>
+    </entry>
+</feed>
