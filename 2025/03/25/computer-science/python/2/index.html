@@ -1,0 +1,555 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="pytorch基础,笔记" />
+
+
+<link rel="canonical" href="http://example.com/2025/03/25/computer-science/python/2/">
+
+
+
+  <title>
+笔记：PyTorch(1) - Python - 计算机科学 |
+鱼塘 = </title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">笔记：PyTorch(1)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-03-25 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-03-25T00:00:00+08:00">2025-03-25</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">鱼塘</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/assets/wallpaper-2572384.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/" itemprop="item" rel="index" title="分类于 Python"><span itemprop="name">Python</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/25/computer-science/python/2/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+    <meta itemprop="name" content="Xylia">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="加载数据的方式"><a class="markdownIt-Anchor" href="#加载数据的方式">#</a> 加载数据的方式</h1>
+<ul>
+<li>Dataset<br>
+ 提供一种方式去获取数据及其 label<br>
+ 如何获取每一个数据及其 label<br>
+ 告诉我们总共有多少的数据</li>
+<li>Dataloader<br>
+ 为后面网络提供不同的数据形式</li>
+</ul>
+<h1 id="使用dataset"><a class="markdownIt-Anchor" href="#使用dataset">#</a> 使用 dataset</h1>
+<ul>
+<li>查看 dataset 的使用说明</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```jupyter</span> <span class="string">notebook</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">Dataset</span></span><br><span class="line"><span class="string">help(Dataset)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实战</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">Dataset</span></span><br><span class="line"><span class="string">from</span> <span class="string">PIL</span> <span class="string">import</span> <span class="string">Image</span></span><br><span class="line"><span class="string">import</span> <span class="string">os</span></span><br><span class="line"><span class="attr">class MyData(Dataset):</span></span><br><span class="line">    <span class="string">def</span> <span class="string">__init__(self,root_dir,lable_dir):</span></span><br><span class="line">        <span class="string">self.root_dir</span> <span class="string">=</span> <span class="string">root_dir</span></span><br><span class="line">        <span class="string">self.lable_dir</span> <span class="string">=</span> <span class="string">lable_dir</span></span><br><span class="line">        <span class="string">self.path</span> <span class="string">=</span> <span class="string">os.path.join(self.root_dir,self.lable_dir)</span></span><br><span class="line">        <span class="string">self.img_path</span> <span class="string">=</span> <span class="string">os.listdir(self.path)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">__getitem__(self,</span> <span class="attr">index):</span></span><br><span class="line">        <span class="string">img_name</span> <span class="string">=</span> <span class="string">self.img_path[index]</span></span><br><span class="line">        <span class="string">img_item_path</span> <span class="string">=</span> <span class="string">os.path.join(self.root_dir,self.lable_dir,img_name)</span></span><br><span class="line">        <span class="string">img</span> <span class="string">=</span> <span class="string">Image.open(img_item_path)</span></span><br><span class="line">        <span class="string">label</span> <span class="string">=</span> <span class="string">self.lable_dir</span></span><br><span class="line">        <span class="string">return</span> <span class="string">img,</span> <span class="string">label</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">def __len__(self):</span></span><br><span class="line">        <span class="string">return</span> <span class="string">len(self.img_path)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">root_dir</span> <span class="string">=</span> <span class="string">r&#x27;dataset/train&#x27;</span></span><br><span class="line"><span class="string">ants_lable_dir</span> <span class="string">=</span> <span class="string">&#x27;ants_image&#x27;</span></span><br><span class="line"><span class="string">bees_lable_dir</span> <span class="string">=</span> <span class="string">&#x27;bees_image&#x27;</span></span><br><span class="line"><span class="string">ants_dataset</span> <span class="string">=</span> <span class="string">MyData(root_dir,ants_lable_dir)</span></span><br><span class="line"><span class="string">bees_dataset</span> <span class="string">=</span> <span class="string">MyData(root_dir,bees_lable_dir)</span></span><br><span class="line"><span class="comment"># 合并数据</span></span><br><span class="line"><span class="string">dataset</span> <span class="string">=</span> <span class="string">ants_dataset</span> <span class="string">+</span> <span class="string">bees_dataset</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看长度</span></span><br><span class="line"><span class="string">len(ants_lable_dir)</span></span><br><span class="line"><span class="string">len(bees_lable_dir)</span></span><br><span class="line"><span class="string">len(dataset)</span></span><br><span class="line"><span class="string">print(f&quot;一共有&#123;len(dataset)&#125;张图片&quot;)</span></span><br><span class="line"><span class="comment"># 展示图片</span></span><br><span class="line"><span class="string">x</span> <span class="string">=</span> <span class="string">input(&quot;请输入你想查询的图片编号&quot;)</span></span><br><span class="line"><span class="string">x</span> <span class="string">=</span> <span class="string">int(x)</span></span><br><span class="line"><span class="string">img,label</span> <span class="string">=</span> <span class="string">dataset[x]</span></span><br><span class="line"><span class="string">img.show()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="tensorboard的使用"><a class="markdownIt-Anchor" href="#tensorboard的使用">#</a> TensorBoard 的使用</h2>
+<ul>
+<li>安装 tensorboard</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```终端</span></span><br><span class="line"><span class="string">pip</span> <span class="string">install</span> <span class="string">tensorboard</span></span><br><span class="line"><span class="comment"># logdir = 事件文件所在文件夹名</span></span><br><span class="line"><span class="string">tensorboard</span> <span class="string">--logdir=log</span> <span class="string">--port=6007</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用add_scalar"><a class="markdownIt-Anchor" href="#使用add_scalar">#</a> 使用 add_scalar</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;log&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># writer.add_image()</span></span><br><span class="line"><span class="comment"># y = 2x</span></span><br><span class="line"><span class="attr">for i in range(100):</span></span><br><span class="line">    <span class="string">writer.add_scalar(tag=&quot;y=x&quot;,</span> <span class="string">scalar_value=i,</span> <span class="string">global_step=i)</span></span><br><span class="line">    <span class="string">writer.add_scalar(tag=&quot;y=2x&quot;,</span> <span class="string">scalar_value=2*i,</span> <span class="string">global_step=i)#</span> <span class="string">标题，数值（y轴），训练的步数（x轴）</span></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"></span><br><span class="line"><span class="string">```终端</span></span><br><span class="line"><span class="string">tensorboard</span> <span class="string">--logdir=log</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用add_image"><a class="markdownIt-Anchor" href="#使用add_image">#</a> 使用 add_image</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python控制台</span></span><br><span class="line"><span class="string">image_path</span> <span class="string">=</span> <span class="string">&quot;dataset/train/ants_image/0013035.jpg&quot;</span></span><br><span class="line"><span class="string">from</span> <span class="string">PIL</span> <span class="string">import</span> <span class="string">Image</span></span><br><span class="line"><span class="string">img</span> <span class="string">=</span> <span class="string">Image.open(image_path)</span></span><br><span class="line"><span class="string">print(type(img))</span> </span><br><span class="line"><span class="string">&lt;class</span> <span class="string">&#x27;PIL.JpegImagePlugin.JpegImageFile&#x27;</span><span class="string">&gt;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<details><summary>img的类型不符合add_image</summary><div>
+<p>img_tensor (torch.Tensor, numpy.ndarray, or string/blobname): Image data</p>
+</div></details>
+<ul>
+<li>使用 opencv 读取图片，获得 numpy 型图片数据</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```终端</span></span><br><span class="line"><span class="string">pip</span> <span class="string">install</span> <span class="string">opencv-python</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">cv2</span></span><br><span class="line"><span class="string">cv_img</span> <span class="string">=</span> <span class="string">cv2.imread(img_path)</span></span><br><span class="line"><span class="string">print(type(cv_img))</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>利用 numpy.array ()，对 PIL 图片进行转换</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python控制台</span></span><br><span class="line"><span class="string">import</span> <span class="string">numpy</span> <span class="string">as</span> <span class="string">np</span></span><br><span class="line"><span class="string">img_array</span> <span class="string">=</span> <span class="string">np.array(img)</span></span><br><span class="line"><span class="string">print(type(img_array))</span></span><br><span class="line"><span class="string">&lt;class</span> <span class="string">&#x27;numpy.ndarray&#x27;</span><span class="string">&gt;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实战</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"><span class="string">from</span> <span class="string">PIL</span> <span class="string">import</span> <span class="string">Image</span></span><br><span class="line"><span class="string">import</span> <span class="string">numpy</span> <span class="string">as</span> <span class="string">np</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;log&quot;)</span></span><br><span class="line"><span class="string">img_path</span> <span class="string">=</span> <span class="string">&quot;dataset/train/bees_image/16838648_415acd9e3f.jpg&quot;</span></span><br><span class="line"><span class="string">img_PIL</span> <span class="string">=</span> <span class="string">Image.open(img_path)</span></span><br><span class="line"><span class="string">img_array</span> <span class="string">=</span> <span class="string">np.array(img_PIL)</span></span><br><span class="line"><span class="string">print(type(img_array))</span></span><br><span class="line"><span class="string">print(img_array.shape)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.add_image(&quot;test&quot;,img_array,2,dataformats=&#x27;HWC&#x27;)</span></span><br><span class="line"><span class="comment"># y = 2x</span></span><br><span class="line"><span class="attr">for i in range(100):</span></span><br><span class="line">    <span class="string">writer.add_scalar(tag=&quot;y=x&quot;,</span> <span class="string">scalar_value=i,</span> <span class="string">global_step=i)</span></span><br><span class="line">    <span class="string">writer.add_scalar(tag=&quot;y=2x&quot;,</span> <span class="string">scalar_value=2*i,</span> <span class="string">global_step=i)#</span> <span class="string">标题，数值（y轴），训练的步数（x轴）</span></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="常见的transforms"><a class="markdownIt-Anchor" href="#常见的transforms">#</a> 常见的 Transforms</h1>
+<p>关注输入，输出和作用</p>
+<details class="success"><summary>init__call__的作用</summary><div>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="attr">class Person:</span></span><br><span class="line">    <span class="string">def</span> <span class="string">__call__(self,name):</span></span><br><span class="line">        <span class="string">print(&quot;__call__&quot;+&quot;Helle&quot;+name)</span></span><br><span class="line">    </span><br><span class="line">    <span class="string">def</span> <span class="string">hello(self,name):</span></span><br><span class="line">        <span class="string">print(&quot;hello&quot;+name)</span></span><br><span class="line"></span><br><span class="line"><span class="string">person</span> <span class="string">=</span> <span class="string">Person()</span></span><br><span class="line"><span class="string">person(&quot;张三&quot;)</span></span><br><span class="line"><span class="string">person.hello(&quot;lisi&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<p><span class="label">例子</span></p>
+</div></details>
+<h2 id="对比"><a class="markdownIt-Anchor" href="#对比">#</a> 对比</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">PIL</span> <span class="string">import</span> <span class="string">Image</span></span><br><span class="line"><span class="string">from</span> <span class="string">torchvision</span> <span class="string">import</span>  <span class="string">transforms</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 相对路径</span></span><br><span class="line"><span class="comment"># PIL</span></span><br><span class="line"><span class="string">img_path</span> <span class="string">=&quot;dataset/train/ants_image/0013035.jpg&quot;</span></span><br><span class="line"><span class="comment"># 绝对路径</span></span><br><span class="line"><span class="comment"># img_path_abs = r&quot;F:\doc\python\1\Learn-PyTorch\dataset\train\ants_image\0013035.jpg&quot;</span></span><br><span class="line"><span class="string">img</span> <span class="string">=</span> <span class="string">Image.open(img_path)</span></span><br><span class="line"><span class="string">print(type(img))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Tensor</span></span><br><span class="line"><span class="string">tensor_trans</span> <span class="string">=</span> <span class="string">transforms.ToTensor()</span></span><br><span class="line"><span class="string">tensor_img</span> <span class="string">=</span> <span class="string">tensor_trans(img)</span></span><br><span class="line"><span class="string">print(tensor_img)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<p>创建具体的工具 tensor_trans，使用这个具体的工具，给它一个输入 img，获得一个输出</p>
+<h2 id="transformstotensor"><a class="markdownIt-Anchor" href="#transformstotensor">#</a> transforms.ToTensor</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">PIL</span> <span class="string">import</span> <span class="string">Image</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"><span class="string">from</span> <span class="string">torchvision</span> <span class="string">import</span>  <span class="string">transforms</span></span><br><span class="line"><span class="string">import</span> <span class="string">cv2</span></span><br><span class="line"></span><br><span class="line"><span class="string">img_path</span> <span class="string">=&quot;dataset/train/ants_image/0013035.jpg&quot;</span></span><br><span class="line"><span class="string">print(type(img))</span></span><br><span class="line"></span><br><span class="line"><span class="string">tensor_trans</span> <span class="string">=</span> <span class="string">transforms.ToTensor()</span></span><br><span class="line"><span class="string">tensor_img</span> <span class="string">=</span> <span class="string">tensor_trans(img)</span></span><br><span class="line"><span class="string">print(tensor_img)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;log&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.add_image(&quot;Tensor_img&quot;,tensor_img)</span></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="topilimage"><a class="markdownIt-Anchor" href="#topilimage">#</a> ToPILImage</h2>
+<p>作用：把数据转化为 PIL 的数据类型</p>
+<h2 id="normalize"><a class="markdownIt-Anchor" href="#normalize">#</a> Normalize</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">print(img_tensor[0][0][0])</span></span><br><span class="line"><span class="string">trans_norm</span> <span class="string">=</span> <span class="string">transforms.Normalize([0.5,0.5,0.5],[0.5,0.5,0.5])</span></span><br><span class="line"><span class="comment"># trans_norm只能输入tensor数据类型</span></span><br><span class="line"><span class="string">img_norm</span> <span class="string">=</span> <span class="string">trans_norm(img_tensor)</span></span><br><span class="line"><span class="string">print(img_norm[0][0][0])</span></span><br><span class="line"><span class="string">writer.add_image(&quot;Normalize&quot;,img_norm)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="resize"><a class="markdownIt-Anchor" href="#resize">#</a> Resize</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">print(img.size)</span></span><br><span class="line"><span class="string">trans_resize</span> <span class="string">=</span> <span class="string">transforms.Resize((512,512))</span></span><br><span class="line"><span class="comment"># 输入类型为PIL</span></span><br><span class="line"><span class="string">img_resize</span> <span class="string">=</span> <span class="string">trans_resize(img)</span></span><br><span class="line"><span class="comment"># 查看返回值类型，为PIL</span></span><br><span class="line"><span class="string">print(img_resize)</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 将数据类型变为tensor</span></span><br><span class="line"><span class="string">img_resize</span> <span class="string">=</span> <span class="string">trans_totenser(img_resize)</span></span><br><span class="line"><span class="string">writer.add_image(&quot;Resize&quot;,img_resize,0)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="compose-resize等比缩放"><a class="markdownIt-Anchor" href="#compose-resize等比缩放">#</a> Compose Resize（等比缩放）</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">trans_resize_2</span> <span class="string">=</span> <span class="string">transforms.Resize(512)</span></span><br><span class="line"><span class="comment"># 后面参数的输入 和 前面参数的输出 进行匹配</span></span><br><span class="line"><span class="string">trans_compose</span> <span class="string">=</span> <span class="string">transforms.Compose([trans_resize_2,trans_totenser])</span></span><br><span class="line"><span class="comment"># 需要输入 PIL img</span></span><br><span class="line"><span class="string">img_resize_2</span> <span class="string">=</span> <span class="string">trans_compose(img)</span></span><br><span class="line"><span class="string">writer.add_image(&quot;Resize&quot;,img_resize_2,1)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="randomcrop"><a class="markdownIt-Anchor" href="#randomcrop">#</a> RandomCrop</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">trans_random</span> <span class="string">=</span> <span class="string">transforms.RandomCrop(333)</span></span><br><span class="line"><span class="comment"># 进行随机裁剪，然后转化为tenser类型</span></span><br><span class="line"><span class="string">trans_compose</span> <span class="string">=</span> <span class="string">transforms.Compose([trans_random,trans_totenser])</span></span><br><span class="line"><span class="attr">for i in range(10):</span></span><br><span class="line">    <span class="string">img_crop</span> <span class="string">=</span> <span class="string">trans_compose(img)</span></span><br><span class="line">    <span class="string">writer.add_image(&quot;RandomCrop&quot;,img_crop,i)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="dataset和transforms的联合使用"><a class="markdownIt-Anchor" href="#dataset和transforms的联合使用">#</a> dataset 和 transforms 的联合使用</h1>
+<ul>
+<li>下载数据集</li>
+</ul>
+<p>视频中相同的链接 (<span class="exturl" data-url="aHR0cHM6Ly9weXRvcmNoLm9yZy92aXNpb24vMC45Lw==">https://pytorch.org/vision/0.9/</span>)</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision</span></span><br><span class="line"></span><br><span class="line"><span class="string">train_set</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(root=&quot;./data&quot;,train=True,download=True)</span></span><br><span class="line"><span class="string">test_set</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(root=&quot;./data&quot;,train=False,download=True)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<p>+++ 数据集</p>
+<div class="links"><div class="item" title="CIFAR10.zip" style="--block-color:#e9546b;"><span class="exturl image" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU96LWphQlNEOHZrMVBmVHVjcXcwN3c/cHdkPTgyaWk=" data-background-image="https://img.88icon.com/download/jpg/201912/20212877d98b95ae7730decb11762bac.jpg!bg"></span>
+          <div class="info">
+          <span class="exturl title" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU96LWphQlNEOHZrMVBmVHVjcXcwN3c/cHdkPTgyaWk=">CIFAR10.zip</span>
+          <p class="desc">密码82ii</p>
+          </div></div></div>
+<p>+++</p>
+<ul>
+<li>联合使用</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"></span><br><span class="line"><span class="string">from</span> <span class="string">test_tb</span> <span class="string">import</span> <span class="string">writer</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataset_transform</span> <span class="string">=</span> <span class="string">torchvision.transforms.Compose([</span></span><br><span class="line">    <span class="string">torchvision.transforms.ToTensor()</span></span><br><span class="line"><span class="string">])</span></span><br><span class="line"></span><br><span class="line"><span class="string">train_set</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(root=&quot;/data&quot;,train=True,transform=dataset_transform,download=True)</span></span><br><span class="line"><span class="string">test_set</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(root=&quot;/data&quot;,train=False,transform=dataset_transform,download=True)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(test_set)</span></span><br><span class="line"><span class="comment"># print(test_set.classes)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># img,target = test_set[0]</span></span><br><span class="line"><span class="comment"># print(img)</span></span><br><span class="line"><span class="comment"># print(target)</span></span><br><span class="line"><span class="comment"># print(test_set.classes[target])</span></span><br><span class="line"><span class="comment"># img.show()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(test_set[0])</span></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;p10&quot;)</span></span><br><span class="line"><span class="attr">for i in range(10):</span></span><br><span class="line">    <span class="string">img,target</span> <span class="string">=</span> <span class="string">train_set[i]</span></span><br><span class="line">    <span class="string">writer.add_image(&quot;test_set&quot;,img,i)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="dataloader的使用"><a class="markdownIt-Anchor" href="#dataloader的使用">#</a> DataLoader 的使用</h1>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision.datasets</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">DataLoader</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"></span><br><span class="line"><span class="string">from</span> <span class="string">dataset_transform</span> <span class="string">import</span> <span class="string">test_set,</span> <span class="string">writer</span></span><br><span class="line"></span><br><span class="line"><span class="string">test_data</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(&quot;./data&quot;,</span> <span class="string">train=False,transform=torchvision.transforms.ToTensor())</span></span><br><span class="line"><span class="comment"># 当batch_size不足64，drop_last=True将会舍去剩下的图片</span></span><br><span class="line"><span class="comment"># shuffle = False时两轮数据是相同的</span></span><br><span class="line"><span class="string">test_loader</span> <span class="string">=</span> <span class="string">DataLoader(dataset=test_set,</span> <span class="string">batch_size=64,</span> <span class="string">shuffle=False,</span> <span class="string">num_workers=0,</span> <span class="string">drop_last=True)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试数据集中的第一张图片及target</span></span><br><span class="line"><span class="string">img,target</span> <span class="string">=</span> <span class="string">test_data[0]</span></span><br><span class="line"><span class="string">print(img.shape)</span></span><br><span class="line"><span class="string">print(target)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;dataloader&quot;)</span></span><br><span class="line"><span class="string">step</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 两轮</span></span><br><span class="line"><span class="attr">for epoch in range(2):</span></span><br><span class="line">    <span class="attr">for data in test_loader:</span></span><br><span class="line">        <span class="string">imgs,targets</span> <span class="string">=</span> <span class="string">data</span></span><br><span class="line">        <span class="comment"># print(imgs.shape)</span></span><br><span class="line">        <span class="comment"># print(targets)</span></span><br><span class="line">        <span class="string">writer.add_images(&quot;test_data_epoch_false&quot;,imgs,step)</span></span><br><span class="line">        <span class="string">step</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/pytorch%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> pytorch基础</a>
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-03-25 20:55:33" itemprop="dateModified" datetime="2025-03-25T20:55:33+08:00">2025-03-25</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/wechatpay.png" alt="Xylia 微信支付">
+        <p>微信支付</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Xylia <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2025/03/25/computer-science/python/2/" title="笔记：PyTorch(1)">http://example.com/2025/03/25/computer-science/python/2/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/03/24/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;1000&#x2F;802&#x2F;348&#x2F;electronic-devices-chip-memory-high-tech-preview.jpg" title="Hello World">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Hello World</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text"> 加载数据的方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8dataset"><span class="toc-number">2.</span> <span class="toc-text"> 使用 dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text"> TensorBoard 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8add_scalar"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 使用 add_scalar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8add_image"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 使用 add_image</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84transforms"><span class="toc-number">3.</span> <span class="toc-text"> 常见的 Transforms</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94"><span class="toc-number">3.1.</span> <span class="toc-text"> 对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transformstotensor"><span class="toc-number">3.2.</span> <span class="toc-text"> transforms.ToTensor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#topilimage"><span class="toc-number">3.3.</span> <span class="toc-text"> ToPILImage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#normalize"><span class="toc-number">3.4.</span> <span class="toc-text"> Normalize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#resize"><span class="toc-number">3.5.</span> <span class="toc-text"> Resize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#compose-resize%E7%AD%89%E6%AF%94%E7%BC%A9%E6%94%BE"><span class="toc-number">3.6.</span> <span class="toc-text"> Compose Resize（等比缩放）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#randomcrop"><span class="toc-number">3.7.</span> <span class="toc-text"> RandomCrop</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dataset%E5%92%8Ctransforms%E7%9A%84%E8%81%94%E5%90%88%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text"> dataset 和 transforms 的联合使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dataloader%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text"> DataLoader 的使用</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2025/03/23/computer-science/python/1/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li class="active"><a href="/2025/03/25/computer-science/python/2/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xylia"
+      data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+  <p class="name" itemprop="name">Xylia</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">3</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01pYS1YeWxpYQ==" title="https:&#x2F;&#x2F;github.com&#x2F;Mia-Xylia"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>链环</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友達</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>链接</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/03/24/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/python/1/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/25/computer-science/python/2/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xylia @ 鱼塘</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">10k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/03/25/computer-science/python/2/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//fastly.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
