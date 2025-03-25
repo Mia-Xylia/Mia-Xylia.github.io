@@ -3,35 +3,8 @@
     <id>http://example.com</id>
     <title> • Posts by &#34;python&#34; category</title>
     <link href="http://example.com" />
-    <updated>2025-03-24T16:00:00.000Z</updated>
+    <updated>2025-03-23T16:00:00.000Z</updated>
     <category term="教程" />
-    <entry>
-        <id>http://example.com/2025/03/25/computer-science/python/pytorch/</id>
-        <title>笔记：PyTorch深度学习快速入门教程</title>
-        <link rel="alternate" href="http://example.com/2025/03/25/computer-science/python/pytorch/"/>
-        <content type="html">&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;名片&lt;/summary&gt;&lt;div&gt;
-&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Xylia&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9taWEteHlsaWEuZ2l0aHViLmlvLw==&#34; data-background-image=&#34;/images/404.png&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9taWEteHlsaWEuZ2l0aHViLmlvLw==&#34;&gt;Xylia&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;https://mia-xylia.github.io/&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;warning&#34;&gt;&lt;summary&gt;个人信息&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;!! 警告警告警告警告警告！！{.bulr}&lt;br&gt;
-&lt;span class=&#34;label warning&#34;&gt;label&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;快速通道&lt;/summary&gt;&lt;div&gt;
-&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;链接&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9taWEteHlsaWEuZ2l0aHViLmlvLzIwMjUvMDMvMjMvY29tcHV0ZXItc2NpZW5jZS9weXRob24vMS8=&#34;&gt;第一节&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9taWEteHlsaWEuZ2l0aHViLmlvLzIwMjUvMDMvMjQvY29tcHV0ZXItc2NpZW5jZS9weXRob24vMi8=&#34;&gt;第二节&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;&lt;/details&gt;
-</content>
-        <updated>2025-03-24T16:00:00.000Z</updated>
-    </entry>
     <entry>
         <id>http://example.com/2025/03/24/computer-science/python/2/</id>
         <title>笔记：PyTorch(1)</title>
