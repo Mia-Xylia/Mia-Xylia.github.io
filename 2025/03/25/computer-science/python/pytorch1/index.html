@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="pytorch基础,笔记" />
+  <meta name="keywords" content="笔记,pytorch基础" />
 
 
 <link rel="canonical" href="http://example.com/2025/03/25/computer-science/python/pytorch1/">
@@ -176,7 +176,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;log&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># writer.add_image()</span></span><br><span class="line"><span class="comment"># y = 2x</span></span><br><span class="line"><span class="attr">for i in range(100):</span></span><br><span class="line">    <span class="string">writer.add_scalar(tag=&quot;y=x&quot;,</span> <span class="string">scalar_value=i,</span> <span class="string">global_step=i)</span></span><br><span class="line">    <span class="string">writer.add_scalar(tag=&quot;y=2x&quot;,</span> <span class="string">scalar_value=2*i,</span> <span class="string">global_step=i)#</span> <span class="string">标题，数值（y轴），训练的步数（x轴）</span></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"></span><br><span class="line"><span class="string">```终端</span></span><br><span class="line"><span class="string">tensorboard</span> <span class="string">--logdir=log</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
 <h3 id="使用add_image"><a class="markdownIt-Anchor" href="#使用add_image">#</a> 使用 add_image</h3>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python控制台</span></span><br><span class="line"><span class="string">image_path</span> <span class="string">=</span> <span class="string">&quot;dataset/train/ants_image/0013035.jpg&quot;</span></span><br><span class="line"><span class="string">from</span> <span class="string">PIL</span> <span class="string">import</span> <span class="string">Image</span></span><br><span class="line"><span class="string">img</span> <span class="string">=</span> <span class="string">Image.open(image_path)</span></span><br><span class="line"><span class="string">print(type(img))</span> </span><br><span class="line"><span class="string">&lt;class</span> <span class="string">&#x27;PIL.JpegImagePlugin.JpegImageFile&#x27;</span><span class="string">&gt;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
-<details><summary>img的类型不符合add_image</summary><div>
+<details class="success"><summary>img的类型不符合add_image</summary><div>
 <p>img_tensor (torch.Tensor, numpy.ndarray, or string/blobname): Image data</p>
 </div></details>
 <ul>
@@ -236,8 +236,8 @@
 <h1 id="dataloader的使用"><a class="markdownIt-Anchor" href="#dataloader的使用">#</a> DataLoader 的使用</h1>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision.datasets</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">DataLoader</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"></span><br><span class="line"><span class="string">from</span> <span class="string">dataset_transform</span> <span class="string">import</span> <span class="string">test_set,</span> <span class="string">writer</span></span><br><span class="line"></span><br><span class="line"><span class="string">test_data</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(&quot;./data&quot;,</span> <span class="string">train=False,transform=torchvision.transforms.ToTensor())</span></span><br><span class="line"><span class="comment"># 当batch_size不足64，drop_last=True将会舍去剩下的图片</span></span><br><span class="line"><span class="comment"># shuffle = False时两轮数据是相同的</span></span><br><span class="line"><span class="string">test_loader</span> <span class="string">=</span> <span class="string">DataLoader(dataset=test_set,</span> <span class="string">batch_size=64,</span> <span class="string">shuffle=False,</span> <span class="string">num_workers=0,</span> <span class="string">drop_last=True)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试数据集中的第一张图片及target</span></span><br><span class="line"><span class="string">img,target</span> <span class="string">=</span> <span class="string">test_data[0]</span></span><br><span class="line"><span class="string">print(img.shape)</span></span><br><span class="line"><span class="string">print(target)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;dataloader&quot;)</span></span><br><span class="line"><span class="string">step</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 两轮</span></span><br><span class="line"><span class="attr">for epoch in range(2):</span></span><br><span class="line">    <span class="attr">for data in test_loader:</span></span><br><span class="line">        <span class="string">imgs,targets</span> <span class="string">=</span> <span class="string">data</span></span><br><span class="line">        <span class="comment"># print(imgs.shape)</span></span><br><span class="line">        <span class="comment"># print(targets)</span></span><br><span class="line">        <span class="string">writer.add_images(&quot;test_data_epoch_false&quot;,imgs,step)</span></span><br><span class="line">        <span class="string">step</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
       <div class="tags">
-          <a href="/tags/pytorch%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> pytorch基础</a>
           <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/pytorch%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> pytorch基础</a>
       </div>
   </div>
 
@@ -249,7 +249,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-03-26 11:35:10" itemprop="dateModified" datetime="2025-03-26T11:35:10+08:00">2025-03-26</time>
+    <time title="修改时间：2025-03-26 13:31:25" itemprop="dateModified" datetime="2025-03-26T13:31:25+08:00">2025-03-26</time>
   </span>
 </div>
 
@@ -294,7 +294,7 @@
     <div class="item left">
       
 
-  <a href="/2025/03/24/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;711&#x2F;359&#x2F;607&#x2F;coding-programming-working-macbook-preview.jpg" title="Hello World">
+  <a href="/2025/03/24/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;952&#x2F;114&#x2F;564&#x2F;text-pin-code-computer-preview.jpg" title="Hello World">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>Hello World</h3>
@@ -330,7 +330,7 @@
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2025/03/23/computer-science/python/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li class="active"><a href="/2025/03/25/computer-science/python/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li><a href="/2025/03/26/computer-science/python/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li>
+          <li><a href="/2025/03/23/computer-science/python/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li class="active"><a href="/2025/03/25/computer-science/python/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li><a href="/2025/03/26/computer-science/python/pytorch3/" rel="bookmark" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></li><li><a href="/2025/03/26/computer-science/python/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -344,19 +344,19 @@
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">6</span>
+        <span class="count">7</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">3</span>
+        <span class="count">4</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">3</span>
+        <span class="count">4</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -453,40 +453,10 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
 </div>
 
-    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/03/24/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="笔记：java">笔记：java</a></span>
   </li>
 
       
@@ -513,6 +483,51 @@
     <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
   </li>
 
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/03/24/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
+  </li>
+
   </ul>
 </div>
 <div>
@@ -535,13 +550,13 @@
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">16k 字</span>
+    <span title="站点总字数">22k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

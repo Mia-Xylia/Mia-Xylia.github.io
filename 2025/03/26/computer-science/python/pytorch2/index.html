@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="pytorch基础,笔记" />
+  <meta name="keywords" content="笔记,pytorch基础" />
 
 
 <link rel="canonical" href="http://example.com/2025/03/26/computer-science/python/pytorch2/">
@@ -157,7 +157,7 @@
 <li>nn.Conv2d<br>
 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3ZkdW1vdWxpbi9jb252X2FyaXRobWV0aWMvYmxvYi9tYXN0ZXIvUkVBRE1FLm1k">link</span></li>
 </ul>
-<details><summary>部分官方文档</summary><div>
+<details class="success"><summary>部分官方文档</summary><div>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True, padding_mode=&#x27;zeros&#x27;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">in_channels (int) – Number of channels in the input image</span><br><span class="line"></span><br><span class="line">out_channels (int) – Number of channels produced by the convolution</span><br><span class="line"></span><br><span class="line">kernel_size (int or tuple) – Size of the convolving kernel</span><br><span class="line"></span><br><span class="line">stride (int or tuple, optional) – Stride of the convolution. Default: 1</span><br><span class="line"></span><br><span class="line">padding (int or tuple, optional) – Zero-padding added to both sides of the input. Default: 0</span><br><span class="line"></span><br><span class="line">padding_mode (string, optional) – &#x27;zeros&#x27;, &#x27;reflect&#x27;, &#x27;replicate&#x27; or &#x27;circular&#x27;. Default: &#x27;zeros&#x27;</span><br><span class="line"></span><br><span class="line">dilation (int or tuple, optional) – Spacing between kernel elements. Default: 1</span><br><span class="line"></span><br><span class="line">groups (int, optional) – Number of blocked connections from input channels to output channels. Default: 1</span><br><span class="line"></span><br><span class="line">bias (bool, optional) – If True, adds a learnable bias to the output. Default: True</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </div></details>
@@ -167,7 +167,7 @@
 <ul>
 <li>nn.MaxPool2d</li>
 </ul>
-<details><summary>部分官方文档</summary><div>
+<details class="success"><summary>部分官方文档</summary><div>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">kernel_size – the size of the window to take a max over</span><br><span class="line"></span><br><span class="line">stride – the stride of the window. Default value is kernel_size</span><br><span class="line"></span><br><span class="line">padding – implicit zero padding to be added on both sides</span><br><span class="line"></span><br><span class="line">dilation – a parameter that controls the stride of elements in the window</span><br><span class="line"></span><br><span class="line">return_indices – if True, will return the max indices along with the outputs. Useful for torch.nn.MaxUnpool2d later</span><br><span class="line"></span><br><span class="line">ceil_mode – when True, will use ceil instead of floor to compute the output shape</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </div></details>
 <p>dilation 空洞卷积，卷积核每两个数空一格<br>
@@ -190,7 +190,7 @@ Ceil_model = True   进行保留</p>
  input&gt;0 output = input<br>
 input&lt;0 output = 0</li>
 </ul>
-<details><summary>inplace</summary><div>
+<details class="success"><summary>inplace</summary><div>
 <p>input = -1<br>
 Pelu(input,inplace = True)<br>
 input =0</p>
@@ -215,10 +215,24 @@ nn.Dropout 防止过拟合</li>
 nn.Embedding 自然语言</li>
 <li>Distance Functions</li>
 <li>Loss Functions</li>
+<li>Sequential</li>
 </ul>
 <h3 id="linaear-layers"><a class="markdownIt-Anchor" href="#linaear-layers">#</a> Linaear Layers</h3>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torch</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">DataLoader</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataset</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(&quot;./data&quot;,</span> <span class="string">train=False,</span> <span class="string">download=True,</span></span><br><span class="line">                                       <span class="string">transform=torchvision.transforms.ToTensor())</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#数据集batch之后生下了16张图片，舍弃最后不满足的drop_last=True</span></span><br><span class="line"><span class="string">dataloader</span> <span class="string">=</span> <span class="string">DataLoader(dataset,</span> <span class="string">batch_size=64,drop_last=True)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,self).__init__()</span></span><br><span class="line">        <span class="string">self.Linear1</span> <span class="string">=</span> <span class="string">nn.Linear(196608,10)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,input):</span></span><br><span class="line">        <span class="string">output</span> <span class="string">=</span> <span class="string">self.Linear1(input)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">output</span></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"></span><br><span class="line"><span class="attr">for data in dataloader:</span></span><br><span class="line">    <span class="string">imgs,targets</span> <span class="string">=</span> <span class="string">data</span></span><br><span class="line">    <span class="string">print(imgs.shape)</span></span><br><span class="line">    <span class="comment"># output = torch.reshape(imgs,(1,1,1,-1))</span></span><br><span class="line">    <span class="string">output</span> <span class="string">=</span> <span class="string">torch.flatten(imgs)</span></span><br><span class="line">    <span class="string">print(output.shape)</span></span><br><span class="line">    <span class="string">output</span> <span class="string">=</span> <span class="string">xylia(output)</span></span><br><span class="line">    <span class="string">print(output.shape)</span></span><br><span class="line"></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
 <h2 id="搭建小实战和sequential的使用"><a class="markdownIt-Anchor" href="#搭建小实战和sequential的使用">#</a> 搭建小实战和 Sequential 的使用</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.nn</span> <span class="string">import</span> <span class="string">Conv2d,MaxPool2d,Flatten,Linear</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line">        <span class="string">self.conv1</span> <span class="string">=</span> <span class="string">Conv2d(3,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1)</span></span><br><span class="line">        <span class="string">self.maxpool1</span> <span class="string">=</span> <span class="string">MaxPool2d(2)</span></span><br><span class="line">        <span class="string">self.conv2</span> <span class="string">=</span> <span class="string">Conv2d(32,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1)</span></span><br><span class="line">        <span class="string">self.maxpool2</span> <span class="string">=</span> <span class="string">MaxPool2d(2)</span></span><br><span class="line">        <span class="string">self.conv3</span> <span class="string">=</span> <span class="string">Conv2d(32,</span> <span class="number">64</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1)</span></span><br><span class="line">        <span class="string">self.maxpool3</span> <span class="string">=</span> <span class="string">MaxPool2d(2)</span></span><br><span class="line">        <span class="string">self.flatten</span> <span class="string">=</span> <span class="string">Flatten()</span></span><br><span class="line">        <span class="string">self.linear</span> <span class="string">=</span> <span class="string">Linear(1024,</span> <span class="number">64</span><span class="string">)</span></span><br><span class="line">        <span class="string">self.linear2</span> <span class="string">=</span> <span class="string">Linear(64,</span> <span class="number">10</span><span class="string">)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">x):</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.conv1(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.maxpool1(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.conv2(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.maxpool2(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.conv3(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.maxpool3(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.flatten(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.linear(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.linear2(x)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">x</span></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"><span class="string">print(xylia)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>检验是否正确</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.ones((64,3,32,32))</span></span><br><span class="line"><span class="string">output</span> <span class="string">=</span> <span class="string">xylia(input)</span></span><br><span class="line"><span class="string">print(output.shape)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Sequential 的作用</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line"></span><br><span class="line">        <span class="string">self.model</span> <span class="string">=</span> <span class="string">nn.Sequential(</span></span><br><span class="line">            <span class="string">Conv2d(3,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1),</span></span><br><span class="line">            <span class="string">MaxPool2d(2),</span></span><br><span class="line">            <span class="string">Conv2d(32,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1),</span></span><br><span class="line">            <span class="string">MaxPool2d(2),</span></span><br><span class="line">            <span class="string">Conv2d(32,</span> <span class="number">64</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1),</span></span><br><span class="line">            <span class="string">MaxPool2d(2),</span></span><br><span class="line">            <span class="string">Flatten(),</span></span><br><span class="line">            <span class="string">Linear(1024,</span> <span class="number">64</span><span class="string">),</span></span><br><span class="line">            <span class="string">Linear(64,</span> <span class="number">10</span><span class="string">)</span></span><br><span class="line">        <span class="string">)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">x):</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.model(x)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">x</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>writer 方式</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;./logs_seq&quot;)</span></span><br><span class="line"><span class="string">writer.add_graph(xylia,</span> <span class="string">input)</span></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
 <h1 id="土堆说卷积操作选看"><a class="markdownIt-Anchor" href="#土堆说卷积操作选看">#</a> 土堆说卷积操作 (选看)</h1>
 <ul>
 <li>conv2D<br>
@@ -231,8 +245,8 @@ padding = 1, 向外拓展一行 / 列</li>
 </ul>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">output3</span> <span class="string">=</span> <span class="string">F.conv2d(input,kernel,stride=1,padding=1)</span></span><br><span class="line"><span class="string">print(output3)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
       <div class="tags">
-          <a href="/tags/pytorch%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> pytorch基础</a>
           <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/pytorch%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> pytorch基础</a>
       </div>
   </div>
 
@@ -244,7 +258,7 @@ padding = 1, 向外拓展一行 / 列</li>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-03-26 11:32:55" itemprop="dateModified" datetime="2025-03-26T11:32:55+08:00">2025-03-26</time>
+    <time title="修改时间：2025-03-26 15:09:18" itemprop="dateModified" datetime="2025-03-26T15:09:18+08:00">2025-03-26</time>
   </span>
 </div>
 
@@ -299,10 +313,10 @@ padding = 1, 向外拓展一行 / 列</li>
     <div class="item right">
       
 
-  <a href="/2025/03/26/computer-science/python/pytorch3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;1000&#x2F;802&#x2F;348&#x2F;electronic-devices-chip-memory-high-tech-preview.jpg" title="未命名">
+  <a href="/2025/03/26/computer-science/python/pytorch3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="笔记：PyTorch(3)">
   <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>未命名</h3>
+  <span class="category"><i class="ic i-flag"></i> Python</span>
+  <h3>笔记：PyTorch(3)</h3>
   </a>
 
     </div>
@@ -325,7 +339,7 @@ padding = 1, 向外拓展一行 / 列</li>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2025/03/23/computer-science/python/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li><a href="/2025/03/25/computer-science/python/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li class="active"><a href="/2025/03/26/computer-science/python/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li>
+          <li><a href="/2025/03/23/computer-science/python/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li><a href="/2025/03/25/computer-science/python/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li><a href="/2025/03/26/computer-science/python/pytorch3/" rel="bookmark" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></li><li class="active"><a href="/2025/03/26/computer-science/python/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -339,19 +353,19 @@ padding = 1, 向外拓展一行 / 列</li>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">6</span>
+        <span class="count">7</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">3</span>
+        <span class="count">4</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">3</span>
+        <span class="count">4</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -451,7 +465,7 @@ padding = 1, 向外拓展一行 / 列</li>
 <a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
+    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
   </li>
 
       
@@ -464,27 +478,6 @@ padding = 1, 向外拓展一行 / 列</li>
 </div>
 
     <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/03/24/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
   </li>
 
       
@@ -505,7 +498,43 @@ padding = 1, 向外拓展一行 / 列</li>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="未命名">未命名</a></span>
+    <span><a href="/2025/03/24/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="笔记：java">笔记：java</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
   </li>
 
   </ul>
@@ -530,13 +559,13 @@ padding = 1, 向外拓展一行 / 列</li>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">16k 字</span>
+    <span title="站点总字数">22k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

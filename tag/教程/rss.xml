@@ -8,8 +8,9 @@
         <pubDate>Sun, 23 Mar 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 23 Mar 2025 00:00:00 +0800</lastBuildDate>
         <category>教程</category>
-        <category>pytorch基础</category>
+        <category>java基础</category>
         <category>笔记</category>
+        <category>pytorch基础</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/23/computer-science/crawler/1/</guid>
             <title>爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</title>

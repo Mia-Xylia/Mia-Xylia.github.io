@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;java基础&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0800</lastBuildDate>
+        <category>教程</category>
+        <category>java基础</category>
+        <category>笔记</category>
+        <category>pytorch基础</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/</guid>
+            <title>笔记：java</title>
+            <link>http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/</link>
+            <category>java基础</category>
+            <category>笔记</category>
+            <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;ul&gt;
+&lt;li&gt;课程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;韩顺平&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWZoNDExeTdSOC8/c3BtX2lkX2Zyb209MzMzLjMzNy5zZWFyY2gtY2FyZC5hbGwuY2xpY2smdmRfc291cmNlPTIxYTg4NDRlZGE0MTE4N2M2ZTIxYzhmYTdjNTNiZThl&#34; data-background-image=&#34;https://www.bilibili.com/favicon.ico&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWZoNDExeTdSOC8/c3BtX2lkX2Zyb209MzMzLjMzNy5zZWFyY2gtY2FyZC5hbGwuY2xpY2smdmRfc291cmNlPTIxYTg4NDRlZGE0MTE4N2M2ZTIxYzhmYTdjNTNiZThl&#34;&gt;韩顺平 零基础30天学会java&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;java基础&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&#34;课程内容介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程内容介绍&#34;&gt;#&lt;/a&gt; 课程内容介绍&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;java 后端技术体系  HSP8&lt;br&gt;
+ 第一部分：java 基础&lt;br&gt;
+第二部分：java 高级&lt;br&gt;
+第三部分：javaWEB&lt;br&gt;
+ 第四部分：主流框架和项目管理&lt;br&gt;
+第五部分：分布式，微服务，并行架构&lt;br&gt;
+第六部分：DevOps（开发运维一体化）   自动化部分管理项目，解决 CI/CD&lt;br&gt;
+ 第七部分：大数据技术（可以弱化）&lt;br&gt;
+第八部分：项目&lt;br&gt;
+第九部分：大厂的高频面试题&lt;br&gt;
+第十部分：底层源码 / 内核研究&lt;br&gt;
+编程基础的扩展（科班）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;java 就业方向&lt;br&gt;
+ javaEE 软件工程师 ： 电商，团购，众筹，sns，教育，金融，搜索&lt;br&gt;
+大数据软件工程师：大数据应用工程师，大数据算法工程师，大数据分析和挖掘工程师&lt;br&gt;
+ Android 工程师&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开发场景&lt;br&gt;
+ SSM&lt;br&gt;
+Android 开发&lt;br&gt;
+ hadoop&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;应用领域&lt;br&gt;
+企业级应用&lt;br&gt;
+ Android 平台应用&lt;br&gt;
+移动领域应用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内容梳理&lt;br&gt;
+笔记，代码，课件，软件，视频，资料&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;程序举例&lt;br&gt;
+程序：计算机执行某些操作或解决某个问题而编写的一系列有序指令的集合&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Test&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;main(String[]&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;args)&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;rest&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;+1;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;显示&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;结果=&amp;quot;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;res);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;java 故事&lt;br&gt;
+ 1995 年第一版&lt;br&gt;
+ 8**，11  LTS&lt;br&gt;
+java se 标准版，java EE 企业版，java me 小型版&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;java 特性&lt;br&gt;
+ 1.oop&lt;br&gt;
+2. 健壮的（强类型机制，异常处理，垃圾的自动收集等）&lt;br&gt;
+3. 跨平台     .java --&amp;gt; .class --&amp;gt; Windows/Linux/Mac&lt;br&gt;
+4. 解释型语言：编译后不能直接运行&lt;br&gt;
+编译型语言：c/c++&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编译工具的介绍&lt;br&gt;
+ editplus&lt;br&gt;
+notepad++&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuc3VibGltZXRleHQuY29tLw==&#34;&gt;Subline Text&lt;/span&gt;&lt;br&gt;
+IDEA&lt;br&gt;
+eclipse&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;java-jdk 介绍&lt;br&gt;
+ JVM（java 虚拟机）实现了跨平台，包含在 jdk 中&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;graph LR&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    .java[Square Rect] -- 编译(javac) -- --&amp;gt; .class[Square Rect]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    .class[Square Rect] -- 运行(java) -- --&amp;gt; Windows/Linux/Mac[Square Rect]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;JDK = JRE + java 的开发工具 [java,javac,javadoc,javap 等]&lt;br&gt;
+ JRE = JVM + java 核心类库&lt;/p&gt;
+&lt;h1 id=&#34;jdk的安装和配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jdk的安装和配置&#34;&gt;#&lt;/a&gt; jdk 的安装和配置&lt;/h1&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
