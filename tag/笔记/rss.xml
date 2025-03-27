@@ -7,19 +7,10 @@
         <language>zh-CN</language>
         <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0800</lastBuildDate>
+        <category>教程</category>
         <category>java基础</category>
         <category>笔记</category>
         <category>pytorch基础</category>
-        <category>教程</category>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/</guid>
-            <title>笔记：java（1）</title>
-            <link>http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/</link>
-            <category>java基础</category>
-            <category>笔记</category>
-            <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
-        </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/</guid>
             <title>笔记：java（0）</title>
@@ -157,8 +148,8 @@ eclipse&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;学习方法&lt;br&gt;
 明确需求 --&amp;gt; 能否使用传统技术解决 --&amp;gt; 学习的新技术和知识点&lt;br&gt;
-⬇&lt;br&gt;
-研究细节和使用规范  &amp;lt;-- 快速入门案例 &amp;lt;-- 学习新技术的基本原理和基本语法&lt;/p&gt;
+ |&lt;br&gt;
+ 研究细节和使用规范  &amp;lt;-- 快速入门案例 &amp;lt;-- 学习新技术的基本原理和基本语法&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;转义字符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#转义字符&#34;&gt;#&lt;/a&gt; 转义字符&lt;/h1&gt;
@@ -210,7 +201,6 @@ eclipse&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;常用的 doc 命令&lt;br&gt;
-–|--&lt;br&gt;
  &lt;code&gt;dir&lt;/code&gt;  | 查看当前目录下的内容&lt;br&gt;
  &lt;code&gt;cd&lt;/code&gt;  | 切换到另外一个地址&lt;br&gt;
  &lt;code&gt;help&lt;/code&gt;  | 查看使用方式&lt;br&gt;
@@ -223,7 +213,6 @@ eclipse&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;其他 doc 命令&lt;br&gt;
-–|--&lt;br&gt;
  &lt;code&gt;md&lt;/code&gt;  | 创建目录&lt;br&gt;
  &lt;code&gt;rd&lt;/code&gt;  | 删除目录&lt;br&gt;
  &lt;code&gt;copy&lt;/code&gt;  | 拷贝文件&lt;br&gt;
@@ -269,6 +258,15 @@ Java 编写规范&lt;/li&gt;
 java 初学者容易犯的错误&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/*文件名和类名不一致&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  书写错误&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  英文和中文的；*/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/</guid>
+            <title>笔记：java（1）</title>
+            <link>http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/</link>
+            <category>java基础</category>
+            <category>笔记</category>
+            <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/pytorch2/</guid>
