@@ -4,13 +4,22 @@
     <title> • Posts by &#34;java&#34; category</title>
     <link href="http://example.com" />
     <updated>2025-03-25T16:00:00.000Z</updated>
-    <category term="教程" />
     <category term="java基础" />
     <category term="笔记" />
     <category term="pytorch基础" />
+    <category term="教程" />
+    <entry>
+        <id>http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/</id>
+        <title>笔记：java（1）</title>
+        <link rel="alternate" href="http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/"/>
+        <content type="html"></content>
+        <category term="java基础" />
+        <category term="笔记" />
+        <updated>2025-03-25T16:00:00.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/</id>
-        <title>笔记：java</title>
+        <title>笔记：java（0）</title>
         <link rel="alternate" href="http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/"/>
         <content type="html">&lt;ul&gt;
 &lt;li&gt;课程&lt;/li&gt;
@@ -92,11 +101,168 @@ eclipse&lt;/p&gt;
  JVM（java 虚拟机）实现了跨平台，包含在 jdk 中&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;graph LR&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    .java[Square Rect] -- 编译(javac) --&amp;gt; .class[Square Rect]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    .class[Square Rect] -- 运行(java) --&amp;gt; Windows/Linux/Mac[Square Rect]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;graph LR&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    A[.java] -- 编译(javac) --&amp;gt; B[.class]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    B[.class] -- 运行(java) --&amp;gt; C[Windows/Linux/Mac]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;JDK = JRE + java 的开发工具 [java,javac,javadoc,javap 等]&lt;br&gt;
  JRE = JVM + java 核心类库&lt;/p&gt;
 &lt;h1 id=&#34;jdk的安装和配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jdk的安装和配置&#34;&gt;#&lt;/a&gt; jdk 的安装和配置&lt;/h1&gt;
-</content>
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cub3JhY2xlLmNvbS9qYXZhL3RlY2hub2xvZ2llcy9kb3dubG9hZHMvP2VyPTIyMTg4NiNqYXZhMTctd2luZG93cw==&#34;&gt;jdk 安装地址&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;配置环境变量&lt;br&gt;
+ jdk 安装地址 /bin javac&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我的电脑–属性–高级系统设置–环境变量&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JAVA_HOME 环境变量&lt;/li&gt;
+&lt;li&gt;path 中 % JAVA_HOME%\bin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;US 区别&lt;br&gt;
+环境变量和用户变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;入门&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#入门&#34;&gt;#&lt;/a&gt; 入门&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;快速入门&lt;br&gt;
+文件名与类名相同&lt;br&gt;
+文件 – 设置文件编码 – GBK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```base&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;//这是java的快速入门，演示java的开发步骤&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Hello表示hello是一个类，是一个public公有的类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;hello&amp;#123;&amp;#125;表示一个类的开始和结束&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;main&amp;#123;&amp;#125;表示方法的开始和结束&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;;表示语句结束&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Hello&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;//编写一个main方法，程序的入口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;main(String[]&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;args)&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;输出hello&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;world到屏幕&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;hello,world~&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;javac -encoding UTF-8 Hello.java&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;java Hello&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;练习题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;Hello&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;main(String[]&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;args)&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;小明&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;studying&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;java！&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;java 流程分析&lt;br&gt;
+.java 源文件&lt;br&gt;
+.class 字节文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开发细节&lt;br&gt;
+ 1.java 源文件是以.java 为扩展名的。源文件的基本组成部分是.class 文件&lt;br&gt;
+ 2.java 区分大小写&lt;br&gt;
+ 3. 以；结尾&lt;br&gt;
+ 4.main 方法有固定书写格式：public static void main (String [] args)&lt;br&gt;
+ 5. 一个源文件最多只能有一个 public 类，其他类的个数不限制，每一个类对应一个.class 文件&lt;br&gt;
+ 6. 大括号成对出现&lt;br&gt;
+ 7.public 类的类名 = 文件名&lt;br&gt;
+ 8. 一个源文件中最多只有一个 public 类。其他类的个数不限，也可以将 main 方法写在非 public 类中，指定运行非 public 类，入口方法就是非 public 类的 main 方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;学习方法&lt;br&gt;
+明确需求 --&amp;gt; 能否使用传统技术解决 --&amp;gt; 学习的新技术和知识点&lt;br&gt;
+⬇&lt;br&gt;
+研究细节和使用规范  &amp;lt;-- 快速入门案例 &amp;lt;-- 学习新技术的基本原理和基本语法&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;转义字符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#转义字符&#34;&gt;#&lt;/a&gt; 转义字符&lt;/h1&gt;
+&lt;p&gt;\t 制表符&lt;br&gt;
+ \n 换行符&lt;br&gt;
+ \   &amp;quot;  &#39; 转义符&lt;br&gt;
+ \r 一个回车&lt;/p&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ChangeChar&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;main(String[]&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;args)&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;\t制表位&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;北京\t天津\t上海\t&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;\n换行符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;红楼梦\n林黛玉\n&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;\\&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;:一个\&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;C:\\Windows\\System32\\cmd.exe&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;老韩说：\&amp;quot;要好好学习java\&amp;quot;&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;老韩说：\&amp;#x27;要好好学习java\&amp;#x27;&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;\&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;回车&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;韩顺平教育\r北京&amp;quot;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;课后练习&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ChangeChar1&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;main(String[]&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;args)&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;		&lt;span class=&#34;string&#34;&gt;System.out.println(&amp;quot;书名\t作者\t价格\t销量\n三国\t罗贯中\t120\t1000&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;注释-comment&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注释-comment&#34;&gt;#&lt;/a&gt; 注释 comment&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;单行注释&lt;br&gt;
+ // 注释文字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多行注释&lt;br&gt;
+ /&lt;em&gt; 注释文字&lt;/em&gt; /&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文档注释&lt;br&gt;
+ javadoc -d 文件夹名 -xx -yy Demo3.java&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;*@author    xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;*@version   yyy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;*/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;javadoc -d 文件夹路径 -author -version CommentTest.java&lt;br&gt;
+&lt;img data-src=&#34;https://cdn.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia-pictures@master/img/ac0fd5161da54b83a5c85493e9f0a5af.png&#34; alt=&#34;javadoc标签&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;java代码基础规范&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java代码基础规范&#34;&gt;#&lt;/a&gt; java 代码基础规范&lt;/h1&gt;
+&lt;p&gt;1. 类，方法的注释要用 javadoc 方式&lt;br&gt;
+ 2. 多行 / 单行 给代码维护者看&lt;br&gt;
+ 3. 运算符和 = 两边加空格&lt;br&gt;
+ 4. 源文件使用 utf-8&lt;br&gt;
+5. 行宽不超过 80&lt;br&gt;
+6. 代码编写风格 次行风格和行尾风格&lt;/p&gt;
+&lt;h1 id=&#34;dos命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dos命令&#34;&gt;#&lt;/a&gt; DOS 命令&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;DOC（磁盘操作系统）基本原理:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;指令 --&amp;gt; 接受指令，解析指令，执行指令&lt;br&gt;
+ dos 系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;路径&lt;br&gt;
+相对路径：从当前目录开始定位，形成的路径&lt;br&gt;
+绝对路径：从根目录 / 顶级目录开始定位，形成的路径&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常用的 doc 命令&lt;br&gt;
+–|--&lt;br&gt;
+ &lt;code&gt;dir&lt;/code&gt;  | 查看当前目录下的内容&lt;br&gt;
+ &lt;code&gt;cd&lt;/code&gt;  | 切换到另外一个地址&lt;br&gt;
+ &lt;code&gt;help&lt;/code&gt;  | 查看使用方式&lt;br&gt;
+ &lt;code&gt;cd../&lt;/code&gt; | 切换到上级目录&lt;br&gt;
+ &lt;code&gt;cd\&lt;/code&gt; | 切换到根目录&lt;br&gt;
+ &lt;code&gt;tree&lt;/code&gt;  | 查看目录树&lt;br&gt;
+ &lt;code&gt;cls&lt;/code&gt;  | 清屏&lt;br&gt;
+ &lt;code&gt;exit&lt;/code&gt;  | 退出&lt;br&gt;
+ &lt;code&gt;quit&lt;/code&gt;  | 退出&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其他 doc 命令&lt;br&gt;
+–|--&lt;br&gt;
+ &lt;code&gt;md&lt;/code&gt;  | 创建目录&lt;br&gt;
+ &lt;code&gt;rd&lt;/code&gt;  | 删除目录&lt;br&gt;
+ &lt;code&gt;copy&lt;/code&gt;  | 拷贝文件&lt;br&gt;
+ &lt;code&gt;del&lt;/code&gt;  | 删除文件&lt;br&gt;
+ &lt;code&gt;echo&lt;/code&gt;  | 创建文件&lt;br&gt;
+ &lt;code&gt;type&lt;/code&gt;  | 显示文本内容&lt;br&gt;
+ &lt;code&gt;move&lt;/code&gt;  | 移动&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;本章作业&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#本章作业&#34;&gt;#&lt;/a&gt; 本章作业&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Homework01&lt;br&gt;
+hello world 程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;public class Homework01&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  public static void main(String[] args)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    System.out.println(&amp;quot;hello world&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Homework02&lt;br&gt;
+ 将个人的基本信息（姓名，性别，籍贯，住址）打印到控制台输出，各信息分别占一行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;public class Homework02&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  public static void main(String[] args)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    System.out.println(&amp;quot;姓名\t性别\t籍贯\t住址\n小二\t男\t山西\t山东&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Homework03&lt;br&gt;
+JDK,JRE,JVM 的关系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// JDK包含JRE，JRE包含JVM&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// JDK = JRE + java开发工具&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// JRE = JVM + 核心类库&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Homework04&lt;br&gt;
+ 环境变量 path 配置及作用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 高级环境变量 -- 环境变量 -- path（u）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 能够在整个用户系统中使用java的命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//为了在doc任意目录，使用java和javac命令&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Homework05&lt;br&gt;
+java 编写步骤&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//定义一个public类，定义一个主方法，编写功能;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Homework06&lt;br&gt;
+Java 编写规范&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/*类和方法注释用文档注释，维护人员看的是单行注释和多行注释&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  运算符和=两边都加空格&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  源文件用utf-8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  风格&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;*/ &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Homework07&lt;br&gt;
+java 初学者容易犯的错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/*文件名和类名不一致&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  书写错误&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  英文和中文的；*/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="java基础" />
         <category term="笔记" />
         <updated>2025-03-25T16:00:00.000Z</updated>

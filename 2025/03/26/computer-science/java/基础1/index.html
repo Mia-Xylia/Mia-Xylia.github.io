@@ -32,7 +32,7 @@
 
 
   <title>
-笔记：java - java - 计算机科学 |
+笔记：java（0） - java - 计算机科学 |
 鱼塘 = </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,7 +60,7 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">笔记：java
+  <h1 itemprop="name headline">笔记：java（0）
   </h1>
   
 <div class="meta">
@@ -229,11 +229,168 @@ eclipse</p>
  JVM（java 虚拟机）实现了跨平台，包含在 jdk 中</p>
 </li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    .java[Square Rect] -- 编译(javac) --&gt; .class[Square Rect]</span><br><span class="line">    .class[Square Rect] -- 运行(java) --&gt; Windows/Linux/Mac[Square Rect]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A[.java] -- 编译(javac) --&gt; B[.class]</span><br><span class="line">    B[.class] -- 运行(java) --&gt; C[Windows/Linux/Mac]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>JDK = JRE + java 的开发工具 [java,javac,javadoc,javap 等]<br>
  JRE = JVM + java 核心类库</p>
 <h1 id="jdk的安装和配置"><a class="markdownIt-Anchor" href="#jdk的安装和配置">#</a> jdk 的安装和配置</h1>
-
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cub3JhY2xlLmNvbS9qYXZhL3RlY2hub2xvZ2llcy9kb3dubG9hZHMvP2VyPTIyMTg4NiNqYXZhMTctd2luZG93cw==">jdk 安装地址</span></p>
+<ul>
+<li>配置环境变量<br>
+ jdk 安装地址 /bin javac</li>
+</ul>
+<p>我的电脑–属性–高级系统设置–环境变量</p>
+<ul>
+<li>JAVA_HOME 环境变量</li>
+<li>path 中 % JAVA_HOME%\bin</li>
+</ul>
+<ul>
+<li>US 区别<br>
+环境变量和用户变量</li>
+</ul>
+<h1 id="入门"><a class="markdownIt-Anchor" href="#入门">#</a> 入门</h1>
+<ul>
+<li>快速入门<br>
+文件名与类名相同<br>
+文件 – 设置文件编码 – GBK</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```base</span></span><br><span class="line"><span class="string">//这是java的快速入门，演示java的开发步骤</span></span><br><span class="line"></span><br><span class="line"><span class="string">//</span> <span class="string">public</span> <span class="string">class</span> <span class="string">Hello表示hello是一个类，是一个public公有的类</span></span><br><span class="line"><span class="string">//</span> <span class="string">hello&#123;&#125;表示一个类的开始和结束</span></span><br><span class="line"><span class="string">//</span> <span class="string">main&#123;&#125;表示方法的开始和结束</span></span><br><span class="line"><span class="string">//</span> <span class="string">;表示语句结束</span></span><br><span class="line"></span><br><span class="line"><span class="string">public</span> <span class="string">class</span> <span class="string">Hello&#123;</span></span><br><span class="line"></span><br><span class="line">	<span class="string">//编写一个main方法，程序的入口</span></span><br><span class="line">	<span class="string">public</span> <span class="string">static</span> <span class="string">void</span> <span class="string">main(String[]</span> <span class="string">args)&#123;</span></span><br><span class="line">	<span class="string">//</span> <span class="string">输出hello</span> <span class="string">world到屏幕</span></span><br><span class="line">		<span class="string">System.out.println(&quot;hello,world~&quot;);</span></span><br><span class="line">	<span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding UTF-8 Hello.java</span><br><span class="line">java Hello</span><br></pre></td></tr></table></figure>
+<ul>
+<li>练习题</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">public</span> <span class="string">class</span> <span class="string">Hello&#123;</span></span><br><span class="line">	<span class="string">public</span> <span class="string">static</span> <span class="string">void</span> <span class="string">main(String[]</span> <span class="string">args)&#123;</span></span><br><span class="line">		<span class="string">System.out.println(&quot;小明</span> <span class="string">is</span> <span class="string">studying</span> <span class="string">java！&quot;);</span></span><br><span class="line">	<span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>java 流程分析<br>
+.java 源文件<br>
+.class 字节文件</p>
+</li>
+<li>
+<p>开发细节<br>
+ 1.java 源文件是以.java 为扩展名的。源文件的基本组成部分是.class 文件<br>
+ 2.java 区分大小写<br>
+ 3. 以；结尾<br>
+ 4.main 方法有固定书写格式：public static void main (String [] args)<br>
+ 5. 一个源文件最多只能有一个 public 类，其他类的个数不限制，每一个类对应一个.class 文件<br>
+ 6. 大括号成对出现<br>
+ 7.public 类的类名 = 文件名<br>
+ 8. 一个源文件中最多只有一个 public 类。其他类的个数不限，也可以将 main 方法写在非 public 类中，指定运行非 public 类，入口方法就是非 public 类的 main 方法</p>
+</li>
+<li>
+<p>学习方法<br>
+明确需求 --&gt; 能否使用传统技术解决 --&gt; 学习的新技术和知识点<br>
+⬇<br>
+研究细节和使用规范  &lt;-- 快速入门案例 &lt;-- 学习新技术的基本原理和基本语法</p>
+</li>
+</ul>
+<h1 id="转义字符"><a class="markdownIt-Anchor" href="#转义字符">#</a> 转义字符</h1>
+<p>\t 制表符<br>
+ \n 换行符<br>
+ \   &quot;  ' 转义符<br>
+ \r 一个回车</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">public</span> <span class="string">class</span> <span class="string">ChangeChar&#123;</span></span><br><span class="line">	<span class="string">public</span> <span class="string">static</span> <span class="string">void</span> <span class="string">main(String[]</span> <span class="string">args)&#123;</span></span><br><span class="line">		<span class="string">//</span> <span class="string">\t制表位</span></span><br><span class="line">		<span class="string">System.out.println(&quot;北京\t天津\t上海\t&quot;);</span></span><br><span class="line">		<span class="string">//</span> <span class="string">\n换行符</span></span><br><span class="line">		<span class="string">System.out.println(&quot;红楼梦\n林黛玉\n&quot;);</span></span><br><span class="line">		<span class="string">//</span> <span class="string">\\</span> <span class="string">:一个\</span></span><br><span class="line">		<span class="string">System.out.println(&quot;C:\\Windows\\System32\\cmd.exe&quot;);</span></span><br><span class="line">		<span class="string">//</span> <span class="string">\&quot;</span></span><br><span class="line">		<span class="string">System.out.println(&quot;老韩说：\&quot;要好好学习java\&quot;&quot;);</span></span><br><span class="line">		<span class="string">System.out.println(&quot;老韩说：\&#x27;要好好学习java\&#x27;&quot;);</span></span><br><span class="line">		<span class="string">//</span> <span class="string">\</span> <span class="string">r</span> <span class="string">回车</span></span><br><span class="line">		<span class="string">System.out.println(&quot;韩顺平教育\r北京&quot;)</span></span><br><span class="line"></span><br><span class="line">	<span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>课后练习</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">public</span> <span class="string">class</span> <span class="string">ChangeChar1&#123;</span></span><br><span class="line">	<span class="string">public</span> <span class="string">static</span> <span class="string">void</span> <span class="string">main(String[]</span> <span class="string">args)&#123;</span></span><br><span class="line">		<span class="string">System.out.println(&quot;书名\t作者\t价格\t销量\n三国\t罗贯中\t120\t1000&quot;);</span></span><br><span class="line">	<span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="注释-comment"><a class="markdownIt-Anchor" href="#注释-comment">#</a> 注释 comment</h1>
+<ul>
+<li>
+<p>单行注释<br>
+ // 注释文字</p>
+</li>
+<li>
+<p>多行注释<br>
+ /<em> 注释文字</em> /</p>
+</li>
+<li>
+<p>文档注释<br>
+ javadoc -d 文件夹名 -xx -yy Demo3.java</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">*@author    xxx</span><br><span class="line">*@version   yyy</span><br><span class="line">*/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>javadoc -d 文件夹路径 -author -version CommentTest.java<br>
+<img data-src="https://cdn.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia-pictures@master/img/ac0fd5161da54b83a5c85493e9f0a5af.png" alt="javadoc标签"></p>
+<h1 id="java代码基础规范"><a class="markdownIt-Anchor" href="#java代码基础规范">#</a> java 代码基础规范</h1>
+<p>1. 类，方法的注释要用 javadoc 方式<br>
+ 2. 多行 / 单行 给代码维护者看<br>
+ 3. 运算符和 = 两边加空格<br>
+ 4. 源文件使用 utf-8<br>
+5. 行宽不超过 80<br>
+6. 代码编写风格 次行风格和行尾风格</p>
+<h1 id="dos命令"><a class="markdownIt-Anchor" href="#dos命令">#</a> DOS 命令</h1>
+<ul>
+<li>DOC（磁盘操作系统）基本原理:</li>
+</ul>
+<p>指令 --&gt; 接受指令，解析指令，执行指令<br>
+ dos 系统</p>
+<ul>
+<li>
+<p>路径<br>
+相对路径：从当前目录开始定位，形成的路径<br>
+绝对路径：从根目录 / 顶级目录开始定位，形成的路径</p>
+</li>
+<li>
+<p>常用的 doc 命令<br>
+–|--<br>
+ <code>dir</code>  | 查看当前目录下的内容<br>
+ <code>cd</code>  | 切换到另外一个地址<br>
+ <code>help</code>  | 查看使用方式<br>
+ <code>cd../</code> | 切换到上级目录<br>
+ <code>cd\</code> | 切换到根目录<br>
+ <code>tree</code>  | 查看目录树<br>
+ <code>cls</code>  | 清屏<br>
+ <code>exit</code>  | 退出<br>
+ <code>quit</code>  | 退出</p>
+</li>
+<li>
+<p>其他 doc 命令<br>
+–|--<br>
+ <code>md</code>  | 创建目录<br>
+ <code>rd</code>  | 删除目录<br>
+ <code>copy</code>  | 拷贝文件<br>
+ <code>del</code>  | 删除文件<br>
+ <code>echo</code>  | 创建文件<br>
+ <code>type</code>  | 显示文本内容<br>
+ <code>move</code>  | 移动</p>
+</li>
+</ul>
+<h1 id="本章作业"><a class="markdownIt-Anchor" href="#本章作业">#</a> 本章作业</h1>
+<ul>
+<li>Homework01<br>
+hello world 程序</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Homework01&#123;</span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">    System.out.println(&quot;hello world&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Homework02<br>
+ 将个人的基本信息（姓名，性别，籍贯，住址）打印到控制台输出，各信息分别占一行</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Homework02&#123;</span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">    System.out.println(&quot;姓名\t性别\t籍贯\t住址\n小二\t男\t山西\t山东&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Homework03<br>
+JDK,JRE,JVM 的关系</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// JDK包含JRE，JRE包含JVM</span><br><span class="line">// JDK = JRE + java开发工具</span><br><span class="line">// JRE = JVM + 核心类库</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Homework04<br>
+ 环境变量 path 配置及作用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 高级环境变量 -- 环境变量 -- path（u）</span><br><span class="line">// 能够在整个用户系统中使用java的命令</span><br><span class="line"></span><br><span class="line">//为了在doc任意目录，使用java和javac命令</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Homework05<br>
+java 编写步骤</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//定义一个public类，定义一个主方法，编写功能;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Homework06<br>
+Java 编写规范</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*类和方法注释用文档注释，维护人员看的是单行注释和多行注释</span><br><span class="line">  运算符和=两边都加空格</span><br><span class="line">  源文件用utf-8</span><br><span class="line">  风格</span><br><span class="line">*/ </span><br></pre></td></tr></table></figure>
+<ul>
+<li>Homework07<br>
+java 初学者容易犯的错误</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*文件名和类名不一致</span><br><span class="line">  书写错误</span><br><span class="line">  英文和中文的；*/</span><br></pre></td></tr></table></figure>
       <div class="tags">
           <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> java基础</a>
           <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
@@ -248,7 +405,7 @@ eclipse</p>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-03-27 07:54:21" itemprop="dateModified" datetime="2025-03-27T07:54:21+08:00">2025-03-27</time>
+    <time title="修改时间：2025-03-27 20:58:38" itemprop="dateModified" datetime="2025-03-27T20:58:38+08:00">2025-03-27</time>
   </span>
 </div>
 
@@ -274,7 +431,7 @@ eclipse</p>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="笔记：java">http://example.com/2025/03/26/computer-science/java/基础1/</a>
+    <a href="http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="笔记：java（0）">http://example.com/2025/03/26/computer-science/java/基础1/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -301,6 +458,14 @@ eclipse</p>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="笔记：java（1）">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> java</span>
+  <h3>笔记：java（1）</h3>
+  </a>
+
     </div>
 </div>
 
@@ -317,11 +482,11 @@ eclipse</p>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> 课程内容介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jdk%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text"> jdk 的安装和配置</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> 课程内容介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jdk%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text"> jdk 的安装和配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-number">3.</span> <span class="toc-text"> 入门</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text"> 转义字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A-comment"><span class="toc-number">5.</span> <span class="toc-text"> 注释 comment</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80%E8%A7%84%E8%8C%83"><span class="toc-number">6.</span> <span class="toc-text"> java 代码基础规范</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dos%E5%91%BD%E4%BB%A4"><span class="toc-number">7.</span> <span class="toc-text"> DOS 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E7%AB%A0%E4%BD%9C%E4%B8%9A"><span class="toc-number">8.</span> <span class="toc-text"> 本章作业</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" rel="bookmark" title="笔记：java">笔记：java</a></li>
+          <li><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/" rel="bookmark" title="笔记：java（1）">笔记：java（1）</a></li><li class="active"><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" rel="bookmark" title="笔记：java（0）">笔记：java（0）</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -335,7 +500,7 @@ eclipse</p>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">7</span>
+        <span class="count">8</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -415,10 +580,12 @@ eclipse</p>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/03/26/computer-science/python/pytorch2/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -442,10 +609,10 @@ eclipse</p>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
 </div>
 
-    <span><a href="/2025/03/25/computer-science/python/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
+    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%802/" title="笔记：java（1）">笔记：java（1）</a></span>
   </li>
 
       
@@ -454,10 +621,10 @@ eclipse</p>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
+    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
   </li>
 
       
@@ -466,7 +633,31 @@ eclipse</p>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/03/24/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/2025/03/27/computer-science/java/%E5%9F%BA%E7%A1%803/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="笔记：java（0）">笔记：java（0）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/25/computer-science/python/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
   </li>
 
       
@@ -490,18 +681,6 @@ eclipse</p>
 <a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
-</div>
-
     <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
   </li>
 
@@ -511,10 +690,10 @@ eclipse</p>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
 </div>
 
-    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="笔记：java">笔记：java</a></span>
+    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
   </li>
 
   </ul>
@@ -539,13 +718,13 @@ eclipse</p>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">35k 字</span>
+    <span title="站点总字数">38k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">34 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
