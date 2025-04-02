@@ -1,0 +1,654 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="java基础,笔记" />
+
+
+<link rel="canonical" href="http://example.com/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%804/">
+
+
+
+  <title>
+控制结构 - java - 计算机科学 |
+鱼塘 = </title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">控制结构
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-03-30 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-03-30T00:00:00+08:00">2025-03-30</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">鱼塘</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/assets/wallpaper-2572384.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/java/" itemprop="item" rel="index" title="分类于 java"><span itemprop="name">java</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%804/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+    <meta itemprop="name" content="Xylia">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>在程序中，程序运行的流程控制决定程序的运行<br>
+ 1. 顺序控制<br>
+ 2. 分支控制<br>
+ 3. 循环控制</p>
+<h1 id="顺序"><a class="markdownIt-Anchor" href="#顺序">#</a> 顺序</h1>
+<p>程序从上到下逐行执行，中间没有任何判断和跳转<br>
+ java 中定义变量时采用合法的向前引用</p>
+<h1 id="分支"><a class="markdownIt-Anchor" href="#分支">#</a> 分支</h1>
+<h2 id="if-else"><a class="markdownIt-Anchor" href="#if-else">#</a> if else</h2>
+<p>让分支有选择的运行</p>
+<h3 id="单分支"><a class="markdownIt-Anchor" href="#单分支">#</a> 单分支</h3>
+<p>if（条件表达式）{<br>
+执行代码块<br>
+}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">Scanner scanner = new Scanner(System.in);</span><br><span class="line">System.out.println(&quot;请输入你的年龄&quot;);</span><br><span class="line">int age = scanner.netInt();</span><br><span class="line">if(age &gt; 18)&#123;</span><br><span class="line">    System.out.print(&quot;你的年龄大于18，要为自己的行为负责&quot;);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(&quot;程序继续运行&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="双分支"><a class="markdownIt-Anchor" href="#双分支">#</a> 双分支</h3>
+<p>if（条件表达式）{<br>
+执行代码块<br>
+}<br>
+else{<br>
+执行代码块 2<br>
+}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">Scanner scanner = new Scanner(System.in);</span><br><span class="line">System.out.println(&quot;请输入你的年龄&quot;);</span><br><span class="line">int age = scanner.nextInt();</span><br><span class="line">if(age &gt; 18)&#123;</span><br><span class="line">    System.out.print(&quot;你的年龄大于18，要为自己的行为负责&quot;);</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    System.out.println(&quot;这次放过你了&quot;);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(&quot;程序继续运行&quot;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if(a &gt; 10.0 &amp;&amp; b &lt; 20&gt;)&#123;</span><br><span class="line">    System.out.println(a + b);</span><br><span class="line">&#125;</span><br><span class="line">if((a + b) % 3 == 0 &amp;&amp; (a + b) % 5 == 0)&#123;</span><br><span class="line">    System.out.println(&quot;两者的和能被三和五整除&quot;);</span><br><span class="line">&#125;</span><br><span class="line">if((year % 4 == 0 &amp;&amp; year % 100 != 0) || year % 400 == 0)&#123;</span><br><span class="line">    System.out.println(year + &quot;是闰年&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多分支"><a class="markdownIt-Anchor" href="#多分支">#</a> 多分支</h3>
+<p>if（条件表达式）{<br>
+执行代码块 1<br>
+}<br>
+ else if (条件表达式){<br>
+执行代码块 2<br>
+}<br>
+…………<br>
+else{<br>
+执行代码块 n<br>
+}<br>
+ 多分支可以没有 else，如果所有的条件表达式都不成立则一个执行入口都没有<br>
+如果有 else，如果所有的条件表达式都不成立，则默认执行 else</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">Scanner scanner = new Scanner(System.in);</span><br><span class="line">int score = scanner.nextInt();</span><br><span class="line">if(100 &gt;= score &amp;&amp; score &gt;= 0)&#123;</span><br><span class="line">    if(score == 100)&#123;</span><br><span class="line">        System.out.println(&quot;信用极好&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    else if(99 &gt;=score &amp;&amp; score &gt; 80)&#123;</span><br><span class="line">        System.out.println(&quot;信用优秀&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    else if(80 &gt;= score &amp;&amp; score &lt;= 60)&#123;</span><br><span class="line">        System.out.println(&quot;信用一般&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        System.out.println(&quot;不及格&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    System.out.println(&quot;请输入正确的信用分&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="嵌套分支"><a class="markdownIt-Anchor" href="#嵌套分支">#</a> 嵌套分支</h3>
+<p>if(){<br>
+if(){</p>
+<pre><code>&#125;
+</code></pre>
+<p>}<br>
+ 嵌套不要超过三层</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">Scanner scanner = new Scanner(System.in);</span><br><span class="line">System.out.println(&quot;请输入分数&quot;);</span><br><span class="line">double score = scanner.nextDouble();</span><br><span class="line">System.out.println(&quot;请输入性别&quot;);</span><br><span class="line">char gender = scanner.next().charAt(0);</span><br><span class="line">if (score &gt; 8.0 )&#123;</span><br><span class="line">    if(gender == &#x27;女&#x27;)&#123;</span><br><span class="line">        System.out.println(&quot;女子组&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        System.out.println(&quot;男子组&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    System.out.println(&quot;淘汰&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>课后练习</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">Scanner scanner = new Scanner(System.in);</span><br><span class="line">System.out.println(&quot;请输入年龄：&quot;);</span><br><span class="line">int age = scanner.nextInt();</span><br><span class="line">System.out.println(&quot;请输入游玩月份：&quot;);</span><br><span class="line">int month = scanner.nextInt();</span><br><span class="line">if(month &gt;= 4 &amp;&amp; month &lt;= 10)&#123;</span><br><span class="line">    if(age &lt; 18)&#123;</span><br><span class="line">        System.out.print(&quot;儿童半价，30元&quot;);</span><br><span class="line">    &#125;else if(age &gt; 60)&#123;</span><br><span class="line">        System.out.print(&quot;老人1/3，20元&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        System.out.print(&quot;成人，60元&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    if(age &gt;= 18 &amp;&amp; age &lt;=60)&#123;</span><br><span class="line">        System.out.println(&quot;成人60元&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        System.out.println(&quot;儿童/老人30元&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="switch"><a class="markdownIt-Anchor" href="#switch">#</a> switch</h2>
+<p>switch (表达式){<br>
+case 常量 1:<br>
+ 语句块 1;<br>
+break;<br>
+case 常量 2:<br>
+ 语句块 2;<br>
+break;<br>
+………………<br>
+case 常量 n:<br>
+ 语句块 n;<br>
+break;<br>
+default:<br>
+default 语句块:<br>
+break;<br>
+}<br>
+ 如果没有 break 语句，执行下一个语句块，不判断是否匹配</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = new Scanner(System.in);</span><br><span class="line">char c1 = scanner.next().charAt(0);</span><br><span class="line">switch(c1)&#123;</span><br><span class="line">    case &#x27;a&#x27;:</span><br><span class="line">    System.out.println(&quot;星期一&quot;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;b&#x27;:</span><br><span class="line">    System.out.println(&quot;星期二&quot;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;c&#x27;:</span><br><span class="line">    System.out.println(&quot;星期三&quot;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;d&#x27;:</span><br><span class="line">    System.out.println(&quot;星期四&quot;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;e&#x27;:</span><br><span class="line">    System.out.println(&quot;星期五&quot;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;f&#x27;:</span><br><span class="line">    System.out.println(&quot;星期六&quot;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;g&#x27;:</span><br><span class="line">    System.out.println(&quot;星期日&quot;);</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>细节<br>
+ 1. 表达式数据类型应该和 case 后常量类型一致，或者可以自动转成可以比较的类型<br>
+ 2.switch 中表达式的返回值必须是 （byte，short，int，char，enum，String）<br>
+3.case 中的值必须是常量或常量表达式，不能是变量<br>
+ 4.default 是可选的，没有匹配的 case，执行 default<br>
+5.break 语句用来在执行完一个 case 分支后使程序跳出 switch 语句块，如果没有写 break，程序会顺利运行到 switch 结尾，除非执行到 break</li>
+<li>课堂练习</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">char c1 = scanner.next().charAt(0);</span><br><span class="line">switch(c1)&#123;</span><br><span class="line">    case &#x27;a&#x27;:</span><br><span class="line">    System.out.println(&#x27;A&#x27;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;b&#x27;:</span><br><span class="line">    System.out.println(&#x27;B&#x27;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;c&#x27;:</span><br><span class="line">    System.out.println(&#x27;C&#x27;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;d&#x27;:</span><br><span class="line">    System.out.println(&#x27;D&#x27;);</span><br><span class="line">    break;</span><br><span class="line">    case &#x27;e&#x27;:</span><br><span class="line">    System.out.println(&#x27;E&#x27;);</span><br><span class="line">    break;</span><br><span class="line">    default:</span><br><span class="line">    System.out.println(&quot;other&quot;);</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int score = scanner.nextInt();</span><br><span class="line">if(score &gt;= 0 &amp;&amp; score &lt;= 100)&#123;</span><br><span class="line">    switch((int)(score/60))&#123;</span><br><span class="line">        case 1:</span><br><span class="line">        System.out.println(&quot;合格&quot;);</span><br><span class="line">        break;</span><br><span class="line">        default:</span><br><span class="line">        System.out.println(&quot;不合格&quot;);</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    System.out.println(&quot;请输入0-100的成绩&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">int month = scanner.nextInt();</span><br><span class="line">switch(month)&#123;</span><br><span class="line">    case 3:</span><br><span class="line">    case 4:</span><br><span class="line">    case 5:</span><br><span class="line">        System.out.println(&quot;春季&quot;);</span><br><span class="line">        break;</span><br><span class="line">    case 6:</span><br><span class="line">    case 7:</span><br><span class="line">    case 8:</span><br><span class="line">        System.out.println(&quot;夏季&quot;);</span><br><span class="line">        break;</span><br><span class="line">    case 9:</span><br><span class="line">    case 10:</span><br><span class="line">    case 11:</span><br><span class="line">        System.out.println(&quot;秋季&quot;);</span><br><span class="line">        break;</span><br><span class="line">    case 12:</span><br><span class="line">    case 1:</span><br><span class="line">    case 2:</span><br><span class="line">        System.out.println(&quot;冬季&quot;);</span><br><span class="line">        break;</span><br><span class="line">    default:</span><br><span class="line">        System.out.println(&quot;你输入的季节不对&quot;);</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>判断具体的数值不多且符合 byte，short，int，char，enum，String，建议使用 switch<br>
+ 区间判断 /boolean 使用 if else</p>
+<h1 id="循环"><a class="markdownIt-Anchor" href="#循环">#</a> 循环</h1>
+<h2 id="for"><a class="markdownIt-Anchor" href="#for">#</a> for</h2>
+<p>for (循环变量初始化；循环条件；循环变量迭代){<br>
+循环操作（可以多条语句）;<br>
+}</p>
+<ul>
+<li>细节<br>
+ 1. 循环条件是返回一个布尔值的表达式<br>
+ 2.for (; 循环哦按段条件；) 中的初始化和变量迭代可以写到其他地方，但是两边的；不能省略<br>
+ 3. 循环初始化可以有多条初始化语句，但要求类型一样，并且中间用，隔开<br>
+循环变量迭代也可以有多条变量迭代语句，中间用，隔开</li>
+</ul>
+<h2 id="while"><a class="markdownIt-Anchor" href="#while">#</a> while</h2>
+<h2 id="do-while"><a class="markdownIt-Anchor" href="#do-while">#</a> do while</h2>
+<h1 id="break"><a class="markdownIt-Anchor" href="#break">#</a> break</h1>
+<h1 id="continue"><a class="markdownIt-Anchor" href="#continue">#</a> continue</h1>
+<h1 id="return"><a class="markdownIt-Anchor" href="#return">#</a> return</h1>
+
+      <div class="tags">
+          <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> java基础</a>
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-04-02 17:43:57" itemprop="dateModified" datetime="2025-04-02T17:43:57+08:00">2025-04-02</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/wechatpay.png" alt="Xylia 微信支付">
+        <p>微信支付</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Xylia <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%804/" title="控制结构">http://example.com/2025/03/30/computer-science/java/基础4/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%805/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="数组，排序和查找">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> java</span>
+  <h3>数组，排序和查找</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="运算符">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> java</span>
+  <h3>运算符</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text"> 顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF"><span class="toc-number">2.</span> <span class="toc-text"> 分支</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else"><span class="toc-number">2.1.</span> <span class="toc-text"> if else</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 单分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%88%86%E6%94%AF"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 双分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 多分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%88%86%E6%94%AF"><span class="toc-number">2.1.4.</span> <span class="toc-text"> 嵌套分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">2.2.</span> <span class="toc-text"> switch</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-number">3.</span> <span class="toc-text"> 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#for"><span class="toc-number">3.1.</span> <span class="toc-text"> for</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while"><span class="toc-number">3.2.</span> <span class="toc-text"> while</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#do-while"><span class="toc-number">3.3.</span> <span class="toc-text"> do while</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#break"><span class="toc-number">4.</span> <span class="toc-text"> break</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#continue"><span class="toc-number">5.</span> <span class="toc-text"> continue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#return"><span class="toc-number">6.</span> <span class="toc-text"> return</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" rel="bookmark" title="java基本概述">java基本概述</a></li><li><a href="/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/" rel="bookmark" title="运算符">运算符</a></li><li class="active"><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%804/" rel="bookmark" title="控制结构">控制结构</a></li><li><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%805/" rel="bookmark" title="数组，排序和查找">数组，排序和查找</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xylia"
+      data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+  <p class="name" itemprop="name">Xylia</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">11</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">4</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01pYS1YeWxpYQ==" title="https:&#x2F;&#x2F;github.com&#x2F;Mia-Xylia"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>链环</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友達</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>链接</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%805/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/" title="变量">变量</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/01/computer-science/java/%E5%9F%BA%E7%A1%806/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%805/" title="数组，排序和查找">数组，排序和查找</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/" title="运算符">运算符</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%804/" title="控制结构">控制结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/25/computer-science/python/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="java基本概述">java基本概述</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xylia @ 鱼塘</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">51k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">46 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/03/30/computer-science/java/基础4/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,mermaid: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//fastly.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
