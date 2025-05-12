@@ -7,17 +7,18 @@
         <language>zh-CN</language>
         <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0800</lastBuildDate>
+        <category>java基础</category>
+        <category>笔记</category>
         <category>教程</category>
+        <category>python基础</category>
         <category>随笔</category>
         <category>pytorch基础</category>
-        <category>笔记</category>
-        <category>java基础</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/pytorch2/</guid>
             <title>笔记：PyTorch(2)</title>
             <link>http://example.com/2025/03/26/computer-science/python/pytorch2/</link>
-            <category>pytorch基础</category>
             <category>笔记</category>
+            <category>pytorch基础</category>
             <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;神经网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#神经网络&#34;&gt;#&lt;/a&gt; 神经网络&lt;/h1&gt;
 &lt;h2 id=&#34;神经网络的基本骨架-nnmodule&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#神经网络的基本骨架-nnmodule&#34;&gt;#&lt;/a&gt; 神经网络的基本骨架  nn.Module&lt;/h2&gt;
@@ -119,8 +120,8 @@ padding = 1, 向外拓展一行 / 列&lt;/li&gt;
             <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/pytorch3/</guid>
             <title>笔记：PyTorch(3)</title>
             <link>http://example.com/2025/03/26/computer-science/python/pytorch3/</link>
-            <category>pytorch基础</category>
             <category>笔记</category>
+            <category>pytorch基础</category>
             <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;loss-functions&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#loss-functions&#34;&gt;#&lt;/a&gt; Loss Functions&lt;/h1&gt;
 &lt;ul&gt;
@@ -214,8 +215,8 @@ Lr = learning rate&lt;/p&gt;
             <guid isPermalink="true">http://example.com/2025/03/25/computer-science/python/pytorch1/</guid>
             <title>笔记：PyTorch(1)</title>
             <link>http://example.com/2025/03/25/computer-science/python/pytorch1/</link>
-            <category>pytorch基础</category>
             <category>笔记</category>
+            <category>pytorch基础</category>
             <pubDate>Tue, 25 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;加载数据的方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#加载数据的方式&#34;&gt;#&lt;/a&gt; 加载数据的方式&lt;/h1&gt;
 &lt;ul&gt;
