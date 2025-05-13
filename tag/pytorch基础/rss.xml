@@ -7,12 +7,12 @@
         <language>zh-CN</language>
         <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0800</lastBuildDate>
-        <category>教程</category>
-        <category>python基础</category>
-        <category>笔记</category>
-        <category>pytorch基础</category>
-        <category>java基础</category>
         <category>随笔</category>
+        <category>教程</category>
+        <category>java基础</category>
+        <category>笔记</category>
+        <category>python基础</category>
+        <category>pytorch基础</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/pytorch3/</guid>
             <title>笔记：PyTorch(3)</title>
