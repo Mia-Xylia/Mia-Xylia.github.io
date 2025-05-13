@@ -5,18 +5,18 @@
     <link href="http://example.com" />
     <updated>2025-05-12T16:00:00.000Z</updated>
     <category term="教程" />
-    <category term="java基础" />
-    <category term="笔记" />
     <category term="python基础" />
+    <category term="笔记" />
     <category term="pytorch基础" />
+    <category term="java基础" />
     <category term="随笔" />
     <entry>
         <id>http://example.com/2025/05/13/computer-science/python/han3/</id>
         <title>程序控制结构</title>
         <link rel="alternate" href="http://example.com/2025/05/13/computer-science/python/han3/"/>
         <content type="html"></content>
-        <category term="笔记" />
         <category term="python基础" />
+        <category term="笔记" />
         <updated>2025-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -86,8 +86,8 @@
  3.= 两边用空格&lt;br&gt;
  4. 变量用，隔开&lt;/p&gt;
 </content>
-        <category term="笔记" />
         <category term="python基础" />
+        <category term="笔记" />
         <updated>2025-05-11T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -187,8 +187,8 @@ a，b 是变量，没有类型&lt;/p&gt;
 &lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```使用str类型，分别保存\n\t\r\\123等字符并打印输出&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;str1&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;r&amp;quot;\n&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;str2&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;r&amp;quot;\t&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;str3&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;r&amp;quot;\r&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;str4&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;r&amp;quot;\\&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;str5&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;1&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;str6&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;2&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;str7&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;print(f&amp;quot;&amp;#123;str1&amp;#125;&lt;/span&gt; &amp;#123;&lt;span class=&#34;string&#34;&gt;str2&lt;/span&gt;&amp;#125; &amp;#123;&lt;span class=&#34;string&#34;&gt;str3&lt;/span&gt;&amp;#125; &amp;#123;&lt;span class=&#34;string&#34;&gt;str4&lt;/span&gt;&amp;#125; &amp;#123;&lt;span class=&#34;string&#34;&gt;str5&lt;/span&gt;&amp;#125; &amp;#123;&lt;span class=&#34;string&#34;&gt;str6&lt;/span&gt;&amp;#125; &amp;#123;&lt;span class=&#34;string&#34;&gt;str7&lt;/span&gt;&amp;#125;&lt;span class=&#34;string&#34;&gt;&amp;quot;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```保存两本书名，用+拼接，看效果。保存两本是的价格，用+拼接看效果&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;price1&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;22&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;price2&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;33&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;book1&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;西游记&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;book2&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;水浒传&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;book&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;book1&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;book2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;price&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;price1&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;price2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;print(book)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;print(price)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Xylia&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;age&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;22&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;score&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;100&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;gender&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;女&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;hobby&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;编程&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;print(f&amp;quot;姓名\t\t年龄\t成绩\t性别\t爱好\n&amp;#123;name&amp;#125;\t&amp;#123;age&amp;#125;\t&amp;#123;score&amp;#125;\t&amp;#123;gender&amp;#125;\t&amp;#123;hobby&amp;#125;&amp;quot;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="笔记" />
         <category term="python基础" />
+        <category term="笔记" />
         <updated>2025-05-11T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -252,8 +252,8 @@ max = a if a &amp;gt; b else b&lt;/p&gt;
 &lt;h1 id=&#34;进制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#进制&#34;&gt;#&lt;/a&gt; 进制&lt;/h1&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9taWEteHlsaWEuZ2l0aHViLmlvLzIwMjUvMDMvMzAvY29tcHV0ZXItc2NpZW5jZS9qYXZhLyVFNSU5RiVCQSVFNyVBMSU4MDMv&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 </content>
-        <category term="笔记" />
         <category term="python基础" />
+        <category term="笔记" />
         <updated>2025-05-11T16:00:00.000Z</updated>
     </entry>
 </feed>

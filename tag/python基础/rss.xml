@@ -8,17 +8,17 @@
         <pubDate>Tue, 13 May 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 13 May 2025 00:00:00 +0800</lastBuildDate>
         <category>教程</category>
-        <category>java基础</category>
-        <category>笔记</category>
         <category>python基础</category>
+        <category>笔记</category>
         <category>pytorch基础</category>
+        <category>java基础</category>
         <category>随笔</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/05/13/computer-science/python/han3/</guid>
             <title>程序控制结构</title>
             <link>http://example.com/2025/05/13/computer-science/python/han3/</link>
-            <category>笔记</category>
             <category>python基础</category>
+            <category>笔记</category>
             <pubDate>Tue, 13 May 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[  ]]></description>
         </item>
@@ -26,8 +26,8 @@
             <guid isPermalink="true">http://example.com/2025/05/12/computer-science/python/han0/</guid>
             <title>python语言的概述</title>
             <link>http://example.com/2025/05/12/computer-science/python/han0/</link>
-            <category>笔记</category>
             <category>python基础</category>
+            <category>笔记</category>
             <pubDate>Mon, 12 May 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;课程信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#课程信息&#34;&gt;#&lt;/a&gt; 课程信息&lt;/h1&gt;
 &lt;ul&gt;
@@ -97,8 +97,8 @@
             <guid isPermalink="true">http://example.com/2025/05/12/computer-science/python/han1/</guid>
             <title>变量</title>
             <link>http://example.com/2025/05/12/computer-science/python/han1/</link>
-            <category>笔记</category>
             <category>python基础</category>
+            <category>笔记</category>
             <pubDate>Mon, 12 May 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量&#34;&gt;#&lt;/a&gt; 变量&lt;/h1&gt;
 &lt;h2 id=&#34;为什么需要变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为什么需要变量&#34;&gt;#&lt;/a&gt; 为什么需要变量&lt;/h2&gt;
@@ -198,8 +198,8 @@ a，b 是变量，没有类型&lt;/p&gt;
             <guid isPermalink="true">http://example.com/2025/05/12/computer-science/python/han2/</guid>
             <title>运算符</title>
             <link>http://example.com/2025/05/12/computer-science/python/han2/</link>
-            <category>笔记</category>
             <category>python基础</category>
+            <category>笔记</category>
             <pubDate>Mon, 12 May 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;运算符的介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符的介绍&#34;&gt;#&lt;/a&gt; 运算符的介绍&lt;/h1&gt;
 &lt;h2 id=&#34;算术运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算术运算符&#34;&gt;#&lt;/a&gt; 算术运算符&lt;/h2&gt;
