@@ -149,7 +149,94 @@
   <div class="body md" itemprop="articleBody">
     
 
-    
+    <h1 id="程序流程控制"><a class="markdownIt-Anchor" href="#程序流程控制">#</a> 程序流程控制</h1>
+<h2 id="顺序控制"><a class="markdownIt-Anchor" href="#顺序控制">#</a> 顺序控制</h2>
+<p>python 定义变量时采用合法的前向引用</p>
+<h2 id="分支控制if-else"><a class="markdownIt-Anchor" href="#分支控制if-else">#</a> 分支控制 if-else</h2>
+<h3 id="单分支"><a class="markdownIt-Anchor" href="#单分支">#</a> 单分支</h3>
+<p>if 条件表达式:<br>
+ 代码块<br>
+缩进用于界定代码块，每个代码块应具有相同的缩进长度</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">age</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入你的年龄&quot;))</span></span><br><span class="line"><span class="string">if</span> <span class="string">age</span> <span class="string">&gt;</span> <span class="attr">18:</span></span><br><span class="line">    <span class="string">print(&quot;你的年龄大于18，要对自己的行为负责&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxMzEwMDM0OC5wbmc=">流程图</span></p>
+<h3 id="双分支"><a class="markdownIt-Anchor" href="#双分支">#</a> 双分支</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">age</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入你的年龄&quot;))</span></span><br><span class="line"><span class="string">if</span> <span class="string">age</span> <span class="string">&gt;</span> <span class="attr">18:</span></span><br><span class="line">    <span class="string">print(&quot;你的年龄大于18，要对自己的行为负责&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxMzEwMDczNi5wbmc=">流程图</span></p>
+<ul>
+<li>练习题<br>
+ 1. 韩顺平教育～</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```两个int数的和大于50时输出hello</span> <span class="string">world</span></span><br><span class="line"><span class="string">num1</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入第一个数字：&quot;))</span></span><br><span class="line"><span class="string">num2</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入第二个数字：&quot;))</span></span><br><span class="line"><span class="string">if</span> <span class="string">num1</span> <span class="string">+</span> <span class="string">num2</span> <span class="string">&gt;</span> <span class="attr">50:</span></span><br><span class="line">    <span class="string">print(&quot;hello</span> <span class="string">world&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```两个float变量，第一个数大于10.0，第二个数小于20.0，打印两数之和</span></span><br><span class="line"><span class="string">num1</span> <span class="string">=</span> <span class="string">float(input(&quot;请输入第一个数字：&quot;))</span></span><br><span class="line"><span class="string">num2</span> <span class="string">=</span> <span class="string">float(input(&quot;请输入第二个数字：&quot;))</span></span><br><span class="line"><span class="string">if</span> <span class="string">num1&gt;10.0</span> <span class="string">and</span> <span class="string">num2&lt;20.0:</span></span><br><span class="line">    <span class="string">print(num1</span> <span class="string">+</span> <span class="string">num2)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```两个int变量的和是否能被3和5整除</span></span><br><span class="line"><span class="string">num1</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入第一个数字：&quot;))</span></span><br><span class="line"><span class="string">num2</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入第二个数字：&quot;))</span></span><br><span class="line"><span class="string">num</span> <span class="string">=</span> <span class="string">num1</span> <span class="string">+</span> <span class="string">num2</span></span><br><span class="line"></span><br><span class="line"><span class="string">if</span> <span class="string">not</span> <span class="string">num</span> <span class="string">%</span> <span class="number">3</span> <span class="string">and</span> <span class="string">not</span> <span class="string">num</span> <span class="string">%</span> <span class="attr">5:</span></span><br><span class="line">    <span class="string">print(f&quot;&#123;num&#125;既能被3整除又能被5整除&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```判断是否是闰年</span></span><br><span class="line"><span class="string">year</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入要查询的年份&quot;))</span></span><br><span class="line"><span class="string">if</span> <span class="string">year</span> <span class="string">%</span> <span class="number">4</span> <span class="string">==</span> <span class="number">0</span> <span class="string">and</span> <span class="string">year</span> <span class="string">%</span> <span class="number">100</span> <span class="type">!=</span> <span class="number">0</span> <span class="string">or</span> <span class="string">year</span> <span class="string">%</span> <span class="number">400</span> <span class="string">==</span> <span class="attr">0:</span></span><br><span class="line">    <span class="string">print(f&quot;&#123;year&#125;是闰年&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="多分支"><a class="markdownIt-Anchor" href="#多分支">#</a> 多分支</h3>
+<p>if:<br>
+else if/elif:<br>
+else:<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxMzEwNDkzOS5wbmc="></span></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">score</span> <span class="string">=</span> <span class="string">int(input(&quot;小头儿子的python考试成绩：&quot;))</span></span><br><span class="line"><span class="string">if</span> <span class="string">score</span> <span class="string">==</span> <span class="attr">100:</span></span><br><span class="line">    <span class="string">print(&quot;奖励一辆BMW&quot;)</span></span><br><span class="line"><span class="string">elif</span> <span class="string">score</span> <span class="string">&gt;</span> <span class="attr">80:</span></span><br><span class="line">    <span class="string">print(&quot;奖励一台iphone13&quot;)</span></span><br><span class="line"><span class="string">elif</span> <span class="string">score</span> <span class="string">&gt;=</span> <span class="number">60</span> <span class="string">and</span> <span class="string">score</span> <span class="string">&lt;=</span> <span class="attr">80:</span></span><br><span class="line">    <span class="string">print(&quot;奖励一个iPad&quot;)</span></span><br><span class="line"><span class="attr">else:</span></span><br><span class="line">    <span class="string">print(&quot;什么奖励也没有&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>练习题</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">high</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入男生的身高：&quot;))</span></span><br><span class="line"><span class="string">money</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入男生的财产：&quot;))</span></span><br><span class="line"><span class="string">face</span> <span class="string">=</span> <span class="string">input(&quot;请输入男生的相貌，帅/不帅？&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="string">high_condition</span> <span class="string">=</span> <span class="string">high</span> <span class="string">&gt;</span> <span class="number">180</span></span><br><span class="line"><span class="string">money_condition</span> <span class="string">=</span> <span class="string">money</span> <span class="string">&gt;</span> <span class="number">10000000</span></span><br><span class="line"><span class="string">face_condition</span> <span class="string">=</span> <span class="string">face</span> <span class="string">==</span> <span class="string">&quot;帅&quot;</span></span><br><span class="line"><span class="attr">if high_condition and money_condition and face_condition:</span></span><br><span class="line">    <span class="string">print(&quot;我一定要嫁给他&quot;)</span></span><br><span class="line"><span class="attr">elif high_condition or money_condition or face_condition:</span></span><br><span class="line">    <span class="string">print(&quot;嫁吧，比上不足，比下有余&quot;)</span></span><br><span class="line"><span class="attr">else:</span></span><br><span class="line">    <span class="string">print(&quot;不嫁！&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="嵌套分支"><a class="markdownIt-Anchor" href="#嵌套分支">#</a> 嵌套分支</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">score</span> <span class="string">=</span> <span class="string">float(input(&quot;请输入参赛者成绩：&quot;))</span></span><br><span class="line"><span class="string">gender</span> <span class="string">=</span> <span class="string">input(&quot;请输入参赛者性别：&quot;)</span></span><br><span class="line"><span class="string">if</span> <span class="string">score</span> <span class="string">&gt;</span> <span class="attr">8.0:</span></span><br><span class="line">    <span class="string">if</span> <span class="string">gender</span> <span class="string">==</span> <span class="string">&quot;女&quot;</span><span class="string">:</span></span><br><span class="line">        <span class="string">print(&quot;进入女子组&quot;)</span></span><br><span class="line">    <span class="string">print(&quot;进入男子组&quot;)</span></span><br><span class="line"><span class="attr">else:</span></span><br><span class="line">    <span class="string">print(&quot;淘汰&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">month</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入月份：&quot;))</span></span><br><span class="line"><span class="string">age</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入年龄：&quot;))</span></span><br><span class="line"><span class="string">print(&quot;票价：&quot;)</span></span><br><span class="line"><span class="string">if</span> <span class="number">10</span><span class="string">&gt;month&gt;4:</span></span><br><span class="line">    <span class="string">if</span> <span class="string">age</span> <span class="string">&lt;</span> <span class="attr">18:</span></span><br><span class="line">        <span class="string">print(&quot;30&quot;)</span></span><br><span class="line">    <span class="string">elif</span> <span class="string">age</span> <span class="string">&gt;</span> <span class="attr">60:</span></span><br><span class="line">        <span class="string">print(&quot;20&quot;)</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="string">print(&quot;60&quot;)</span></span><br><span class="line"><span class="attr">else:</span></span><br><span class="line">    <span class="string">if</span> <span class="string">age</span> <span class="string">&lt;</span> <span class="attr">18:</span></span><br><span class="line">        <span class="string">print(&quot;20&quot;)</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="string">print(&quot;40&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="循环控制"><a class="markdownIt-Anchor" href="#循环控制">#</a> 循环控制</h2>
+<h3 id="for循环控制"><a class="markdownIt-Anchor" href="#for循环控制">#</a> for 循环控制</h3>
+<p>for 变量 in 范围 / 序列<br>
+循环操作语句<br>
+轮询机制，对指定数据集进行 “轮询处理”<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxMzE1NDkzMS5wbmc="> 流程图</span><br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxMzE2MDE0MC5wbmc=">内存分析法</span></p>
+<ul>
+<li>细节<br>
+ 1. 循环时依次将序列种的数取出献给变量<br>
+ 2.range (start,stop,step), 不可变序列，start 默认是 0，step 默认是 1，数列前闭后开</li>
+<li>for-else<br>
+for 循环正常的完成遍历，在遍历过程中，没有被打断（break）</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="attr">for i in range(10):</span></span><br><span class="line">    <span class="string">print(i)</span></span><br><span class="line">    <span class="string">if</span> <span class="string">i</span> <span class="string">==</span> <span class="attr">3:</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line"><span class="attr">else:</span></span><br><span class="line">    <span class="string">print(&quot;所有数据都输出了&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="while循环"><a class="markdownIt-Anchor" href="#while循环">#</a> while 循环</h3>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDA5MjMwOC5wbmc=">流程图</span><br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDA5MjQ0MC5wbmc=">内存分析图</span></p>
+<ul>
+<li>while-else<br>
+while 循环正常的完成遍历，在遍历过程中，没有被打断（break）</li>
+<li>练习题</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```打印1-100之间所有能被3整除的数</span></span><br><span class="line"><span class="string">i</span> <span class="string">=</span> <span class="number">1</span></span><br><span class="line"><span class="string">while</span> <span class="string">i</span> <span class="string">&lt;=</span> <span class="attr">100:</span></span><br><span class="line">    <span class="string">if</span> <span class="string">i</span> <span class="string">%</span> <span class="number">3</span> <span class="string">==</span> <span class="attr">0:</span></span><br><span class="line">        <span class="string">print(i)</span></span><br><span class="line">    <span class="string">i</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```打印40-200之间的所有偶数</span></span><br><span class="line"><span class="string">i</span> <span class="string">=</span> <span class="number">40</span></span><br><span class="line"><span class="string">while</span> <span class="string">i</span> <span class="string">&lt;=</span> <span class="attr">200:</span></span><br><span class="line">    <span class="string">if</span> <span class="string">i</span> <span class="string">%</span> <span class="number">2</span> <span class="string">==</span> <span class="attr">0:</span></span><br><span class="line">        <span class="string">print(i)</span></span><br><span class="line">    <span class="string">i</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```不断输入姓名，直到exit为止</span></span><br><span class="line"><span class="attr">while True:</span></span><br><span class="line">    <span class="string">name</span> <span class="string">=</span> <span class="string">input(&quot;请输入姓名：&quot;)</span></span><br><span class="line">    <span class="string">if</span> <span class="string">name</span> <span class="string">==</span> <span class="attr">&quot;exit&quot;:</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```打印1-100之间所有是9的倍数的整数，统计个数及总和</span></span><br><span class="line"><span class="string">num</span> <span class="string">=</span> <span class="number">1</span></span><br><span class="line"><span class="string">count</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">sum</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">while</span> <span class="string">num</span> <span class="string">&lt;=</span> <span class="attr">100:</span></span><br><span class="line">    <span class="string">if</span> <span class="string">num</span> <span class="string">%</span> <span class="number">9</span> <span class="string">==</span> <span class="attr">0:</span></span><br><span class="line">        <span class="string">print(num)</span></span><br><span class="line">        <span class="string">count</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line">        <span class="string">sum</span> <span class="string">+=</span> <span class="string">num</span></span><br><span class="line">    <span class="string">num</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"><span class="string">print(&quot;个数是：&quot;,count)</span></span><br><span class="line"><span class="string">print(&quot;总和是：&quot;,sum)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">sum</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入一个整数：&quot;))</span></span><br><span class="line"><span class="string">i</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">while</span> <span class="string">i</span> <span class="string">&lt;=</span> <span class="attr">sum:</span></span><br><span class="line">    <span class="string">print(f&quot;&#123;i&#125;</span> <span class="string">+</span> &#123;<span class="string">sum</span> <span class="bullet">-</span> <span class="string">i</span>&#125; <span class="string">=</span> &#123;<span class="string">sum</span>&#125;<span class="string">&quot;)</span></span><br><span class="line"><span class="string">    i += 1</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="多重循环"><a class="markdownIt-Anchor" href="#多重循环">#</a> 多重循环</h3>
+<p>将一个循环放在另一个循环体内<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDEwNDMzMy5wbmc=">嵌套循环</span></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```空心金字塔</span> <span class="string">while-else</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">总层数 total_level</span></span><br><span class="line"><span class="string">目前层数 level</span></span><br><span class="line"><span class="string">当前层数要输出的*数量 num_signal</span></span><br><span class="line"><span class="string">当前层数已输出*数量 print_signal</span></span><br><span class="line"><span class="string">当前层数已输出空格数 num</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">total_level</span> <span class="string">=</span> <span class="string">int(input(&quot;总层数是：&quot;))</span></span><br><span class="line"><span class="string">level</span> <span class="string">=</span> <span class="number">1</span></span><br><span class="line"><span class="string">num_signal</span> <span class="string">=</span> <span class="number">1</span></span><br><span class="line"><span class="string">print_signal</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">num</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">while</span> <span class="string">level</span> <span class="string">&lt;</span> <span class="attr">total_level:</span></span><br><span class="line"><span class="comment"># 打印*前面的空格</span></span><br><span class="line">    <span class="string">while</span> <span class="string">num</span> <span class="string">&lt;</span> <span class="string">(1</span> <span class="string">+</span> <span class="attr">total_level * 2 - num_signal) / 2 - 1:</span></span><br><span class="line">        <span class="string">print(&quot;</span> <span class="string">&quot;, end=&quot;</span><span class="string">&quot;)</span></span><br><span class="line"><span class="string">        num += 1</span></span><br><span class="line"><span class="string"># 打印空心三角形</span></span><br><span class="line"><span class="string">    while print_signal &lt; num_signal:</span></span><br><span class="line"><span class="string">        if print_signal == 0 or print_signal == num_signal - 1:</span></span><br><span class="line"><span class="string">            print(&quot;</span><span class="string">*&quot;,</span> <span class="string">end=&quot;&quot;)</span></span><br><span class="line">        <span class="attr">else:</span></span><br><span class="line">            <span class="string">print(&quot;</span> <span class="string">&quot;, end=&quot;</span><span class="string">&quot;)</span></span><br><span class="line"><span class="string">        print_signal += 1</span></span><br><span class="line"><span class="string">        num += 1</span></span><br><span class="line"><span class="string"># 修改数据</span></span><br><span class="line"><span class="string">    print(&quot;</span><span class="string">&quot;)</span></span><br><span class="line"><span class="string">    num_signal += 2</span></span><br><span class="line"><span class="string">    print_signal = 0</span></span><br><span class="line"><span class="string">    num = 0</span></span><br><span class="line"><span class="string">    level += 1</span></span><br><span class="line"><span class="string"># 打印最后一行</span></span><br><span class="line"><span class="string">else:</span></span><br><span class="line"><span class="string">    while print_signal &lt; num_signal:</span></span><br><span class="line"><span class="string">        print(&quot;</span><span class="string">*&quot;,</span> <span class="string">end=&quot;&quot;)</span></span><br><span class="line">        <span class="string">print_signal</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line">    <span class="string">print()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">题目要求：</span></span><br><span class="line">    <span class="string">统计三个班的成绩情况，每个班5名同学</span></span><br><span class="line">    <span class="string">求出各个版的平均分和所有班级的平均分，学生的成绩从键盘输入</span></span><br><span class="line">    <span class="string">统计三个班及格人数</span></span><br><span class="line"><span class="string">班级数：num_class</span></span><br><span class="line"><span class="string">学生数</span> <span class="string">student</span></span><br><span class="line"><span class="string">分数</span> <span class="string">score</span></span><br><span class="line"><span class="string">总分</span> <span class="string">all</span></span><br><span class="line"><span class="string">平均分</span> <span class="string">average</span></span><br><span class="line"><span class="string">及格人数</span> <span class="string">count</span></span><br><span class="line"><span class="string">年级及格人数</span> <span class="string">num</span></span><br><span class="line"><span class="string">年级总分</span> <span class="string">sum</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">num_class = int(input(&quot;</span><span class="string">请输入班级个数：&quot;))</span></span><br><span class="line"><span class="string">all</span> <span class="string">=</span> <span class="number">0.0</span></span><br><span class="line"><span class="string">count</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">sum</span> <span class="string">=</span> <span class="number">0.0</span></span><br><span class="line"><span class="string">all_student</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">num</span> <span class="string">=0</span></span><br><span class="line"><span class="string">for</span> <span class="string">i</span> <span class="string">in</span> <span class="string">range(1,</span> <span class="string">num_class</span> <span class="string">+</span> <span class="attr">1):</span></span><br><span class="line">    <span class="string">student</span> <span class="string">=</span> <span class="string">int(input(f&quot;请输入&#123;i&#125;班学生数量：&quot;))</span></span><br><span class="line">    <span class="string">all_student</span> <span class="string">+=</span> <span class="string">student</span></span><br><span class="line">    <span class="string">for</span> <span class="string">j</span> <span class="string">in</span> <span class="string">range(1,</span> <span class="string">student</span> <span class="string">+</span> <span class="attr">1):</span></span><br><span class="line">        <span class="string">score</span> <span class="string">=</span> <span class="string">int(input(f&quot;请输入第&#123;j&#125;个学生的分数：&quot;))</span></span><br><span class="line">        <span class="string">all</span> <span class="string">+=</span> <span class="string">score</span></span><br><span class="line">        <span class="string">if</span> <span class="string">score</span> <span class="string">&gt;</span> <span class="attr">60:</span></span><br><span class="line">            <span class="string">count</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line">    <span class="string">average</span> <span class="string">=</span> <span class="string">all</span> <span class="string">/</span> <span class="string">student</span></span><br><span class="line">    <span class="string">print(f&quot;&#123;i&#125;班平均分是&#123;average&#125;，及格人数是&#123;count&#125;&quot;)</span></span><br><span class="line">    <span class="string">sum</span> <span class="string">+=</span> <span class="string">all</span></span><br><span class="line">    <span class="string">num</span> <span class="string">+=</span> <span class="string">student</span></span><br><span class="line">    <span class="string">all</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line">    <span class="string">count</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">print(f&quot;所有班级平均分是&#123;sum</span> <span class="string">/</span> <span class="string">num&#125;&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="break语句"><a class="markdownIt-Anchor" href="#break语句">#</a> break 语句</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line">n = random.randint(1,100)</span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE2NTIyOS5wbmc=">流程图</span></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```随机生成1-100的数，直到97，看看用了几次</span></span><br><span class="line"><span class="string">import</span> <span class="string">random</span></span><br><span class="line"></span><br><span class="line"><span class="string">count</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="attr">while True:</span></span><br><span class="line">    <span class="string">num</span> <span class="string">=</span> <span class="string">random.randint(1,</span> <span class="number">100</span><span class="string">)</span></span><br><span class="line">    <span class="string">count</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line">    <span class="string">if</span> <span class="string">num</span> <span class="string">==</span> <span class="attr">97:</span></span><br><span class="line">        <span class="string">print(count)</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意事项和细节<br>
+ 1. 终结最近的 while 循环<br>
+ 2. 用在 for/while 循环中<br>
+ 3. 如果 for 循环被 break 终结，该循环会保持当前值</li>
+<li>练习题</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```1-100以内的随机数求和，输出i的值（第几次和大于20）</span></span><br><span class="line"><span class="string">import</span> <span class="string">random</span></span><br><span class="line"></span><br><span class="line"><span class="string">sum</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="string">i</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="attr">while True:</span></span><br><span class="line">    <span class="string">num</span> <span class="string">=</span> <span class="string">random.randint(1,</span> <span class="number">100</span><span class="string">)</span></span><br><span class="line">    <span class="string">sum</span> <span class="string">+=</span> <span class="string">num</span></span><br><span class="line">    <span class="string">i</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line">    <span class="string">print(num)</span></span><br><span class="line">    <span class="string">if</span> <span class="string">sum</span> <span class="string">&gt;</span> <span class="attr">20:</span></span><br><span class="line">        <span class="string">print(f&quot;和大于20，i是&#123;i&#125;&quot;)</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```登陆验证</span></span><br><span class="line"><span class="attr">for i in range(3):</span></span><br><span class="line">    <span class="string">name</span> <span class="string">=</span> <span class="string">input(&quot;请输入用户名：&quot;)</span></span><br><span class="line">    <span class="string">code</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入密码：&quot;))</span></span><br><span class="line">    <span class="string">if</span> <span class="string">name</span> <span class="string">==</span> <span class="string">&quot;张无忌&quot;</span> <span class="string">and</span> <span class="string">code</span> <span class="string">==</span> <span class="attr">888:</span></span><br><span class="line">        <span class="string">print(&quot;登陆成功&quot;)</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="string">print(f&quot;密码或用户名错误，登陆失败，还有&#123;2-i&#125;次机会&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="continue语句"><a class="markdownIt-Anchor" href="#continue语句">#</a> continue 语句</h3>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE3MjAyNC5wbmc=">流程图</span><br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE3MjMxNC5wbmc=">内存图</span></p>
+<h3 id="return语句"><a class="markdownIt-Anchor" href="#return语句">#</a> return 语句</h3>
+<p>表示跳出所在的函数</p>
+<h1 id="练习题"><a class="markdownIt-Anchor" href="#练习题">#</a> 练习题</h1>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">某人有100000元，没经过一个路口，需要缴费，规则如下：</span></span><br><span class="line"><span class="string">当现金 &gt; 50000时，每次交5%</span></span><br><span class="line"><span class="string">当现金 &lt;= 50000时，每次交1000</span></span><br><span class="line"><span class="string">计算可以经过多少路口</span></span><br><span class="line"><span class="string">路口数 num</span></span><br><span class="line"><span class="string">剩余金额 money</span></span><br><span class="line"><span class="string">总金额 all</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">money</span> <span class="string">=</span> <span class="number">100000</span></span><br><span class="line"><span class="string">num</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="attr">while True:</span></span><br><span class="line">    <span class="string">if</span> <span class="string">money</span> <span class="string">&gt;</span> <span class="attr">50000:</span></span><br><span class="line">        <span class="string">money</span> <span class="string">-=</span> <span class="number">0.05</span> <span class="string">*</span> <span class="string">money</span></span><br><span class="line">        <span class="string">num</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line">    <span class="string">elif</span> <span class="number">1000</span> <span class="string">&lt;</span> <span class="string">money</span> <span class="string">&lt;=</span> <span class="attr">50000:</span></span><br><span class="line">        <span class="string">money</span> <span class="string">-=</span> <span class="number">1000</span></span><br><span class="line">        <span class="string">num</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="string">print(&quot;现金不足&quot;)</span></span><br><span class="line">        <span class="string">print(f&quot;经过了&#123;num&#125;个路口,剩余的钱为&#123;money&#125;&quot;)</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+
       <div class="tags">
           <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
           <a href="/tags/python%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> python基础</a>
@@ -164,7 +251,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-05-12 21:10:00" itemprop="dateModified" datetime="2025-05-12T21:10:00+08:00">2025-05-12</time>
+    <time title="修改时间：2025-05-14 17:46:39" itemprop="dateModified" datetime="2025-05-14T17:46:39+08:00">2025-05-14</time>
   </span>
 </div>
 
@@ -209,14 +296,22 @@
     <div class="item left">
       
 
-  <a href="/2025/05/12/computer-science/python/han2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="运算符">
+  <a href="/2025/05/12/computer-science/python/han1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="变量">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> python</span>
-  <h3>运算符</h3>
+  <h3>变量</h3>
   </a>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/05/13/computer-science/python/han4/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;70&#x2F;798&#x2F;469&#x2F;virtual-reality-big-data-internet-future-preview.jpg" title="未命名">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>未命名</h3>
+  </a>
+
     </div>
 </div>
 
@@ -233,10 +328,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">1.</span> <span class="toc-text"> 程序流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.</span> <span class="toc-text"> 顺序控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%8E%A7%E5%88%B6if-else"><span class="toc-number">1.2.</span> <span class="toc-text"> 分支控制 if-else</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 单分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%88%86%E6%94%AF"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 双分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 多分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%88%86%E6%94%AF"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 嵌套分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.</span> <span class="toc-text"> 循环控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text"> for 循环控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.3.2.</span> <span class="toc-text"> while 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 多重循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#break%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.4.</span> <span class="toc-text"> break 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#continue%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.5.</span> <span class="toc-text"> continue 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#return%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.6.</span> <span class="toc-text"> return 语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 练习题</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2025/05/12/computer-science/python/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/12/computer-science/python/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/han1/" rel="bookmark" title="变量">变量</a></li><li class="active"><a href="/2025/05/13/computer-science/python/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li>
+          <li><a href="/2025/05/12/computer-science/python/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/han2/" rel="bookmark" title="运算符">运算符</a></li><li class="active"><a href="/2025/05/13/computer-science/python/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -250,7 +346,7 @@
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">16</span>
+        <span class="count">19</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -330,10 +426,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/05/12/computer-science/python/han1/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/05/13/computer-science/python/han4/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -355,12 +453,9 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
+    <span><a href="/2025/05/13/computer-science/python/han4/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -372,31 +467,7 @@
 <a href="/categories/computer-science/python/" title="分类于 python">python</a>
 </div>
 
-    <span><a href="/2025/05/12/computer-science/python/han0/" title="python语言的概述">python语言的概述</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
-</div>
-
-    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="java基本概述">java基本概述</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+    <span><a href="/2025/05/12/computer-science/python/han1/" title="变量">变量</a></span>
   </li>
 
       
@@ -417,10 +488,19 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/" title="变量">变量</a></span>
+    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/05/13/computer-science/python/han6/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -444,7 +524,7 @@
 <a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="/2025/03/25/computer-science/python/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
+    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
   </li>
 
       
@@ -456,7 +536,7 @@
 <a href="/categories/computer-science/java/" title="分类于 java">java</a>
 </div>
 
-    <span><a href="/2025/04/02/computer-science/java/%E5%9F%BA%E7%A1%804/" title="控制结构">控制结构</a></span>
+    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="java基本概述">java基本概述</a></span>
   </li>
 
       
@@ -465,10 +545,19 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
 </div>
 
-    <span><a href="/2025/04/20/computer-science/java/%E5%9F%BA%E7%A1%805/" title="数组，排序和查找">数组，排序和查找</a></span>
+    <span><a href="/2025/05/12/computer-science/python/han0/" title="python语言的概述">python语言的概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/05/13/computer-science/python/han5/" title="未命名">未命名</a></span>
   </li>
 
   </ul>
@@ -493,13 +582,13 @@
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">74k 字</span>
+    <span title="站点总字数">79k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:07</span>
+    <span title="站点阅读时长">1:12</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
