@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="教程" />
+  <meta name="keywords" content="笔记,python基础" />
 
 
-<link rel="canonical" href="http://example.com/2025/03/23/computer-science/crawler/1/">
+<link rel="canonical" href="http://example.com/2025/05/14/computer-science/python/han4/">
 
 
 
   <title>
-爬取今日菜价：2025.3.23云南蔬菜市场综合菜价 - 爬虫 - 计算机科学 |
+函数 - python - 计算机科学 |
 鱼塘 = </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价
+  <h1 itemprop="name headline">函数
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2025-03-23 00:00:00">
+  <span class="item" title="创建时间：2025-05-14 00:00:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-03-23T00:00:00+08:00">2025-03-23</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-05-14T00:00:00+08:00">2025-05-14</time>
   </span>
 </div>
 
@@ -129,12 +129,12 @@
 <span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a>
 <meta itemprop="position" content="1" /></span>
 <i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/crawler/" itemprop="item" rel="index" title="分类于 爬虫"><span itemprop="name">爬虫</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/" itemprop="item" rel="index" title="分类于 python"><span itemprop="name">python</span></a>
 <meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/23/computer-science/crawler/1/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/14/computer-science/python/han4/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
@@ -149,24 +149,60 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="背景"><a class="markdownIt-Anchor" href="#背景">#</a> 背景</h1>
-<p>在实践哔哩哔哩 Python 研究社的爬虫教程时，Bs4 解析的教学需要用到北京新天地数据，但因为网站改变，数据不能适用于课程，所以找了另外一个网址来进行练习</p>
-<h1 id="课程信息与网站信息"><a class="markdownIt-Anchor" href="#课程信息与网站信息">#</a> 课程信息与网站信息</h1>
-<div class="links"><div class="item" title="Python研究社" style="--block-color:#e9546b;"><span class="exturl image" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXVONHkxVzdEdT9zcG1faWRfZnJvbT0zMzMuNzg4LnBsYXllci5zd2l0Y2gmdmRfc291cmNlPTIxYTg4NDRlZGE0MTE4N2M2ZTIxYzhmYTdjNTNiZThlJnA9MzA=" data-background-image="https://images.sj33.cn/uploads/202005/7-200525101140K8.png"></span>
-          <div class="info">
-          <span class="exturl title" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXVONHkxVzdEdT9zcG1faWRfZnJvbT0zMzMuNzg4LnBsYXllci5zd2l0Y2gmdmRfc291cmNlPTIxYTg4NDRlZGE0MTE4N2M2ZTIxYzhmYTdjNTNiZThlJnA9MzA=">Bs4解析入门</span>
-          <p class="desc">爬虫教程</p>
-          </div></div></div>
-<div class="links"><div class="item" title="今日菜价" style="--block-color:#e9546b;"><span class="exturl image" data-url="aHR0cDovL3pob25nZGFwZW5nLmNvbS9zaHVjYWlqaWFnZS8xODgyLmh0bWw=" data-background-image="https://bpic.588ku.com/back_origin_min_pic/19/11/12/29a1c1f87580d2b061e113bf231e2973.jpg"></span>
-          <div class="info">
-          <span class="exturl title" data-url="aHR0cDovL3pob25nZGFwZW5nLmNvbS9zaHVjYWlqaWFnZS8xODgyLmh0bWw=">今日菜价</span>
-          <p class="desc">蔬菜批发市场价格行情</p>
-          </div></div></div>
-<h1 id="代码"><a class="markdownIt-Anchor" href="#代码">#</a> 代码</h1>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```Python</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line"><span class="comment"># pip install bs4 -i 清华</span></span><br><span class="line"></span><br><span class="line"><span class="string">import</span> <span class="string">requests</span></span><br><span class="line"><span class="string">from</span> <span class="string">bs4</span> <span class="string">import</span> <span class="string">BeautifulSoup</span></span><br><span class="line"><span class="string">import</span> <span class="string">csv</span></span><br><span class="line"></span><br><span class="line"><span class="string">url</span> <span class="string">=</span> <span class="string">&quot;http://zhongdapeng.com/shucaijiage/1882.html&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">main</span> <span class="string">=</span> <span class="string">requests.get(url,</span> <span class="string">timeout=10)</span></span><br><span class="line"><span class="string">main.encoding</span> <span class="string">=</span> <span class="string">&#x27;utf-8&#x27;</span></span><br><span class="line"><span class="string">main_page</span> <span class="string">=</span> <span class="string">main.text</span></span><br><span class="line"><span class="comment"># print(main_page)</span></span><br><span class="line"></span><br><span class="line"><span class="string">f</span> <span class="string">=</span> <span class="string">open(r&quot;F:\doc\python\1\python</span> <span class="string">go</span> <span class="string">lraening\爬虫\菜价.csv&quot;,</span> <span class="string">mode=&quot;w&quot;,</span> <span class="string">encoding=&quot;utf-8&quot;)</span></span><br><span class="line"><span class="string">csvwriter</span> <span class="string">=</span> <span class="string">csv.writer(f)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解析数据</span></span><br><span class="line"><span class="comment"># 把页面源代码交给B 进行处理，生成bs对象</span></span><br><span class="line"><span class="string">page</span> <span class="string">=</span> <span class="string">BeautifulSoup(main_page,</span> <span class="string">&quot;html.parser&quot;</span><span class="string">)#</span> <span class="string">指定html解析器</span></span><br><span class="line"><span class="comment"># print(page)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从bs对象中查找数据</span></span><br><span class="line"><span class="comment"># find（标签，属性=值）</span></span><br><span class="line"><span class="comment"># find_all（标签，属性=值）</span></span><br><span class="line"><span class="string">table</span> <span class="string">=</span> <span class="string">page.find(&quot;table&quot;,</span> <span class="string">attrs=&#123;&quot;width&quot;:&quot;530&quot;&#125;)#</span> <span class="string">class是python的关键字</span></span><br><span class="line"><span class="comment"># print(table)</span></span><br><span class="line"><span class="string">trs</span> <span class="string">=</span> <span class="string">table.find_all(&quot;tr&quot;)[1:]</span></span><br><span class="line"><span class="attr">for tr in trs:</span></span><br><span class="line">    <span class="string">ps</span> <span class="string">=</span> <span class="string">tr.find_all(&quot;p&quot;)</span></span><br><span class="line">    <span class="string">num</span> <span class="string">=</span> <span class="string">ps[0].text</span></span><br><span class="line">    <span class="string">name</span> <span class="string">=</span> <span class="string">ps[1].text</span>     <span class="comment"># .text拿到被标签标记的内容</span></span><br><span class="line">    <span class="string">price</span> <span class="string">=</span> <span class="string">ps[2].text</span></span><br><span class="line">    <span class="comment"># print(num,name,price)</span></span><br><span class="line">    <span class="string">csvwriter.writerow([num,</span> <span class="string">name,</span> <span class="string">price])</span></span><br><span class="line"></span><br><span class="line"><span class="string">print(&quot;over&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="string">f.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+    <h1 id="函数"><a class="markdownIt-Anchor" href="#函数">#</a> 函数</h1>
+<h2 id="入门"><a class="markdownIt-Anchor" href="#入门">#</a> 入门</h2>
+<p>为完成某一功能的程序指令的集合<br>
+函数分为系统函数（内置函数，模块中提供的函数）和自定义函数</p>
+<ul>
+<li>好处<br>
+ 1. 提供的代码的复用性<br>
+ 2. 将实现的细节封装起来，供其他函数调用</li>
+<li>基本语法<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE4MTczNy5wbmc=">基本语法</span><br>
+调用方式：函数名（实参列表）</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="attr">def cry():</span></span><br><span class="line">    <span class="string">print(&quot;喵喵喵&quot;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">def cal01():</span></span><br><span class="line">    <span class="string">sum</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line">    <span class="attr">for i in range(1001):</span></span><br><span class="line">        <span class="string">sum</span> <span class="string">+=</span> <span class="string">i</span></span><br><span class="line">    <span class="string">print(sum)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">def cal02(n):</span></span><br><span class="line">    <span class="string">sum</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line">    <span class="string">for</span> <span class="string">i</span> <span class="string">in</span> <span class="string">range(n</span> <span class="string">+</span> <span class="attr">1):</span></span><br><span class="line">        <span class="string">sum</span> <span class="string">+=</span> <span class="string">i</span></span><br><span class="line">    <span class="string">print(sum)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">def</span> <span class="string">get_sum(num1,</span> <span class="attr">num2):</span></span><br><span class="line">    <span class="string">return</span> <span class="string">num1</span> <span class="string">+</span> <span class="string">num2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">cry()</span></span><br><span class="line"><span class="string">cal01()</span></span><br><span class="line"><span class="string">cal02(1000)</span></span><br><span class="line"><span class="string">result</span> <span class="string">=</span> <span class="string">get_sum(2,</span> <span class="number">1</span><span class="string">)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数调用机制"><a class="markdownIt-Anchor" href="#函数调用机制">#</a> 函数调用机制</h2>
+<p>给程序必要的输入，函数返回结果<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE4NDg0Ni5wbmc="> getsum 调用示意图</span></p>
+<h2 id="函数的注意事项和使用细节"><a class="markdownIt-Anchor" href="#函数的注意事项和使用细节">#</a> 函数的注意事项和使用细节</h2>
+<p>1. 函数的参数列表可以是 0 - 多个<br>
+ 2. 函数要遵循命名规则<br>
+ 3. 函数的变量是局部的<br>
+ 4. 函数名相同时，调用最近的函数，就近原则<br>
+ 5. 传参方式是位置传参，数据类型不用指定<br>
+ 6. 可以有多个返回值，返回值的类型不被限定<br>
+ 7. 支持关键字参数（形参名 = 实参值）<br>
+8. 支持默认参数，指定参数时以指定为主，默认参数放在参数列表后<br>
+ 9. 支持可变参数，传入的 0 - 多个实参会被组成一个元组 def sum (*args)<br>
+ 10. 传入的多个关键字参数时会被组成一个字典 def sum (**arg)<br>
+ 11. 调用另外一个文件的函数  import 文件名    文件名。函数名 ()</p>
+<h2 id="函数传参机制"><a class="markdownIt-Anchor" href="#函数传参机制">#</a> 函数传参机制</h2>
+<ul>
+<li>字符串和数值类型的传参机制<br>
+不可变数据类型<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE5MjAwNC5wbmc=">内存分析图</span></li>
+</ul>
+<h2 id="递归机制"><a class="markdownIt-Anchor" href="#递归机制">#</a> 递归机制</h2>
+<p>递归就是函数自己调用自己<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE5NDYxNi5wbmc=">内存分析图</span><br>
+将函数命名为 test，这可能会与测试框架（如 pytest）中的某些功能冲突。</p>
+<ul>
+<li>注意事项<br>
+ 1. 执行一个函数时，创建一个新的空间<br>
+ 2. 函数的变量是独立的<br>
+ 3. 必须向递归结束的方向逼近，否则就是无限递归<br>
+ 4. 当一个函数执行完毕，或者遇到 return，就会返回，遵守谁调用就把结果返回给谁</li>
+<li>练习</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```请用递归的方式求出斐波那契数1，1，2，3，5，8，13……给你一个整数，求出它的值是多少</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="函数作为参数传递"><a class="markdownIt-Anchor" href="#函数作为参数传递">#</a> 函数作为参数传递</h1>
+<h1 id="lambda匿名函数"><a class="markdownIt-Anchor" href="#lambda匿名函数">#</a> lambda 匿名函数</h1>
 
       <div class="tags">
-          <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="ic i-tag"></i> 教程</a>
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/python%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> python基础</a>
       </div>
   </div>
 
@@ -178,7 +214,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-03-25 08:06:50" itemprop="dateModified" datetime="2025-03-25T08:06:50+08:00">2025-03-25</time>
+    <time title="修改时间：2025-05-14 20:41:23" itemprop="dateModified" datetime="2025-05-14T20:41:23+08:00">2025-05-14</time>
   </span>
 </div>
 
@@ -204,7 +240,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">http://example.com/2025/03/23/computer-science/crawler/1/</a>
+    <a href="http://example.com/2025/05/14/computer-science/python/han4/" title="函数">http://example.com/2025/05/14/computer-science/python/han4/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -223,22 +259,14 @@
     <div class="item left">
       
 
-  <a href="/2025/03/23/computer-science/python/pytorch0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="笔记：PyTorch(0)">
+  <a href="/2025/05/13/computer-science/python/han6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;1&#x2F;406&#x2F;520&#x2F;coding-computer-hacker-hacking-preview.jpg" title="未命名">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Python</span>
-  <h3>笔记：PyTorch(0)</h3>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>未命名</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2025/03/25/computer-science/python/pytorch1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="笔记：PyTorch(1)">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Python</span>
-  <h3>笔记：PyTorch(1)</h3>
-  </a>
-
     </div>
 </div>
 
@@ -255,11 +283,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text"> 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF%E4%B8%8E%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF"><span class="toc-number">2.</span> <span class="toc-text"> 课程信息与网站信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 代码</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text"> 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> 函数调用机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%92%8C%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82"><span class="toc-number">1.3.</span> <span class="toc-text"> 函数的注意事项和使用细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6"><span class="toc-number">1.4.</span> <span class="toc-text"> 函数传参机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.</span> <span class="toc-text"> 递归机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">2.</span> <span class="toc-text"> 函数作为参数传递</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lambda%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text"> lambda 匿名函数</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2025/03/23/computer-science/crawler/1/" rel="bookmark" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></li>
+          <li><a href="/2025/05/12/computer-science/python/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/13/computer-science/python/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li class="active"><a href="/2025/05/14/computer-science/python/han4/" rel="bookmark" title="函数">函数</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -353,12 +381,10 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/03/23/computer-science/python/pytorch0/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/03/25/computer-science/python/pytorch1/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -382,30 +408,6 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
-</div>
-
-    <span><a href="/2025/04/02/computer-science/java/%E5%9F%BA%E7%A1%804/" title="控制结构">控制结构</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 python">python</a>
-</div>
-
-    <span><a href="/2025/05/12/computer-science/python/han1/" title="变量">变量</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/python/" title="分类于 python">python</a>
 </div>
 
@@ -418,58 +420,22 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2025/05/12/computer-science/python/han2/" title="运算符">运算符</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/java/" title="分类于 java">java</a>
 </div>
 
-    <span><a href="/2025/04/24/computer-science/java/%E5%9F%BA%E7%A1%806/" title="面向对象编程">面向对象编程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/poetry/" title="分类于 随笔">随笔</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/poetry/original/" title="分类于 原创">原创</a>
-</div>
-
-    <span><a href="/2025/04/14/poetry/original/2025.4/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="/2025/03/25/computer-science/python/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
+    <span><a href="/2025/04/20/computer-science/java/%E5%9F%BA%E7%A1%805/" title="数组，排序和查找">数组，排序和查找</a></span>
   </li>
 
       
@@ -490,10 +456,70 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/" title="变量">变量</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="java基本概述">java基本概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/python/" title="分类于 python">python</a>
 </div>
 
     <span><a href="/2025/05/13/computer-science/python/han3/" title="程序控制结构">程序控制结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/25/computer-science/python/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
   </li>
 
   </ul>
@@ -536,7 +562,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/03/23/computer-science/crawler/1/',
+    path: '2025/05/14/computer-science/python/han4/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
@@ -546,7 +572,7 @@
       empty: "关于 「 ${query} 」，什么也没搜到",
       stats: "${time} ms 内找到 ${hits} 条结果"
     },
-    valine: true,fancybox: true,
+    valine: true,mermaid: true,fancybox: true,
     copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
     ignores : [
       function(uri) {

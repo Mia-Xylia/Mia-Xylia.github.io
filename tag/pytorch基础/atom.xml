@@ -8,8 +8,8 @@
     <category term="java基础" />
     <category term="笔记" />
     <category term="python基础" />
-    <category term="随笔" />
     <category term="pytorch基础" />
+    <category term="随笔" />
     <entry>
         <id>http://example.com/2025/03/26/computer-science/python/pytorch2/</id>
         <title>笔记：PyTorch(2)</title>

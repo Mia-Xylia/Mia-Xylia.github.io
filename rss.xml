@@ -5,14 +5,73 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 13 May 2025 09:40:51 +0800</pubDate>
-        <lastBuildDate>Tue, 13 May 2025 09:40:51 +0800</lastBuildDate>
+        <pubDate>Wed, 14 May 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Wed, 14 May 2025 00:00:00 +0800</lastBuildDate>
         <category>教程</category>
         <category>java基础</category>
         <category>笔记</category>
         <category>python基础</category>
-        <category>随笔</category>
         <category>pytorch基础</category>
+        <category>随笔</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/05/14/computer-science/python/han4/</guid>
+            <title>函数</title>
+            <link>http://example.com/2025/05/14/computer-science/python/han4/</link>
+            <category>笔记</category>
+            <category>python基础</category>
+            <pubDate>Wed, 14 May 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数&#34;&gt;#&lt;/a&gt; 函数&lt;/h1&gt;
+&lt;h2 id=&#34;入门&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#入门&#34;&gt;#&lt;/a&gt; 入门&lt;/h2&gt;
+&lt;p&gt;为完成某一功能的程序指令的集合&lt;br&gt;
+函数分为系统函数（内置函数，模块中提供的函数）和自定义函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;好处&lt;br&gt;
+ 1. 提供的代码的复用性&lt;br&gt;
+ 2. 将实现的细节封装起来，供其他函数调用&lt;/li&gt;
+&lt;li&gt;基本语法&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE4MTczNy5wbmc=&#34;&gt;基本语法&lt;/span&gt;&lt;br&gt;
+调用方式：函数名（实参列表）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;def cry():&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;print(&amp;quot;喵喵喵&amp;quot;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;def cal01():&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;for i in range(1001):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;print(sum)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;def cal02(n):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;range(n&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;1):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;print(sum)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;get_sum(num1,&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;num2):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;num1&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;num2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;cry()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;cal01()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;cal02(1000)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;get_sum(2,&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;函数调用机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数调用机制&#34;&gt;#&lt;/a&gt; 函数调用机制&lt;/h2&gt;
+&lt;p&gt;给程序必要的输入，函数返回结果&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE4NDg0Ni5wbmc=&#34;&gt; getsum 调用示意图&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;函数的注意事项和使用细节&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数的注意事项和使用细节&#34;&gt;#&lt;/a&gt; 函数的注意事项和使用细节&lt;/h2&gt;
+&lt;p&gt;1. 函数的参数列表可以是 0 - 多个&lt;br&gt;
+ 2. 函数要遵循命名规则&lt;br&gt;
+ 3. 函数的变量是局部的&lt;br&gt;
+ 4. 函数名相同时，调用最近的函数，就近原则&lt;br&gt;
+ 5. 传参方式是位置传参，数据类型不用指定&lt;br&gt;
+ 6. 可以有多个返回值，返回值的类型不被限定&lt;br&gt;
+ 7. 支持关键字参数（形参名 = 实参值）&lt;br&gt;
+8. 支持默认参数，指定参数时以指定为主，默认参数放在参数列表后&lt;br&gt;
+ 9. 支持可变参数，传入的 0 - 多个实参会被组成一个元组 def sum (*args)&lt;br&gt;
+ 10. 传入的多个关键字参数时会被组成一个字典 def sum (**arg)&lt;br&gt;
+ 11. 调用另外一个文件的函数  import 文件名    文件名。函数名 ()&lt;/p&gt;
+&lt;h2 id=&#34;函数传参机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数传参机制&#34;&gt;#&lt;/a&gt; 函数传参机制&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;字符串和数值类型的传参机制&lt;br&gt;
+不可变数据类型&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE5MjAwNC5wbmc=&#34;&gt;内存分析图&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;递归机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#递归机制&#34;&gt;#&lt;/a&gt; 递归机制&lt;/h2&gt;
+&lt;p&gt;递归就是函数自己调用自己&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNDE5NDYxNi5wbmc=&#34;&gt;内存分析图&lt;/span&gt;&lt;br&gt;
+将函数命名为 test，这可能会与测试框架（如 pytest）中的某些功能冲突。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注意事项&lt;br&gt;
+ 1. 执行一个函数时，创建一个新的空间&lt;br&gt;
+ 2. 函数的变量是独立的&lt;br&gt;
+ 3. 必须向递归结束的方向逼近，否则就是无限递归&lt;br&gt;
+ 4. 当一个函数执行完毕，或者遇到 return，就会返回，遵守谁调用就把结果返回给谁&lt;/li&gt;
+&lt;li&gt;练习&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```请用递归的方式求出斐波那契数1，1，2，3，5，8，13……给你一个整数，求出它的值是多少&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;函数作为参数传递&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数作为参数传递&#34;&gt;#&lt;/a&gt; 函数作为参数传递&lt;/h1&gt;
+&lt;h1 id=&#34;lambda匿名函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lambda匿名函数&#34;&gt;#&lt;/a&gt; lambda 匿名函数&lt;/h1&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/05/13/computer-science/python/han6/</guid>
             <title></title>
@@ -25,13 +84,6 @@
             <title></title>
             <link>http://example.com/2025/05/13/computer-science/python/han5/</link>
             <pubDate>Tue, 13 May 2025 09:40:37 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/05/13/computer-science/python/han4/</guid>
-            <title></title>
-            <link>http://example.com/2025/05/13/computer-science/python/han4/</link>
-            <pubDate>Tue, 13 May 2025 09:40:17 +0800</pubDate>
             <description><![CDATA[  ]]></description>
         </item>
         <item>
