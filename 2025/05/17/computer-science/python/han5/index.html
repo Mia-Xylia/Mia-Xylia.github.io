@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="computer-science,note,java,crawler,cpp," />
+  <meta name="keywords" content="笔记,python基础" />
 
 
-<link rel="canonical" href="http://example.com/2025/05/13/computer-science/python/han5/">
+<link rel="canonical" href="http://example.com/2025/05/17/computer-science/python/han5/">
 
 
 
   <title>
- |
+数据容器 - python - 计算机科学 |
 鱼塘 = </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
+  <h1 itemprop="name headline">数据容器
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2025-05-13 09:40:37">
+  <span class="item" title="创建时间：2025-05-17 00:00:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-05-13T09:40:37+08:00">2025-05-13</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-05-17T00:00:00+08:00">2025-05-17</time>
   </span>
 </div>
 
@@ -101,14 +101,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-        <ul>
-          <li class="item" data-background-image="https://i0.hippopx.com/photos/279/654/449/art-craft-creative-cute-preview.jpg"></li>
-          <li class="item" data-background-image="https://i0.hippopx.com/photos/1002/489/207/business-earth-background-preview.jpg"></li>
-          <li class="item" data-background-image="https://i0.hippopx.com/photos/952/114/564/text-pin-code-computer-preview.jpg"></li>
-          <li class="item" data-background-image="https://i0.hippopx.com/photos/767/454/329/backlit-blogging-business-coding-preview.jpg"></li>
-          <li class="item" data-background-image="https://i0.hippopx.com/photos/711/359/607/coding-programming-working-macbook-preview.jpg"></li>
-          <li class="item" data-background-image="https://i0.hippopx.com/photos/1000/802/348/electronic-devices-chip-memory-high-tech-preview.jpg"></li>
-        </ul>
+          <img src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/assets/wallpaper-2572384.jpg">
       </div>
     </header>
     <div id="waves">
@@ -132,11 +125,16 @@
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">首页</a></span>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/" itemprop="item" rel="index" title="分类于 python"><span itemprop="name">python</span></a>
+<meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/13/computer-science/python/han5/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/17/computer-science/python/han5/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
@@ -151,12 +149,64 @@
   <div class="body md" itemprop="articleBody">
     
 
-    
+    <p>round (数，保留的位数)</p>
+<ul>
+<li>数据容器<br>
+ 1. 数据容器是一种数据类型<br>
+ 2. 数据容器可以存放多个数据，每一个数据被称为一个元素<br>
+ 3. 存放的数据 / 元素可以是任意类型</li>
+</ul>
+<h1 id="列表"><a class="markdownIt-Anchor" href="#列表">#</a> 列表</h1>
+<ul>
+<li>定义<br>
+创建一个列表，用 [] 括起来，用 “,” 分隔</li>
+<li>使用<br>
+用索引 / 下标来访问值</li>
+<li>遍历</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"># 第一种方法</span><br><span class="line">for i in list</span><br><span class="line">    print(i)</span><br><span class="line"># 第二种方法</span><br><span class="line">index = 0</span><br><span class="line">while index &lt; len(list)</span><br><span class="line">    print(f&quot;第&#123;index + 1&#125;个元素的值是&#123;list[index]&#125;&quot;)</span><br><span class="line">    index += 1</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```养鸡场</span><br><span class="line">hens = [3,5,1,3.4,2,50]</span><br><span class="line"></span><br><span class="line">total_weight = 0</span><br><span class="line">for ele in hens:</span><br><span class="line">    total_weight += ele</span><br><span class="line"></span><br><span class="line">print(f&quot;总体重是&#123;total_weight&#125;，平均体重是&#123;total_weight / len(hens)&#125;&quot;)</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意事项<br>
+ 1. 创建空列表 list = []  list = list ()<br>
+ 2. 元素列表可以有多个，没有类型限制，允许重复元素，并且是有序<br>
+ 3. 列表索引 / 下标从 0 开始<br>
+ 4. 索引必须在指定范围内使用<br>
+ 5. 列表是可变序列</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 新增</span><br><span class="line">list[列表] = 新值</span><br><span class="line"># 修改</span><br><span class="line">list.append(新值)</span><br><span class="line"># 删除</span><br><span class="line">del list[index]</span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNzE5NDI0Ni5wbmc=">列表地址不变，列表元素地址变化</span><br>
+ list2 = list1  list2 修改数据会改变 list1<br>
+a = 1   a = b  b = 10 b 改变不会影响 a<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNzE5NDgxMy5wbmc="> 列表中的数字类型被修改后，地址变化</span><br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNzE5NTI0Ny5wbmc=">列表传参的数据特点</span></p>
+<h2 id="列表常用操作"><a class="markdownIt-Anchor" href="#列表常用操作">#</a> 列表常用操作</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNzE5NTQ0MS5wbmc=">列表常用操作</span><br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxNzE5NTUzMS5wbmc=">列表常用操作</span></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="元组"><a class="markdownIt-Anchor" href="#元组">#</a> 元组</h1>
+<h1 id="字符串"><a class="markdownIt-Anchor" href="#字符串">#</a> 字符串</h1>
+<h1 id="切片"><a class="markdownIt-Anchor" href="#切片">#</a> 切片</h1>
+<h1 id="集合"><a class="markdownIt-Anchor" href="#集合">#</a> 集合</h1>
+<h1 id="字典"><a class="markdownIt-Anchor" href="#字典">#</a> 字典</h1>
+<h1 id="传参机制"><a class="markdownIt-Anchor" href="#传参机制">#</a> 传参机制</h1>
+
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/python%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> python基础</a>
+      </div>
   </div>
 
    <footer>
 
     <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-05-17 20:04:33" itemprop="dateModified" datetime="2025-05-17T20:04:33+08:00">2025-05-17</time>
+  </span>
 </div>
 
       
@@ -181,7 +231,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2025/05/13/computer-science/python/han5/" title="">http://example.com/2025/05/13/computer-science/python/han5/</a>
+    <a href="http://example.com/2025/05/17/computer-science/python/han5/" title="数据容器">http://example.com/2025/05/17/computer-science/python/han5/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -200,22 +250,14 @@
     <div class="item left">
       
 
-  <a href="/2025/05/13/computer-science/python/han3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="程序控制结构">
+  <a href="/2025/05/14/computer-science/python/han4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="函数">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> python</span>
-  <h3>程序控制结构</h3>
+  <h3>函数</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2025/05/13/computer-science/python/han6/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;1002&#x2F;489&#x2F;207&#x2F;business-earth-background-preview.jpg" title="未命名">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>未命名</h3>
-  </a>
-
     </div>
 </div>
 
@@ -232,8 +274,12 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text"> 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text"> 列表常用操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text"> 元组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.</span> <span class="toc-text"> 字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%87%E7%89%87"><span class="toc-number">4.</span> <span class="toc-text"> 切片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">5.</span> <span class="toc-text"> 集合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E5%85%B8"><span class="toc-number">6.</span> <span class="toc-text"> 字典</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6"><span class="toc-number">7.</span> <span class="toc-text"> 传参机制</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2025/05/12/computer-science/python/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/13/computer-science/python/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li><a href="/2025/05/14/computer-science/python/han4/" rel="bookmark" title="函数">函数</a></li><li class="active"><a href="/2025/05/17/computer-science/python/han5/" rel="bookmark" title="数据容器">数据容器</a></li>
+        </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,12 +372,10 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/05/13/computer-science/python/han3/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/05/13/computer-science/python/han6/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -376,10 +420,34 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/04/24/computer-science/java/%E5%9F%BA%E7%A1%806/" title="面向对象编程">面向对象编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
+    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/" title="运算符">运算符</a></span>
   </li>
 
       
@@ -391,7 +459,31 @@
 <a href="/categories/computer-science/python/" title="分类于 python">python</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/python/han3/" title="程序控制结构">程序控制结构</a></span>
+    <span><a href="/2025/05/17/computer-science/python/han5/" title="数据容器">数据容器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2025/05/12/computer-science/python/han1/" title="变量">变量</a></span>
   </li>
 
       
@@ -410,57 +502,12 @@
   <li class="item">
     
 <div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/05/13/computer-science/python/han5/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/poetry/" title="分类于 随笔">随笔</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/poetry/original/" title="分类于 原创">原创</a>
 </div>
 
     <span><a href="/2025/04/14/poetry/original/2025.4/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
-</div>
-
-    <span><a href="/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/" title="变量">变量</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 python">python</a>
-</div>
-
-    <span><a href="/2025/05/12/computer-science/python/han2/" title="运算符">运算符</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 python">python</a>
-</div>
-
-    <span><a href="/2025/05/12/computer-science/python/han0/" title="python语言的概述">python语言的概述</a></span>
   </li>
 
   </ul>
@@ -485,13 +532,13 @@
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">80k 字</span>
+    <span title="站点总字数">83k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:13</span>
+    <span title="站点阅读时长">1:15</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
@@ -503,7 +550,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/05/13/computer-science/python/han5/',
+    path: '2025/05/17/computer-science/python/han5/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
@@ -513,7 +560,7 @@
       empty: "关于 「 ${query} 」，什么也没搜到",
       stats: "${time} ms 内找到 ${hits} 条结果"
     },
-    valine: true,fancybox: true,
+    valine: true,mermaid: true,fancybox: true,
     copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
     ignores : [
       function(uri) {

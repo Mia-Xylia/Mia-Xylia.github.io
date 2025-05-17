@@ -195,10 +195,29 @@
  4. 当一个函数执行完毕，或者遇到 return，就会返回，遵守谁调用就把结果返回给谁</li>
 <li>练习</li>
 </ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```请用递归的方式求出斐波那契数1，1，2，3，5，8，13……给你一个整数，求出它的值是多少</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
-<h1 id="函数作为参数传递"><a class="markdownIt-Anchor" href="#函数作为参数传递">#</a> 函数作为参数传递</h1>
-<h1 id="lambda匿名函数"><a class="markdownIt-Anchor" href="#lambda匿名函数">#</a> lambda 匿名函数</h1>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">请用递归的方式求出斐波那契数1，1，2，3，5，8，13……</span></span><br><span class="line"><span class="string">给你一个整数，求出它的值是多少</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">def Fibonacci_sequence(n):</span></span><br><span class="line">    <span class="string">if</span> <span class="string">n</span> <span class="string">==</span> <span class="attr">0:</span></span><br><span class="line">        <span class="string">return</span> <span class="number">0</span></span><br><span class="line">    <span class="string">elif</span> <span class="string">n</span> <span class="string">==</span> <span class="attr">1:</span></span><br><span class="line">        <span class="string">return</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="string">return</span> <span class="string">Fibonacci_sequence(n-1)</span> <span class="string">+</span> <span class="string">Fibonacci_sequence(n-2)</span></span><br><span class="line"></span><br><span class="line"><span class="string">num</span> <span class="string">=</span> <span class="string">Fibonacci_sequence(5)</span></span><br><span class="line"><span class="string">print(num)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">猴子吃桃子问题：</span></span><br><span class="line"><span class="string">有一堆桃子，猴子第一天吃了其中的一半，并再多吃了一个！</span></span><br><span class="line"><span class="string">以后每天猴子都吃其中的一半，然后再多吃一个。</span></span><br><span class="line"><span class="string">当到第十天时，想再吃时（即还没吃），发现只有1个桃子了。</span></span><br><span class="line"><span class="string">问题：最初共多少桃子</span></span><br><span class="line"><span class="string">剩余桃子数 remain</span></span><br><span class="line"><span class="string">天数 day</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">def</span> <span class="string">peach(remain,day):</span></span><br><span class="line">    <span class="string">if</span> <span class="string">day</span> <span class="string">==</span> <span class="attr">0:</span></span><br><span class="line">        <span class="string">return</span> <span class="string">remain</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="string">return</span> <span class="string">peach(remain</span> <span class="string">*</span> <span class="number">2</span> <span class="string">+</span> <span class="number">1</span><span class="string">,day-1)</span></span><br><span class="line"></span><br><span class="line"><span class="string">a</span> <span class="string">=</span> <span class="string">peach(1,9)</span></span><br><span class="line"><span class="string">print(a)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">求函数值，已知f(1) = 3;f(n) = 2 * f(n-1) + 1,求f(n)</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">def fn(value):</span></span><br><span class="line">    <span class="string">if</span> <span class="string">value</span> <span class="string">==</span> <span class="attr">1:</span></span><br><span class="line">        <span class="string">return</span> <span class="number">3</span></span><br><span class="line">    <span class="string">elif</span> <span class="string">value</span> <span class="string">&gt;</span> <span class="attr">1:</span></span><br><span class="line">        <span class="string">return</span> <span class="number">2</span> <span class="string">*</span> <span class="string">fn(value</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">)</span> <span class="string">+</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="string">return</span> <span class="string">(fn(value</span> <span class="string">+</span> <span class="number">1</span><span class="string">)</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">)</span> <span class="string">/</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="string">fn</span> <span class="string">=</span> <span class="string">fn(0)</span></span><br><span class="line"><span class="string">print(fn)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">汉诺塔</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">def</span> <span class="string">hanoi_tower(num,a,b,c):</span></span><br><span class="line">    <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">    输出指定的num个盘移动的顺序</span></span><br><span class="line"><span class="string">    :param num: 盘数</span></span><br><span class="line"><span class="string">    :param a: 表示A柱</span></span><br><span class="line"><span class="string">    :param b: 表示B柱</span></span><br><span class="line"><span class="string">    :param c: 表示C主</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    &quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 如果只有一个盘</span></span><br><span class="line">    <span class="string">if</span> <span class="string">num</span> <span class="string">==</span> <span class="attr">1:</span></span><br><span class="line">        <span class="string">print(f&quot;第1个盘从:</span> &#123;<span class="string">a</span>&#125;<span class="string">--&gt;&#123;c&#125;&quot;)</span></span><br><span class="line">    <span class="attr">else:</span></span><br><span class="line">        <span class="comment"># 有多个盘，我们认为只有两部分</span></span><br><span class="line">        <span class="comment"># 移动上面所有的盘到B，这个过程借助到C柱</span></span><br><span class="line">        <span class="string">hanoi_tower(num</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">,a,c,b)</span></span><br><span class="line">        <span class="comment"># 移动最下面的盘</span></span><br><span class="line">        <span class="string">print(f&quot;第&#123;num&#125;个盘从:</span> &#123;<span class="string">a</span>&#125;<span class="string">--&gt;&#123;c&#125;&quot;)</span></span><br><span class="line">        <span class="comment"># 把上面所有的盘从B移动到C</span></span><br><span class="line">        <span class="comment"># 这个过程会使用到A柱</span></span><br><span class="line">        <span class="string">hanoi_tower(num</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">,b,a,c)</span></span><br><span class="line"></span><br><span class="line"><span class="string">hanoi_tower(3,&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数作为参数传递"><a class="markdownIt-Anchor" href="#函数作为参数传递">#</a> 函数作为参数传递</h2>
+<p>一种业务逻辑，可以接受多个函数参数</p>
+<h3 id="lambda匿名函数"><a class="markdownIt-Anchor" href="#lambda匿名函数">#</a> lambda 匿名函数</h3>
+<p>如果函数作为参数使用，但只使用一次，我们可以考虑 lambda 匿名函数</p>
+<ul>
+<li>基本语法<br>
+ 1.lambda 形参列表：函数体（一行代码）<br>
+2.lambda 关键字，表示定义匿名函数</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">编写一个匿名函数，接受一个匿名函数和两个数，通过匿名函数计算两个数的最大值</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="string">def</span> <span class="string">f1(fun,num,num2):</span></span><br><span class="line">    <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param fun: 接收函数</span></span><br><span class="line"><span class="string">    :param num:</span></span><br><span class="line"><span class="string">    :param num2:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    &quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="string">print(f&quot;fun的类型是：&#123;type(fun)&#125;&quot;)</span></span><br><span class="line">    <span class="string">return</span> <span class="string">fun(num,num2)</span></span><br><span class="line"></span><br><span class="line"><span class="string">max_val</span> <span class="string">=</span> <span class="string">f1(lambda</span> <span class="string">a,b:a</span> <span class="string">if</span> <span class="string">a&gt;b</span> <span class="string">else</span> <span class="string">b,12,10)</span></span><br><span class="line"><span class="string">print(max_val)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="全局变量和局部变量"><a class="markdownIt-Anchor" href="#全局变量和局部变量">#</a> 全局变量和局部变量</h1>
+<p>全局变量：在整个程序范围内都可以访问，定义在函数外，拥有全局作用域的变量<br>
+局部变量：只能在其被声明的函数范围内使用，定义在函数内部，拥有局部作用域的变量</p>
+<ul>
+<li>注意事项<br>
+ 1. 未在函数内部重新定义 n1，使用全局变量 n1<br>
+2. 在函数内部重新定义 n1，就近原则，使用函数内部重新定义的 n1<br>
+3. 在函数内部使用 global 关键字标明使用全局变量</li>
+</ul>
 
       <div class="tags">
           <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
@@ -214,7 +233,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-05-14 20:41:23" itemprop="dateModified" datetime="2025-05-14T20:41:23+08:00">2025-05-14</time>
+    <time title="修改时间：2025-05-17 19:07:41" itemprop="dateModified" datetime="2025-05-17T19:07:41+08:00">2025-05-17</time>
   </span>
 </div>
 
@@ -259,7 +278,7 @@
     <div class="item left">
       
 
-  <a href="/2025/05/13/computer-science/python/han6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;1&#x2F;406&#x2F;520&#x2F;coding-computer-hacker-hacking-preview.jpg" title="未命名">
+  <a href="/2025/05/13/computer-science/python/han6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i0.hippopx.com&#x2F;photos&#x2F;70&#x2F;798&#x2F;469&#x2F;virtual-reality-big-data-internet-future-preview.jpg" title="未命名">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>未命名</h3>
@@ -267,6 +286,14 @@
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/05/17/computer-science/python/han5/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="数据容器">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> python</span>
+  <h3>数据容器</h3>
+  </a>
+
     </div>
 </div>
 
@@ -283,11 +310,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text"> 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> 函数调用机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%92%8C%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82"><span class="toc-number">1.3.</span> <span class="toc-text"> 函数的注意事项和使用细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6"><span class="toc-number">1.4.</span> <span class="toc-text"> 函数传参机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.</span> <span class="toc-text"> 递归机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">2.</span> <span class="toc-text"> 函数作为参数传递</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lambda%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text"> lambda 匿名函数</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text"> 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> 函数调用机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%92%8C%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82"><span class="toc-number">1.3.</span> <span class="toc-text"> 函数的注意事项和使用细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6"><span class="toc-number">1.4.</span> <span class="toc-text"> 函数传参机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.</span> <span class="toc-text"> 递归机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.6.</span> <span class="toc-text"> 函数作为参数传递</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">1.6.1.</span> <span class="toc-text"> lambda 匿名函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text"> 全局变量和局部变量</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2025/05/12/computer-science/python/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/13/computer-science/python/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li class="active"><a href="/2025/05/14/computer-science/python/han4/" rel="bookmark" title="函数">函数</a></li>
+          <li><a href="/2025/05/12/computer-science/python/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/13/computer-science/python/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li class="active"><a href="/2025/05/14/computer-science/python/han4/" rel="bookmark" title="函数">函数</a></li><li><a href="/2025/05/17/computer-science/python/han5/" rel="bookmark" title="数据容器">数据容器</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -381,10 +408,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/05/13/computer-science/python/han6/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/05/17/computer-science/python/han5/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -411,79 +440,7 @@
 <a href="/categories/computer-science/python/" title="分类于 python">python</a>
 </div>
 
-    <span><a href="/2025/05/12/computer-science/python/han0/" title="python语言的概述">python语言的概述</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 python">python</a>
-</div>
-
-    <span><a href="/2025/05/12/computer-science/python/han2/" title="运算符">运算符</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
-</div>
-
-    <span><a href="/2025/04/20/computer-science/java/%E5%9F%BA%E7%A1%805/" title="数组，排序和查找">数组，排序和查找</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
-</div>
-
-    <span><a href="/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/" title="运算符">运算符</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
-</div>
-
-    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
-</div>
-
-    <span><a href="/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/" title="变量">变量</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
-</div>
-
-    <span><a href="/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/" title="java基本概述">java基本概述</a></span>
+    <span><a href="/2025/05/14/computer-science/python/han4/" title="函数">函数</a></span>
   </li>
 
       
@@ -504,6 +461,66 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2025/05/12/computer-science/python/han0/" title="python语言的概述">python语言的概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/04/24/computer-science/java/%E5%9F%BA%E7%A1%806/" title="面向对象编程">面向对象编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2025/05/17/computer-science/python/han5/" title="数据容器">数据容器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/python/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
@@ -516,10 +533,22 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+</div>
+
+    <span><a href="/2025/04/02/computer-science/java/%E5%9F%BA%E7%A1%804/" title="控制结构">控制结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
 </div>
 
-    <span><a href="/2025/03/26/computer-science/python/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+    <span><a href="/2025/03/26/computer-science/python/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
   </li>
 
   </ul>
@@ -544,13 +573,13 @@
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">80k 字</span>
+    <span title="站点总字数">83k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:13</span>
+    <span title="站点阅读时长">1:15</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
