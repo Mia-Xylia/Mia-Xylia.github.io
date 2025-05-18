@@ -7,18 +7,18 @@
         <language>zh-CN</language>
         <pubDate>Thu, 24 Apr 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0800</lastBuildDate>
+        <category>python基础</category>
+        <category>笔记</category>
         <category>教程</category>
         <category>java基础</category>
-        <category>笔记</category>
-        <category>python基础</category>
         <category>pytorch基础</category>
         <category>随笔</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/04/24/computer-science/java/%E5%9F%BA%E7%A1%806/</guid>
             <title>面向对象编程</title>
             <link>http://example.com/2025/04/24/computer-science/java/%E5%9F%BA%E7%A1%806/</link>
-            <category>java基础</category>
             <category>笔记</category>
+            <category>java基础</category>
             <pubDate>Thu, 24 Apr 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;类与对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类与对象&#34;&gt;#&lt;/a&gt; 类与对象&lt;/h1&gt;
 &lt;p&gt;类是抽象的，概念的；对象是具体的，实际的&lt;br&gt;
@@ -80,8 +80,8 @@ public protected 默认 private&lt;br&gt;
             <guid isPermalink="true">http://example.com/2025/04/20/computer-science/java/%E5%9F%BA%E7%A1%805/</guid>
             <title>数组，排序和查找</title>
             <link>http://example.com/2025/04/20/computer-science/java/%E5%9F%BA%E7%A1%805/</link>
-            <category>java基础</category>
             <category>笔记</category>
+            <category>java基础</category>
             <pubDate>Sun, 20 Apr 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h1&gt;
 &lt;p&gt;数组可以存放多个同一类型的数据。数组是一种数据类型，是引用类型。&lt;br&gt;
@@ -165,8 +165,8 @@ a = new int[10];&lt;/p&gt;
             <guid isPermalink="true">http://example.com/2025/04/02/computer-science/java/%E5%9F%BA%E7%A1%804/</guid>
             <title>控制结构</title>
             <link>http://example.com/2025/04/02/computer-science/java/%E5%9F%BA%E7%A1%804/</link>
-            <category>java基础</category>
             <category>笔记</category>
+            <category>java基础</category>
             <pubDate>Wed, 02 Apr 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;在程序中，程序运行的流程控制决定程序的运行&lt;br&gt;
  1. 顺序控制&lt;br&gt;
@@ -321,8 +321,8 @@ while (循环条件){&lt;br&gt;
             <guid isPermalink="true">http://example.com/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/</guid>
             <title>运算符</title>
             <link>http://example.com/2025/03/30/computer-science/java/%E5%9F%BA%E7%A1%803/</link>
-            <category>java基础</category>
             <category>笔记</category>
+            <category>java基础</category>
             <pubDate>Sun, 30 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;运算符介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符介绍&#34;&gt;#&lt;/a&gt; 运算符介绍&lt;/h1&gt;
 &lt;p&gt;表示数据的运算，赋值和比较&lt;/p&gt;
@@ -476,8 +476,8 @@ while (循环条件){&lt;br&gt;
             <guid isPermalink="true">http://example.com/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/</guid>
             <title>变量</title>
             <link>http://example.com/2025/03/29/computer-science/java/%E5%9F%BA%E7%A1%802/</link>
-            <category>java基础</category>
             <category>笔记</category>
+            <category>java基础</category>
             <pubDate>Sat, 29 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;变量介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量介绍&#34;&gt;#&lt;/a&gt; 变量介绍&lt;/h1&gt;
 &lt;p&gt;变量是程序的基本组成单位&lt;br&gt;
@@ -637,8 +637,8 @@ n5=8&lt;br&gt;
             <guid isPermalink="true">http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/</guid>
             <title>java基本概述</title>
             <link>http://example.com/2025/03/26/computer-science/java/%E5%9F%BA%E7%A1%801/</link>
-            <category>java基础</category>
             <category>笔记</category>
+            <category>java基础</category>
             <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;ul&gt;
 &lt;li&gt;课程&lt;/li&gt;
