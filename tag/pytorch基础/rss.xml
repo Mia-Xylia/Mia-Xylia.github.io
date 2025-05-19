@@ -7,16 +7,16 @@
         <language>zh-CN</language>
         <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0800</lastBuildDate>
-        <category>python基础</category>
-        <category>笔记</category>
         <category>教程</category>
-        <category>java基础</category>
-        <category>pytorch基础</category>
         <category>随笔</category>
+        <category>java基础</category>
+        <category>笔记</category>
+        <category>python基础</category>
+        <category>pytorch基础</category>
         <item>
-            <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/pytorch2/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/notepad/pytorch2/</guid>
             <title>笔记：PyTorch(2)</title>
-            <link>http://example.com/2025/03/26/computer-science/python/pytorch2/</link>
+            <link>http://example.com/2025/03/26/computer-science/python/notepad/pytorch2/</link>
             <category>笔记</category>
             <category>pytorch基础</category>
             <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
@@ -117,9 +117,9 @@ padding = 1, 向外拓展一行 / 列&lt;/li&gt;
 &lt;figure class=&#34;highlight yml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```python&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;output3&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;F.conv2d(input,kernel,stride=1,padding=1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;print(output3)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/pytorch3/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/26/computer-science/python/notepad/pytorch3/</guid>
             <title>笔记：PyTorch(3)</title>
-            <link>http://example.com/2025/03/26/computer-science/python/pytorch3/</link>
+            <link>http://example.com/2025/03/26/computer-science/python/notepad/pytorch3/</link>
             <category>笔记</category>
             <category>pytorch基础</category>
             <pubDate>Wed, 26 Mar 2025 00:00:00 +0800</pubDate>
@@ -212,9 +212,9 @@ Lr = learning rate&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2025/03/25/computer-science/python/pytorch1/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/25/computer-science/python/notepad/pytorch1/</guid>
             <title>笔记：PyTorch(1)</title>
-            <link>http://example.com/2025/03/25/computer-science/python/pytorch1/</link>
+            <link>http://example.com/2025/03/25/computer-science/python/notepad/pytorch1/</link>
             <category>笔记</category>
             <category>pytorch基础</category>
             <pubDate>Tue, 25 Mar 2025 00:00:00 +0800</pubDate>

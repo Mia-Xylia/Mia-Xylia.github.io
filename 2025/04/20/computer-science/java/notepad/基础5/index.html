@@ -1,0 +1,655 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="java基础,笔记" />
+
+
+<link rel="canonical" href="http://example.com/2025/04/20/computer-science/java/notepad/%E5%9F%BA%E7%A1%805/">
+
+
+
+  <title>
+数组，排序和查找 - 课程笔记 - java - 计算机科学 |
+鱼塘 = </title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">数组，排序和查找
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-04-20 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-04-20T00:00:00+08:00">2025-04-20</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">鱼塘</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/assets/wallpaper-2572384.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/java/" itemprop="item" rel="index" title="分类于 java"><span itemprop="name">java</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/java/notepad/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/20/computer-science/java/notepad/%E5%9F%BA%E7%A1%805/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+    <meta itemprop="name" content="Xylia">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h1>
+<p>数组可以存放多个同一类型的数据。数组是一种数据类型，是引用类型。<br>
+1. 数组中可以存放任何数据类型<br>
+ 2. 数组创建后，如果没有赋值，有默认值 int/short/byte/long 为 0<br>
+float/double 为 0.0，char \u0000,boolean false,String null<br>
+3. 数组始于引用类型，数组型数据是对象</p>
+<h2 id="动态初始化"><a class="markdownIt-Anchor" href="#动态初始化">#</a> 动态初始化</h2>
+<p>1.int a[] = new int[5]<br>
+2.int a[];<br>
+a = new int[10];</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">import</span> <span class="string">java.util.Scanner;</span></span><br><span class="line"><span class="string">Scanner</span> <span class="string">scanner</span> <span class="string">=</span> <span class="string">new</span> <span class="string">Scanner(System.in);</span></span><br><span class="line"><span class="string">double</span> <span class="string">scores[]</span> <span class="string">=</span> <span class="string">new</span> <span class="string">double[5];</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">score.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">System.out.println(&quot;请输入第&quot;</span> <span class="string">+</span> <span class="string">(i+1)</span> <span class="string">+</span> <span class="string">&quot;个元素的值&quot;</span><span class="string">);</span></span><br><span class="line">    <span class="string">scores[i]</span> <span class="string">=</span> <span class="string">scanner.nextDouble();</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">score.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">System.out.println(&quot;第&quot;</span> <span class="string">+</span> <span class="string">(i+1)</span> <span class="string">+</span> <span class="string">&quot;个元素的值为&quot;</span> <span class="string">+</span> <span class="string">scores[i]);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="静态初始化"><a class="markdownIt-Anchor" href="#静态初始化">#</a> 静态初始化</h2>
+<p 元素值，元素值…………="">数据类型 数组名 [] =</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```平均体重</span></span><br><span class="line"><span class="string">//</span> <span class="string">定义数组</span></span><br><span class="line"><span class="string">double[]</span> <span class="string">hens</span> <span class="string">=</span> &#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">3.4</span>,<span class="number">2</span>,<span class="number">50</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">double</span> <span class="string">totalWeight</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span></span><br><span class="line"></span><br><span class="line"><span class="string">//</span> <span class="string">for循环遍历数组</span></span><br><span class="line"><span class="string">//</span> <span class="string">数组名.length得到数组大小/长度</span></span><br><span class="line"><span class="string">for</span> <span class="string">(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">hens.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">System.out.println(&quot;第&quot;</span> <span class="string">+</span> <span class="string">(i</span> <span class="string">+</span> <span class="number">1</span><span class="string">)</span> <span class="string">+</span> <span class="string">&quot;个元素的值&quot;</span> <span class="string">+</span> <span class="string">hens[i]);</span></span><br><span class="line">    <span class="string">totalWeight</span> <span class="string">+=</span> <span class="string">hens[i];</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">System.out.println(&quot;总重量为&quot;</span> <span class="string">+</span> <span class="string">totalWeight</span> <span class="string">+</span> <span class="string">&quot;平均重量为&quot;</span> <span class="string">+</span> <span class="string">(totalWeight</span> <span class="string">/</span> <span class="string">hens.length));</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>练习</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```输出A~Z</span></span><br><span class="line"><span class="string">char</span> <span class="string">letter[]</span> <span class="string">=</span> <span class="string">new</span> <span class="string">char[25];</span></span><br><span class="line"><span class="string">char</span> <span class="string">i</span> <span class="string">=</span> <span class="string">&#x27;A&#x27;</span><span class="string">;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">letter.length;</span> <span class="string">j++)&#123;</span></span><br><span class="line">    <span class="string">letter[j]</span> <span class="string">=</span> <span class="string">i;</span></span><br><span class="line">    <span class="string">i++;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">n</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">n</span> <span class="string">&lt;</span> <span class="string">letter.length;</span> <span class="string">n++)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(letter[n]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```求出数组最大值及其对应下标</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">num</span> <span class="string">=</span> &#123;<span class="number">4</span>,<span class="number">-1</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">23</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">max</span> <span class="string">=</span> <span class="number">0</span><span class="string">,index</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">num.length</span> <span class="string">;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">if(num[i]</span> <span class="string">&gt;</span> <span class="string">max)&#123;</span></span><br><span class="line">        <span class="string">max</span> <span class="string">=</span> <span class="string">num[i];</span></span><br><span class="line">        <span class="string">index</span> <span class="string">=</span> <span class="string">i;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">System.out.println(&quot;最大值是&quot;</span> <span class="string">+</span> <span class="string">max</span> <span class="string">+</span> <span class="string">&quot;下标是&quot;</span> <span class="string">+</span> <span class="string">index);</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="数组赋值机制"><a class="markdownIt-Anchor" href="#数组赋值机制">#</a> 数组赋值机制</h2>
+<p>基本数据类型赋值，赋值方式为值拷贝<br>
+数组在默认情况下是引用传递，赋的值是地址，赋值方式为引用赋值<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDQyMjIwMjk1Ni5wbmc=">数据传递</span></p>
+<h2 id="数组拷贝"><a class="markdownIt-Anchor" href="#数组拷贝">#</a> 数组拷贝</h2>
+<p>数据空间是独立的</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arr1</span> <span class="string">=</span> &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arr2</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[arr1.length];</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;i</span> <span class="string">&lt;</span> <span class="string">arr1.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">arr2[i]</span> <span class="string">=</span> <span class="string">arr1[i];</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="数组反转"><a class="markdownIt-Anchor" href="#数组反转">#</a> 数组反转</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```练习</span></span><br><span class="line"><span class="string">//</span> <span class="string">方法一：借助另一个数组</span></span><br><span class="line"><span class="string">int</span> <span class="string">arr1[]</span> <span class="string">=</span> &#123;<span class="number">66</span>,<span class="number">55</span>,<span class="number">44</span>,<span class="number">33</span>,<span class="number">22</span>,<span class="number">11</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">arr2[]</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[arr1.length];</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr1.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">arr2[i]</span> <span class="string">=</span> <span class="string">arr1[arr1.length</span> <span class="bullet">-</span> <span class="string">i</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">arr2.length;</span> <span class="string">j++)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(arr2[j]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">//</span> <span class="string">方法二：11的倍数</span></span><br><span class="line"><span class="string">int</span> <span class="string">arr1[]</span> <span class="string">=</span> &#123;<span class="number">66</span>,<span class="number">55</span>,<span class="number">44</span>,<span class="number">33</span>,<span class="number">22</span>,<span class="number">11</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">1</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;=</span> <span class="number">6</span><span class="string">;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(11</span> <span class="string">*</span> <span class="string">i</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">//</span> <span class="string">老师方法</span></span><br><span class="line"><span class="string">int</span> <span class="string">arr1[]</span> <span class="string">=</span> &#123;<span class="number">66</span>,<span class="number">55</span>,<span class="number">44</span>,<span class="number">33</span>,<span class="number">22</span>,<span class="number">11</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">1</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr1.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">int</span> <span class="string">temp</span> <span class="string">=</span> <span class="string">arr1[arr1.length</span> <span class="bullet">-</span> <span class="number">1</span> <span class="bullet">-</span> <span class="string">i];</span></span><br><span class="line">    <span class="string">arr1[arr1.length</span> <span class="bullet">-</span> <span class="number">1</span> <span class="bullet">-</span> <span class="string">i]</span> <span class="string">=</span> <span class="string">arr1[i];</span></span><br><span class="line">    <span class="string">arr1[i]</span> <span class="string">=</span> <span class="string">temp;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">arr1.length;</span> <span class="string">j++)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(arr1[j]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="数组扩容"><a class="markdownIt-Anchor" href="#数组扩容">#</a> 数组扩容</h2>
+<p>动态的添加元素</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">import</span> <span class="string">java.util.Scanner;</span></span><br><span class="line"><span class="string">class</span> <span class="string">ForExercise&#123;</span></span><br><span class="line">	<span class="string">public</span> <span class="string">static</span> <span class="string">void</span> <span class="string">main(String[]</span> <span class="string">args)&#123;</span></span><br><span class="line">		<span class="string">int[]</span> <span class="string">arr</span> <span class="string">=</span> &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;<span class="string">;</span></span><br><span class="line">		<span class="string">int[]</span> <span class="string">arrNew</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[arr.length</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">		<span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">			<span class="string">arrNew[i]</span> <span class="string">=</span> <span class="string">arr[i];</span></span><br><span class="line">		<span class="string">&#125;</span></span><br><span class="line">		<span class="string">arrNew[arrNew.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">]</span> <span class="string">=</span> <span class="number">4</span><span class="string">;</span></span><br><span class="line">		<span class="string">arr</span> <span class="string">=</span> <span class="string">arrNew;</span></span><br><span class="line"></span><br><span class="line">		<span class="string">Scanner</span> <span class="string">scanner</span> <span class="string">=</span> <span class="string">new</span> <span class="string">Scanner(System.in);</span></span><br><span class="line">		<span class="string">while(true)&#123;</span></span><br><span class="line">			<span class="string">System.out.println(&quot;添加成功，是否继续添加？y/n&quot;);</span></span><br><span class="line">			<span class="string">char</span> <span class="string">answer</span> <span class="string">=</span> <span class="string">scanner.next().charAt(0);</span></span><br><span class="line">			<span class="string">if(answer</span> <span class="string">==</span> <span class="string">&#x27;n&#x27;</span><span class="string">)&#123;</span></span><br><span class="line">				<span class="string">break;</span></span><br><span class="line">			<span class="string">&#125;</span></span><br><span class="line">			<span class="string">int[]</span> <span class="string">arrAdd</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[arr.length</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">			<span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">				<span class="string">arrAdd[i]</span> <span class="string">=</span> <span class="string">arr[i];</span></span><br><span class="line">			<span class="string">&#125;</span></span><br><span class="line">			<span class="string">int</span> <span class="string">num</span> <span class="string">=</span> <span class="string">scanner.nextInt();</span></span><br><span class="line">			<span class="string">arrAdd[arrAdd.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">]</span> <span class="string">=</span> <span class="string">num;</span></span><br><span class="line">			<span class="string">arr</span> <span class="string">=</span> <span class="string">arrAdd;</span></span><br><span class="line">		<span class="string">&#125;</span></span><br><span class="line">		<span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">			<span class="string">System.out.print(arr[i]</span> <span class="string">+</span> <span class="string">&quot;\t&quot;</span><span class="string">);</span></span><br><span class="line">		<span class="string">&#125;</span></span><br><span class="line">	<span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="数组缩减"><a class="markdownIt-Anchor" href="#数组缩减">#</a> 数组缩减</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arr</span> <span class="string">=</span> &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">for(;arr.length</span> <span class="string">&gt;</span> <span class="number">1</span><span class="string">;)&#123;</span></span><br><span class="line">    <span class="string">int[]</span> <span class="string">arrNew</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[arr.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">;</span> <span class="string">i++)&#123;</span></span><br><span class="line">        <span class="string">arrNew[i]</span> <span class="string">=</span> <span class="string">arr[i];</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">arr</span> <span class="string">=</span> <span class="string">arrNew;</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">        <span class="string">System.out.print(arr[i]</span> <span class="string">+</span> <span class="string">&quot;\t&quot;</span><span class="string">);</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">System.out.println(&quot;&quot;);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">System.out.println(&quot;不能再缩减&quot;);</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="二维数组"><a class="markdownIt-Anchor" href="#二维数组">#</a> 二维数组</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">int[][]</span> <span class="string">arr</span> <span class="string">=</span> &#123;&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,</span><br><span class="line">               &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,</span><br><span class="line">               &#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,</span><br><span class="line">               &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;&#125;<span class="string">;</span></span><br><span class="line"><span class="string">//输出</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span> <span class="string">//遍历二维数组的每个元素</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">arr[i].length;</span> <span class="string">j++)&#123;</span></span><br><span class="line">        <span class="string">System.out.print(arr[i][j]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">System.out.println();</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="内存布局"><a class="markdownIt-Anchor" href="#内存布局">#</a> 内存布局</h3>
+<p>动态初始化 类型 [][] 数组名 = new 类型 [][]<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDQyMzIwNTYxMC5wbmc="> 二维数组内存</span></p>
+<h3 id="使用"><a class="markdownIt-Anchor" href="#使用">#</a> 使用</h3>
+<p>1. 动态初始化 类型 [][] 数组名 = new 类型 [][]<br>
+ 2. 类型 数组名 [][];<br>
+ 数组名 = new 类型 [][]<br>
+ 3. 列数不确定（一维数组内的个数不相同）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int[][] arr = new int[3][];</span><br><span class="line">for(int i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">    arr[i] = new int[i + 1];//二维数组开空间</span><br><span class="line">    for(int j = 0; j &lt; arr[i].length;j++)&#123;</span><br><span class="line">        arr[i][j] = i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//输出,遍历</span><br></pre></td></tr></table></figure>
+<p>4. 静态初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类型[][] 数组名 = &#123;&#123;&#125;,&#123;&#125;,&#123;&#125;……&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```数组所有元素的和</span></span><br><span class="line"><span class="string">int</span> <span class="string">arr[][]</span> <span class="string">=</span> &#123;&#123;<span class="number">4</span>,<span class="number">6</span>&#125;,&#123;<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>&#125;,&#123;<span class="number">-2</span>&#125;&#125;<span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">sum</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">arr[i].length;</span> <span class="string">j++)&#123;</span></span><br><span class="line">        <span class="string">sum</span> <span class="string">+=</span> <span class="string">arr[i][j];</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">System.out.println(&quot;sum=&quot;</span> <span class="string">+</span> <span class="string">sum);</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```杨辉三角</span></span><br><span class="line"><span class="string">int[][]</span> <span class="string">arr</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[10][];</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">layer</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">layer</span> <span class="string">&lt;</span> <span class="number">10</span><span class="string">;</span> <span class="string">layer++)&#123;</span></span><br><span class="line">    <span class="string">arr[layer]</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[layer</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">    <span class="string">arr[layer][0]</span> <span class="string">=</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    <span class="string">arr[layer][layer]</span> <span class="string">=</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    <span class="string">if(layer</span> <span class="string">&gt;=</span> <span class="number">2</span><span class="string">)&#123;</span></span><br><span class="line">        <span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;i</span> <span class="string">&lt;</span> <span class="string">layer;</span> <span class="string">i++)&#123;</span></span><br><span class="line">            <span class="string">if(i</span> <span class="string">&lt;</span> <span class="string">layer</span> <span class="string">+</span> <span class="number">1</span> <span class="string">&amp;&amp;</span> <span class="string">i</span> <span class="string">&gt;</span> <span class="number">0</span><span class="string">)&#123;</span></span><br><span class="line">                <span class="string">arr[layer][i]</span> <span class="string">=</span> <span class="string">arr[layer</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">][i]</span> <span class="string">+</span> <span class="string">arr[layer</span> <span class="number">-1</span><span class="string">][i-1];</span></span><br><span class="line">            <span class="string">&#125;</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">arr[i].length;</span> <span class="string">j++)&#123;</span></span><br><span class="line">        <span class="string">System.out.print(arr[i][j]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">System.out.println();</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h3 id="细节"><a class="markdownIt-Anchor" href="#细节">#</a> 细节</h3>
+<p>1. 一维数组<br>
+ int [] x     int  x []<br>
+ 1. 二维数组<br>
+ int [] y []  int [][] y  int y [][]<br>
+ 二维数组是由多个一维数组组成的，它的各个一维数组的长度可以相同也可以不相同<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDQyNDA5MDIyNC5wbmc=">例题</span></p>
+<h1 id="排序"><a class="markdownIt-Anchor" href="#排序">#</a> 排序</h1>
+<p>1. 内部排序：交换式排序，选择排序，插入式排序<br>
+ 2. 外部排序：合并排序，直接合并排序<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDQyMzE5MzIxNy5wbmc=">冒泡排序特点</span></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```冒泡排序BubbleSort</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arr</span> <span class="string">=</span> &#123;<span class="number">24</span>,<span class="number">69</span>,<span class="number">80</span>,<span class="number">57</span>,<span class="number">13</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">1</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">index</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">index</span> <span class="string">&lt;</span> <span class="string">arr.length</span> <span class="bullet">-</span> <span class="string">i;index++)&#123;</span></span><br><span class="line">        <span class="string">if(arr[index]</span> <span class="string">&gt;</span> <span class="string">arr[index</span> <span class="string">+</span> <span class="number">1</span><span class="string">])&#123;</span></span><br><span class="line">            <span class="string">int</span> <span class="string">temp</span> <span class="string">=</span> <span class="string">arr[index</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">            <span class="string">arr[index</span> <span class="string">+</span> <span class="number">1</span><span class="string">]</span> <span class="string">=</span> <span class="string">arr[index];</span></span><br><span class="line">            <span class="string">arr[index]</span> <span class="string">=</span> <span class="string">temp;</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(arr[i]</span> <span class="string">+</span> <span class="string">&quot;\t&quot;</span><span class="string">);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="查找"><a class="markdownIt-Anchor" href="#查找">#</a> 查找</h1>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```顺序查找</span></span><br><span class="line"><span class="string">String[]</span> <span class="string">game</span> <span class="string">=</span> &#123;<span class="string">&quot;白眉鹰王&quot;</span>,<span class="string">&quot;金毛狮王&quot;</span>,<span class="string">&quot;紫衫龙王&quot;</span>,<span class="string">&quot;青翼蝠王&quot;</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">Scanner</span> <span class="string">scanner</span> <span class="string">=</span> <span class="string">new</span> <span class="string">Scanner(System.in);</span></span><br><span class="line"><span class="string">System.out.println(&quot;您要查找的是：&quot;);</span></span><br><span class="line"><span class="string">String</span> <span class="string">name</span> <span class="string">=</span> <span class="string">scanner.next();</span></span><br><span class="line"><span class="string">int</span> <span class="string">index</span> <span class="string">=</span> <span class="number">-1</span><span class="string">;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">game.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">if(name.equals(game[i]))&#123;</span></span><br><span class="line">        <span class="string">System.out.println(&quot;找到了，下标为：&quot;</span> <span class="string">+</span> <span class="string">i);</span></span><br><span class="line">        <span class="string">index</span> <span class="string">=</span> <span class="string">i</span></span><br><span class="line">        <span class="string">break;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">if(index</span> <span class="string">==</span> <span class="number">-1</span><span class="string">)&#123;</span></span><br><span class="line">        <span class="string">System.out.println(&quot;对不起，未找到&quot;</span> <span class="string">+</span> <span class="string">name);</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="练习题"><a class="markdownIt-Anchor" href="#练习题">#</a> 练习题</h1>
+<p>1.B,D<br>
+2.blue<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDQyNDA5MDYzNy5wbmc="> 题目</span><br>
+ 3.1，3，5，7<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDQyNDA5MTAyMC5wbmc="> 题目</span><br>
+ 4.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```升序数组，插入一个元素后依然是升序</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arr</span> <span class="string">=</span> &#123;<span class="number">10</span>,<span class="number">12</span>,<span class="number">45</span>,<span class="number">90</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">Scanner</span> <span class="string">scanner</span> <span class="string">=</span> <span class="string">new</span> <span class="string">Scanner(System.in);</span></span><br><span class="line"><span class="string">while(true)&#123;</span></span><br><span class="line">    <span class="string">System.out.println(&quot;请问是否继续添加元素？y/n&quot;);</span></span><br><span class="line">    <span class="string">char</span> <span class="string">add</span> <span class="string">=</span> <span class="string">scanner.next().charAt(0);</span></span><br><span class="line">    <span class="string">if(add</span> <span class="string">==</span> <span class="string">&#x27;n&#x27;</span> <span class="string">||</span> <span class="string">add</span> <span class="string">==</span> <span class="string">&#x27;N&#x27;</span><span class="string">)&#123;</span></span><br><span class="line">        <span class="string">System.out.println(&quot;最终结果是：&quot;);</span></span><br><span class="line">        <span class="string">break;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">System.out.println(&quot;请输入您要添加的数字:&quot;);</span></span><br><span class="line">    <span class="string">int</span> <span class="string">num</span> <span class="string">=</span> <span class="string">scanner.nextInt();</span></span><br><span class="line">    <span class="string">int[]</span> <span class="string">arrNew</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[arr.length</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">        <span class="string">arrNew[i]</span> <span class="string">=</span> <span class="string">arr[i];</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">arrNew[arrNew.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">]</span> <span class="string">=</span> <span class="string">num;</span></span><br><span class="line">    <span class="string">arr</span> <span class="string">=</span> <span class="string">arrNew;</span></span><br><span class="line">    <span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">arr.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">;</span> <span class="string">j++)&#123;</span></span><br><span class="line">        <span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">+</span> <span class="number">1</span> <span class="string">&lt;</span> <span class="string">arr.length</span> <span class="bullet">-</span> <span class="string">j;</span> <span class="string">i++)&#123;</span></span><br><span class="line">            <span class="string">if(arr[i]</span> <span class="string">&gt;</span> <span class="string">arr[i</span> <span class="string">+</span> <span class="number">1</span><span class="string">])&#123;</span></span><br><span class="line">                <span class="string">int</span> <span class="string">temp</span> <span class="string">=</span> <span class="string">arr[i</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">                <span class="string">arr[i</span> <span class="string">+</span> <span class="number">1</span><span class="string">]</span> <span class="string">=</span> <span class="string">arr[i];</span></span><br><span class="line">                <span class="string">arr[i]</span> <span class="string">=</span> <span class="string">temp;</span></span><br><span class="line">            <span class="string">&#125;</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(arr[i]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">//</span> <span class="string">老师方法</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arr</span> <span class="string">=</span> &#123;<span class="number">10</span>,<span class="number">12</span>,<span class="number">45</span>,<span class="number">90</span>&#125;<span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">insertNum</span> <span class="string">=</span> <span class="number">23</span><span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">index</span> <span class="string">=</span> <span class="number">-1</span><span class="string">;</span></span><br><span class="line"><span class="string">//</span> <span class="string">判断元素应该插入的位置</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">if(insertNum</span> <span class="string">&lt;=</span> <span class="string">arr[i])&#123;</span></span><br><span class="line">        <span class="string">index</span> <span class="string">=</span> <span class="string">i;</span></span><br><span class="line">        <span class="string">break;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">//</span> <span class="string">插入最后</span></span><br><span class="line"><span class="string">if(index</span> <span class="string">==</span> <span class="number">-1</span><span class="string">)&#123;</span></span><br><span class="line">    <span class="string">index</span> <span class="string">=</span> <span class="string">arr.length;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arrNew</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[arr.length</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">,j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arrNew.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">if(i</span> <span class="type">!=</span> <span class="string">index)&#123;</span></span><br><span class="line">        <span class="string">arrNew[i]</span> <span class="string">=</span> <span class="string">arr[j];</span></span><br><span class="line">        <span class="string">j++;</span></span><br><span class="line">    <span class="string">&#125;else&#123;</span></span><br><span class="line">        <span class="string">arrNew[i]</span> <span class="string">=</span> <span class="string">insertNum;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">arr</span> <span class="string">=</span> <span class="string">arrNew;</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(arr[i]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDQyNDA5MzYzOC5wbmc=">题目</span><br>
+ 5.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">//</span> <span class="string">arr[i]</span> <span class="string">=</span> <span class="string">(int)(Math.random()</span> <span class="string">*</span> <span class="number">100</span><span class="string">)</span> <span class="string">+</span> <span class="number">1</span><span class="string">;生成随机数</span></span><br><span class="line"><span class="string">Random</span> <span class="string">random</span> <span class="string">=</span> <span class="string">new</span> <span class="string">Random();</span></span><br><span class="line"><span class="string">int[]</span> <span class="string">arr</span> <span class="string">=</span> <span class="string">new</span> <span class="string">int[10];</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">&lt;</span> <span class="string">arr.length;</span> <span class="string">i++)&#123;</span></span><br><span class="line">    <span class="string">arr[i]</span> <span class="string">=</span> <span class="string">random.nextInt(100);</span></span><br><span class="line"><span class="string">&#125;</span> </span><br><span class="line"><span class="string">int</span> <span class="string">sum</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">y</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">index</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span></span><br><span class="line"><span class="string">int</span> <span class="string">max</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span></span><br><span class="line"><span class="string">System.out.println(&quot;倒叙打印结果：&quot;);</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="string">arr.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">;</span> <span class="string">i</span> <span class="string">&gt;=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i--)&#123;</span></span><br><span class="line">    <span class="string">System.out.print(arr[i]</span> <span class="string">+</span> <span class="string">&quot; &quot;</span><span class="string">);</span></span><br><span class="line">    <span class="string">sum</span> <span class="string">+=</span> <span class="string">arr[i];</span></span><br><span class="line">    <span class="string">if(arr[i]</span> <span class="string">==</span> <span class="number">8</span><span class="string">)&#123;</span></span><br><span class="line">        <span class="string">y</span> <span class="string">=</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">        <span class="string">System.out.println(&quot;有8&quot;);</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">if(arr[i]</span> <span class="string">&gt;</span> <span class="string">max)&#123;</span></span><br><span class="line">        <span class="string">max</span> <span class="string">=</span> <span class="string">arr[i];</span></span><br><span class="line">        <span class="string">index</span> <span class="string">=</span> <span class="string">i;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">System.out.println();</span></span><br><span class="line"><span class="string">System.out.println(&quot;平均值&quot;</span> <span class="string">+</span> <span class="string">sum</span> <span class="string">/</span> <span class="number">10.0</span> <span class="string">+</span> <span class="string">&quot;最大值&quot;</span> <span class="string">+</span> <span class="string">max</span> <span class="string">+</span> <span class="string">&quot;最大值下标&quot;</span> <span class="string">+</span> <span class="string">index);</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<p>6.aazz 韩韩 cc<br>
+7.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```冒泡排序</span></span><br><span class="line"><span class="string">for(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string">&lt;</span> <span class="string">arr.length</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">;</span> <span class="string">j++)&#123;</span></span><br><span class="line">        <span class="string">for(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string">+</span> <span class="number">1</span> <span class="string">&lt;</span> <span class="string">arr.length</span> <span class="bullet">-</span> <span class="string">j;</span> <span class="string">i++)&#123;</span></span><br><span class="line">            <span class="string">if(arr[i]</span> <span class="string">&gt;</span> <span class="string">arr[i</span> <span class="string">+</span> <span class="number">1</span><span class="string">])&#123;</span></span><br><span class="line">                <span class="string">int</span> <span class="string">temp</span> <span class="string">=</span> <span class="string">arr[i</span> <span class="string">+</span> <span class="number">1</span><span class="string">];</span></span><br><span class="line">                <span class="string">arr[i</span> <span class="string">+</span> <span class="number">1</span><span class="string">]</span> <span class="string">=</span> <span class="string">arr[i];</span></span><br><span class="line">                <span class="string">arr[i]</span> <span class="string">=</span> <span class="string">temp;</span></span><br><span class="line">            <span class="string">&#125;</span></span><br><span class="line">        <span class="string">&#125;</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+
+      <div class="tags">
+          <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> java基础</a>
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-05-19 17:31:44" itemprop="dateModified" datetime="2025-05-19T17:31:44+08:00">2025-05-19</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/wechatpay.png" alt="Xylia 微信支付">
+        <p>微信支付</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Xylia <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2025/04/20/computer-science/java/notepad/%E5%9F%BA%E7%A1%805/" title="数组，排序和查找">http://example.com/2025/04/20/computer-science/java/notepad/基础5/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/04/14/poetry/original/2025.4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="未命名">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 原创</span>
+  <h3>未命名</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/04/24/computer-science/java/notepad/%E5%9F%BA%E7%A1%806/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="面向对象编程">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 课程笔记</span>
+  <h3>面向对象编程</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text"> 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text"> 动态初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text"> 静态初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%B5%8B%E5%80%BC%E6%9C%BA%E5%88%B6"><span class="toc-number">1.3.</span> <span class="toc-text"> 数组赋值机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8B%B7%E8%B4%9D"><span class="toc-number">1.4.</span> <span class="toc-text"> 数组拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%8F%8D%E8%BD%AC"><span class="toc-number">1.5.</span> <span class="toc-text"> 数组反转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%89%A9%E5%AE%B9"><span class="toc-number">1.6.</span> <span class="toc-text"> 数组扩容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%BC%A9%E5%87%8F"><span class="toc-number">1.7.</span> <span class="toc-text"> 数组缩减</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">1.8.</span> <span class="toc-text"> 二维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 内存布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E8%8A%82"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 细节</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text"> 排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-number">3.</span> <span class="toc-text"> 查找</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text"> 练习题</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2025/03/26/computer-science/java/notepad/%E5%9F%BA%E7%A1%801/" rel="bookmark" title="java基本概述">java基本概述</a></li><li><a href="/2025/03/29/computer-science/java/notepad/%E5%9F%BA%E7%A1%802/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/03/30/computer-science/java/notepad/%E5%9F%BA%E7%A1%803/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/04/02/computer-science/java/notepad/%E5%9F%BA%E7%A1%804/" rel="bookmark" title="控制结构">控制结构</a></li><li class="active"><a href="/2025/04/20/computer-science/java/notepad/%E5%9F%BA%E7%A1%805/" rel="bookmark" title="数组，排序和查找">数组，排序和查找</a></li><li><a href="/2025/04/24/computer-science/java/notepad/%E5%9F%BA%E7%A1%806/" rel="bookmark" title="面向对象编程">面向对象编程</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xylia"
+      data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+  <p class="name" itemprop="name">Xylia</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">21</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">8</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01pYS1YeWxpYQ==" title="https:&#x2F;&#x2F;github.com&#x2F;Mia-Xylia"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>链环</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友達</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>链接</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/04/14/poetry/original/2025.4/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/04/24/computer-science/java/notepad/%E5%9F%BA%E7%A1%806/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/04/24/computer-science/java/notepad/%E5%9F%BA%E7%A1%806/" title="面向对象编程">面向对象编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/04/02/computer-science/java/notepad/%E5%9F%BA%E7%A1%804/" title="控制结构">控制结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/java/notepad/%E5%9F%BA%E7%A1%801/" title="java基本概述">java基本概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/java/notepad/%E5%9F%BA%E7%A1%802/" title="变量">变量</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/python/notepad/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/04/20/computer-science/java/notepad/%E5%9F%BA%E7%A1%805/" title="数组，排序和查找">数组，排序和查找</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/12/computer-science/python/notepad/han1/" title="变量">变量</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/notepad/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xylia @ 鱼塘</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">96k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:27</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/04/20/computer-science/java/notepad/基础5/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,mermaid: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//fastly.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

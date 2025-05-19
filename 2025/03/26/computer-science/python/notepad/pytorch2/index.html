@@ -1,0 +1,675 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="笔记,pytorch基础" />
+
+
+<link rel="canonical" href="http://example.com/2025/03/26/computer-science/python/notepad/pytorch2/">
+
+
+
+  <title>
+笔记：PyTorch(2) - 课程笔记 - python - 计算机科学 |
+鱼塘 = </title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">笔记：PyTorch(2)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-03-26 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-03-26T00:00:00+08:00">2025-03-26</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">鱼塘</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/assets/wallpaper-2572384.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/" itemprop="item" rel="index" title="分类于 python"><span itemprop="name">python</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/notepad/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/26/computer-science/python/notepad/pytorch2/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+    <meta itemprop="name" content="Xylia">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="神经网络"><a class="markdownIt-Anchor" href="#神经网络">#</a> 神经网络</h1>
+<h2 id="神经网络的基本骨架-nnmodule"><a class="markdownIt-Anchor" href="#神经网络的基本骨架-nnmodule">#</a> 神经网络的基本骨架  nn.Module</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torch</span></span><br><span class="line"><span class="string">from</span> <span class="string">sympy</span> <span class="string">import</span> <span class="string">xring</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super().__init__()</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">input):</span></span><br><span class="line">        <span class="string">output</span> <span class="string">=</span> <span class="string">input+1</span></span><br><span class="line">        <span class="string">return</span> <span class="string">output</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span>  <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"><span class="string">x</span> <span class="string">=</span> <span class="string">torch.tensor(1.0)</span></span><br><span class="line"><span class="string">output</span> <span class="string">=</span> <span class="string">xylia(x)</span></span><br><span class="line"><span class="string">print(output)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="卷积层-convolution-layers"><a class="markdownIt-Anchor" href="#卷积层-convolution-layers">#</a> 卷积层  Convolution Layers</h2>
+<ul>
+<li>nn.Conv2d<br>
+<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3ZkdW1vdWxpbi9jb252X2FyaXRobWV0aWMvYmxvYi9tYXN0ZXIvUkVBRE1FLm1k">link</span></li>
+</ul>
+<details class="success"><summary>部分官方文档</summary><div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True, padding_mode=&#x27;zeros&#x27;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">in_channels (int) – Number of channels in the input image</span><br><span class="line"></span><br><span class="line">out_channels (int) – Number of channels produced by the convolution</span><br><span class="line"></span><br><span class="line">kernel_size (int or tuple) – Size of the convolving kernel</span><br><span class="line"></span><br><span class="line">stride (int or tuple, optional) – Stride of the convolution. Default: 1</span><br><span class="line"></span><br><span class="line">padding (int or tuple, optional) – Zero-padding added to both sides of the input. Default: 0</span><br><span class="line"></span><br><span class="line">padding_mode (string, optional) – &#x27;zeros&#x27;, &#x27;reflect&#x27;, &#x27;replicate&#x27; or &#x27;circular&#x27;. Default: &#x27;zeros&#x27;</span><br><span class="line"></span><br><span class="line">dilation (int or tuple, optional) – Spacing between kernel elements. Default: 1</span><br><span class="line"></span><br><span class="line">groups (int, optional) – Number of blocked connections from input channels to output channels. Default: 1</span><br><span class="line"></span><br><span class="line">bias (bool, optional) – If True, adds a learnable bias to the output. Default: True</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</div></details>
+<p>Out_channel = 2 生成两个卷积核</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torch</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">DataLoader</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"></span><br><span class="line"><span class="string">from</span> <span class="string">nn_module</span> <span class="string">import</span> <span class="string">output</span></span><br><span class="line"><span class="string">from</span> <span class="string">test_tb</span> <span class="string">import</span> <span class="string">writer</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataset</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(&quot;./data&quot;,train=False,transform=torchvision.transforms.ToTensor(),</span></span><br><span class="line">                                       <span class="string">download=True)</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataloader</span> <span class="string">=</span> <span class="string">DataLoader(dataset,batch_size</span> <span class="string">=</span> <span class="number">64</span><span class="string">)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line">        <span class="string">self.conv1</span> <span class="string">=</span> <span class="string">nn.Conv2d(in_channels=3,</span> <span class="string">out_channels=6,</span> <span class="string">kernel_size=3,stride=1,padding=0)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,x):</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.conv1(x)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">x</span></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"><span class="comment"># print(xylia)</span></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;./log&quot;)</span></span><br><span class="line"><span class="string">step</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="attr">for data in dataloader:</span></span><br><span class="line">    <span class="string">imgs,targets</span> <span class="string">=</span> <span class="string">data</span></span><br><span class="line">    <span class="string">output</span> <span class="string">=</span> <span class="string">xylia(imgs)</span></span><br><span class="line">    <span class="string">print(imgs.shape)</span></span><br><span class="line">    <span class="string">print(output.shape)</span></span><br><span class="line">    <span class="comment"># torch.Size([64, 3, 32, 32])</span></span><br><span class="line">    <span class="string">writer.add_images(&quot;input&quot;,imgs,step)</span></span><br><span class="line">    <span class="comment"># torch.Size([64, 6, 30, 30])</span></span><br><span class="line"></span><br><span class="line">    <span class="string">output</span> <span class="string">=</span> <span class="string">torch.reshape(output,(-1,3,30,30))</span></span><br><span class="line">    <span class="string">writer.add_images(&quot;output&quot;,output,step)</span></span><br><span class="line">    <span class="string">step</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="池化层-pooling-layers"><a class="markdownIt-Anchor" href="#池化层-pooling-layers">#</a> 池化层  Pooling layers</h2>
+<ul>
+<li>nn.MaxPool2d</li>
+</ul>
+<details class="success"><summary>部分官方文档</summary><div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">kernel_size – the size of the window to take a max over</span><br><span class="line"></span><br><span class="line">stride – the stride of the window. Default value is kernel_size</span><br><span class="line"></span><br><span class="line">padding – implicit zero padding to be added on both sides</span><br><span class="line"></span><br><span class="line">dilation – a parameter that controls the stride of elements in the window</span><br><span class="line"></span><br><span class="line">return_indices – if True, will return the max indices along with the outputs. Useful for torch.nn.MaxUnpool2d later</span><br><span class="line"></span><br><span class="line">ceil_mode – when True, will use ceil instead of floor to compute the output shape</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</div></details>
+<p>dilation 空洞卷积，卷积核每两个数空一格<br>
+ kernel_size = 3<br>
+ 输入图像：5×5<br>
+ 池化核 3×3<br>
+Ceil_model = True   进行保留</p>
+<p>最大池化的作用：保留数据特征，数据量减少</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torch</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">DataLoader</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataset</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(&quot;./data&quot;,</span> <span class="string">train=True,</span> <span class="string">download=True,</span></span><br><span class="line">                                       <span class="string">transform=torchvision.transforms.ToTensor())</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataloader</span> <span class="string">=</span> <span class="string">DataLoader(dataset,</span> <span class="string">batch_size=64)</span></span><br><span class="line"><span class="comment"># # 输入数据</span></span><br><span class="line"><span class="comment"># input = torch.tensor([[1,2,0,3,1],</span></span><br><span class="line"><span class="comment">#                       [0,1,2,3,1],</span></span><br><span class="line"><span class="comment">#                       [1,2,1,0,0],</span></span><br><span class="line"><span class="comment">#                       [5,2,3,1,1],</span></span><br><span class="line"><span class="comment">#                       [2,1,0,1,1]],dtype=torch.float32)# 二维矩阵</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># input = torch.reshape(input,(-1,1,5,5))</span></span><br><span class="line"><span class="comment"># print(input.shape)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line">        <span class="string">self.maxpool1</span> <span class="string">=</span> <span class="string">nn.MaxPool2d(kernel_size=3,</span> <span class="string">ceil_mode=False)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">input):</span></span><br><span class="line">        <span class="string">output</span> <span class="string">=</span> <span class="string">self.maxpool1(input)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">output</span></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"><span class="comment"># output = xylia(input)</span></span><br><span class="line"><span class="comment"># print(output)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;./logs_maxpoll&quot;)</span></span><br><span class="line"><span class="string">step</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="attr">for data in dataloader:</span></span><br><span class="line">    <span class="string">imgs,targets</span> <span class="string">=</span> <span class="string">data</span></span><br><span class="line">    <span class="string">writer.add_images(&quot;input&quot;,</span> <span class="string">imgs,</span> <span class="string">step)</span></span><br><span class="line">    <span class="string">output</span> <span class="string">=</span> <span class="string">xylia(imgs)</span></span><br><span class="line">    <span class="string">writer.add_images(&quot;output&quot;,</span> <span class="string">output,</span> <span class="string">step)</span></span><br><span class="line">    <span class="string">step</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="padding-layers"><a class="markdownIt-Anchor" href="#padding-layers">#</a> Padding Layers</h2>
+<ul>
+<li>nn.ZeroPad2d<br>
+ 用 0 填充</li>
+<li>nn.ConstatPad2d<br>
+ 用常数填充</li>
+</ul>
+<h2 id="非线性激活-no-linear-activations"><a class="markdownIt-Anchor" href="#非线性激活-no-linear-activations">#</a> 非线性激活  No-linear Activations</h2>
+<ul>
+<li>nn.Relu  截断<br>
+ input&gt;0 output = input<br>
+input&lt;0 output = 0</li>
+</ul>
+<details class="success"><summary>inplace</summary><div>
+<p>input = -1<br>
+Pelu(input,inplace = True)<br>
+input =0</p>
+<p>input = -1<br>
+Pelu(input,inplace = False)<br>
+input =-1<br>
+output = 0</p>
+</div></details>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span>  <span class="string">torch</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.tensor([[1,-0.5],</span></span><br><span class="line">                     [<span class="number">-1</span>,<span class="number">3</span>]<span class="string">])</span></span><br><span class="line"></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.reshape(input,(-1,1,2,2))</span></span><br><span class="line"><span class="string">print(input.shape)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line">        <span class="string">self.relu1</span> <span class="string">=</span> <span class="string">nn.ReLU()</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">input):</span></span><br><span class="line">        <span class="string">output</span> <span class="string">=</span> <span class="string">self.relu1(input)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">output</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"><span class="string">output</span> <span class="string">=</span> <span class="string">xylia(input)</span></span><br><span class="line"><span class="string">print(output)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>nn.Sigmoid</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span>  <span class="string">torch</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">DataLoader</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.tensorboard</span> <span class="string">import</span> <span class="string">SummaryWriter</span></span><br><span class="line"><span class="string">from</span> <span class="string">nn_conv2</span> <span class="string">import</span> <span class="string">dataloader</span></span><br><span class="line"></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.tensor([[1,-0.5],</span></span><br><span class="line">                     [<span class="number">-1</span>,<span class="number">3</span>]<span class="string">])</span></span><br><span class="line"></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.reshape(input,(-1,1,2,2))</span></span><br><span class="line"><span class="string">print(input.shape)</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataset</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(&quot;./data&quot;,</span> <span class="string">train=True,</span> <span class="string">download=True,</span></span><br><span class="line">                                       <span class="string">transform=torchvision.transforms.ToTensor())</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataloader</span> <span class="string">=</span> <span class="string">DataLoader(dataset,batch_size=64)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line">        <span class="string">self.relu1</span> <span class="string">=</span> <span class="string">nn.ReLU()</span></span><br><span class="line">        <span class="string">self.sigmoid1</span> <span class="string">=</span> <span class="string">nn.Sigmoid()</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">input):</span></span><br><span class="line">        <span class="string">output</span> <span class="string">=</span> <span class="string">self.sigmoid1(input)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">output</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"><span class="comment"># output = xylia(input)</span></span><br><span class="line"><span class="comment"># print(output)</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;./logs_sigmoid1&quot;)</span></span><br><span class="line"><span class="string">step</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line"><span class="attr">for data in dataloader:</span></span><br><span class="line">    <span class="string">imgs,</span> <span class="string">targets</span> <span class="string">=</span> <span class="string">data</span></span><br><span class="line">    <span class="string">writer.add_images(&quot;input&quot;,</span> <span class="string">imgs,</span> <span class="string">global_step=step)</span></span><br><span class="line">    <span class="string">outputs</span> <span class="string">=</span> <span class="string">xylia(imgs)</span></span><br><span class="line">    <span class="string">writer.add_images(&quot;output&quot;,</span> <span class="string">outputs,</span> <span class="string">global_step=step)</span></span><br><span class="line">    <span class="string">step</span> <span class="string">+=</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="线性层及其他层介绍"><a class="markdownIt-Anchor" href="#线性层及其他层介绍">#</a> 线性层及其他层介绍</h2>
+<ul>
+<li>Normalization Layer</li>
+<li>Recurrent Layers</li>
+<li>Transformer Layers</li>
+<li>Dropout Layers<br>
+nn.Dropout 防止过拟合</li>
+<li>Sparse Layers<br>
+nn.Embedding 自然语言</li>
+<li>Distance Functions</li>
+<li>Loss Functions</li>
+<li>Sequential</li>
+</ul>
+<h3 id="linaear-layers"><a class="markdownIt-Anchor" href="#linaear-layers">#</a> Linaear Layers</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">import</span> <span class="string">torch</span></span><br><span class="line"><span class="string">import</span> <span class="string">torchvision</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.utils.data</span> <span class="string">import</span> <span class="string">DataLoader</span></span><br><span class="line"></span><br><span class="line"><span class="string">dataset</span> <span class="string">=</span> <span class="string">torchvision.datasets.CIFAR10(&quot;./data&quot;,</span> <span class="string">train=False,</span> <span class="string">download=True,</span></span><br><span class="line">                                       <span class="string">transform=torchvision.transforms.ToTensor())</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#数据集batch之后生下了16张图片，舍弃最后不满足的drop_last=True</span></span><br><span class="line"><span class="string">dataloader</span> <span class="string">=</span> <span class="string">DataLoader(dataset,</span> <span class="string">batch_size=64,drop_last=True)</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,self).__init__()</span></span><br><span class="line">        <span class="string">self.Linear1</span> <span class="string">=</span> <span class="string">nn.Linear(196608,10)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,input):</span></span><br><span class="line">        <span class="string">output</span> <span class="string">=</span> <span class="string">self.Linear1(input)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">output</span></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"></span><br><span class="line"><span class="attr">for data in dataloader:</span></span><br><span class="line">    <span class="string">imgs,targets</span> <span class="string">=</span> <span class="string">data</span></span><br><span class="line">    <span class="string">print(imgs.shape)</span></span><br><span class="line">    <span class="comment"># output = torch.reshape(imgs,(1,1,1,-1))</span></span><br><span class="line">    <span class="string">output</span> <span class="string">=</span> <span class="string">torch.flatten(imgs)</span></span><br><span class="line">    <span class="string">print(output.shape)</span></span><br><span class="line">    <span class="string">output</span> <span class="string">=</span> <span class="string">xylia(output)</span></span><br><span class="line">    <span class="string">print(output.shape)</span></span><br><span class="line"></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="搭建小实战和sequential的使用"><a class="markdownIt-Anchor" href="#搭建小实战和sequential的使用">#</a> 搭建小实战和 Sequential 的使用</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch</span> <span class="string">import</span> <span class="string">nn</span></span><br><span class="line"><span class="string">from</span> <span class="string">torch.nn</span> <span class="string">import</span> <span class="string">Conv2d,MaxPool2d,Flatten,Linear</span></span><br><span class="line"></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line">        <span class="string">self.conv1</span> <span class="string">=</span> <span class="string">Conv2d(3,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1)</span></span><br><span class="line">        <span class="string">self.maxpool1</span> <span class="string">=</span> <span class="string">MaxPool2d(2)</span></span><br><span class="line">        <span class="string">self.conv2</span> <span class="string">=</span> <span class="string">Conv2d(32,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1)</span></span><br><span class="line">        <span class="string">self.maxpool2</span> <span class="string">=</span> <span class="string">MaxPool2d(2)</span></span><br><span class="line">        <span class="string">self.conv3</span> <span class="string">=</span> <span class="string">Conv2d(32,</span> <span class="number">64</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1)</span></span><br><span class="line">        <span class="string">self.maxpool3</span> <span class="string">=</span> <span class="string">MaxPool2d(2)</span></span><br><span class="line">        <span class="string">self.flatten</span> <span class="string">=</span> <span class="string">Flatten()</span></span><br><span class="line">        <span class="string">self.linear</span> <span class="string">=</span> <span class="string">Linear(1024,</span> <span class="number">64</span><span class="string">)</span></span><br><span class="line">        <span class="string">self.linear2</span> <span class="string">=</span> <span class="string">Linear(64,</span> <span class="number">10</span><span class="string">)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">x):</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.conv1(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.maxpool1(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.conv2(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.maxpool2(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.conv3(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.maxpool3(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.flatten(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.linear(x)</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.linear2(x)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">x</span></span><br><span class="line"></span><br><span class="line"><span class="string">xylia</span> <span class="string">=</span> <span class="string">Xylia()</span></span><br><span class="line"><span class="string">print(xylia)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>检验是否正确</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.ones((64,3,32,32))</span></span><br><span class="line"><span class="string">output</span> <span class="string">=</span> <span class="string">xylia(input)</span></span><br><span class="line"><span class="string">print(output.shape)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Sequential 的作用</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="attr">class Xylia(nn.Module):</span></span><br><span class="line">    <span class="attr">def __init__(self):</span></span><br><span class="line">        <span class="string">super(Xylia,</span> <span class="string">self).__init__()</span></span><br><span class="line"></span><br><span class="line">        <span class="string">self.model</span> <span class="string">=</span> <span class="string">nn.Sequential(</span></span><br><span class="line">            <span class="string">Conv2d(3,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1),</span></span><br><span class="line">            <span class="string">MaxPool2d(2),</span></span><br><span class="line">            <span class="string">Conv2d(32,</span> <span class="number">32</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1),</span></span><br><span class="line">            <span class="string">MaxPool2d(2),</span></span><br><span class="line">            <span class="string">Conv2d(32,</span> <span class="number">64</span><span class="string">,</span> <span class="string">kernel_size=5,padding=2,stride=1),</span></span><br><span class="line">            <span class="string">MaxPool2d(2),</span></span><br><span class="line">            <span class="string">Flatten(),</span></span><br><span class="line">            <span class="string">Linear(1024,</span> <span class="number">64</span><span class="string">),</span></span><br><span class="line">            <span class="string">Linear(64,</span> <span class="number">10</span><span class="string">)</span></span><br><span class="line">        <span class="string">)</span></span><br><span class="line"></span><br><span class="line">    <span class="string">def</span> <span class="string">forward(self,</span> <span class="attr">x):</span></span><br><span class="line">        <span class="string">x</span> <span class="string">=</span> <span class="string">self.model(x)</span></span><br><span class="line">        <span class="string">return</span> <span class="string">x</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>writer 方式</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">writer</span> <span class="string">=</span> <span class="string">SummaryWriter(&quot;./logs_seq&quot;)</span></span><br><span class="line"><span class="string">writer.add_graph(xylia,</span> <span class="string">input)</span></span><br><span class="line"><span class="string">writer.close()</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="土堆说卷积操作选看"><a class="markdownIt-Anchor" href="#土堆说卷积操作选看">#</a> 土堆说卷积操作 (选看)</h1>
+<ul>
+<li>conv2D<br>
+stride = 1 时走一步</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">import</span> <span class="string">torch</span></span><br><span class="line"><span class="string">import</span> <span class="string">torch.nn.functional</span> <span class="string">as</span> <span class="string">F</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入数据</span></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.tensor([[1,2,0,3,1],</span></span><br><span class="line">                      [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]<span class="string">,</span></span><br><span class="line">                      [<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>]<span class="string">,</span></span><br><span class="line">                      [<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>]<span class="string">,</span></span><br><span class="line">                      [<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>]<span class="string">])#</span> <span class="string">二维矩阵</span></span><br><span class="line"><span class="comment"># 卷积核</span></span><br><span class="line"><span class="string">kernel</span> <span class="string">=</span> <span class="string">torch.tensor([[1,2,1],</span></span><br><span class="line">                       [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]<span class="string">,</span></span><br><span class="line">                       [<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>]<span class="string">])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 尺寸变换</span></span><br><span class="line"><span class="string">input</span> <span class="string">=</span> <span class="string">torch.reshape(input,(1,1,5,5))</span></span><br><span class="line"><span class="string">kernel</span> <span class="string">=</span> <span class="string">torch.reshape(kernel,(1,1,3,3))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(input.shape)</span></span><br><span class="line"><span class="comment"># print(kernel.shape)</span></span><br><span class="line"></span><br><span class="line"><span class="string">output</span> <span class="string">=</span> <span class="string">F.conv2d(input,kernel,stride=1)</span></span><br><span class="line"><span class="string">print(output)</span></span><br><span class="line"></span><br><span class="line"><span class="string">output2</span> <span class="string">=</span> <span class="string">F.conv2d(input,kernel,stride=2)</span></span><br><span class="line"><span class="string">print(output2)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>padding<br>
+padding = 1, 向外拓展一行 / 列</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```python</span></span><br><span class="line"><span class="string">output3</span> <span class="string">=</span> <span class="string">F.conv2d(input,kernel,stride=1,padding=1)</span></span><br><span class="line"><span class="string">print(output3)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+          <a href="/tags/pytorch%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> pytorch基础</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-05-19 17:30:09" itemprop="dateModified" datetime="2025-05-19T17:30:09+08:00">2025-05-19</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/wechatpay.png" alt="Xylia 微信支付">
+        <p>微信支付</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Xylia <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2025/03/26/computer-science/python/notepad/pytorch2/" title="笔记：PyTorch(2)">http://example.com/2025/03/26/computer-science/python/notepad/pytorch2/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/03/26/computer-science/python/notepad/pytorch3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="笔记：PyTorch(3)">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 课程笔记</span>
+  <h3>笔记：PyTorch(3)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/03/26/computer-science/java/notepad/%E5%9F%BA%E7%A1%801/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="java基本概述">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 课程笔记</span>
+  <h3>java基本概述</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text"> 神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%AA%A8%E6%9E%B6-nnmodule"><span class="toc-number">1.1.</span> <span class="toc-text"> 神经网络的基本骨架  nn.Module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E5%B1%82-convolution-layers"><span class="toc-number">1.2.</span> <span class="toc-text"> 卷积层  Convolution Layers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%A0%E5%8C%96%E5%B1%82-pooling-layers"><span class="toc-number">1.3.</span> <span class="toc-text"> 池化层  Pooling layers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#padding-layers"><span class="toc-number">1.4.</span> <span class="toc-text"> Padding Layers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%BF%80%E6%B4%BB-no-linear-activations"><span class="toc-number">1.5.</span> <span class="toc-text"> 非线性激活  No-linear Activations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%B1%82%E5%8F%8A%E5%85%B6%E4%BB%96%E5%B1%82%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.6.</span> <span class="toc-text"> 线性层及其他层介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linaear-layers"><span class="toc-number">1.6.1.</span> <span class="toc-text"> Linaear Layers</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%B0%8F%E5%AE%9E%E6%88%98%E5%92%8Csequential%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.7.</span> <span class="toc-text"> 搭建小实战和 Sequential 的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%9F%E5%A0%86%E8%AF%B4%E5%8D%B7%E7%A7%AF%E6%93%8D%E4%BD%9C%E9%80%89%E7%9C%8B"><span class="toc-number">2.</span> <span class="toc-text"> 土堆说卷积操作 (选看)</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2025/03/23/computer-science/python/notepad/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li><a href="/2025/03/25/computer-science/python/notepad/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li class="active"><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch3/" rel="bookmark" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/13/computer-science/python/notepad/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li><a href="/2025/05/14/computer-science/python/notepad/han4/" rel="bookmark" title="函数">函数</a></li><li><a href="/2025/05/17/computer-science/python/notepad/han5/" rel="bookmark" title="数据容器">数据容器</a></li><li><a href="/2025/05/18/computer-science/python/notepad/han6/" rel="bookmark" title="排序和查找">排序和查找</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han7/" rel="bookmark" title="断点调试/模块和包">断点调试/模块和包</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han8/" rel="bookmark" title="面向对象编程">面向对象编程</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Xylia"
+      data-src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
+  <p class="name" itemprop="name">Xylia</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">21</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">8</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01pYS1YeWxpYQ==" title="https:&#x2F;&#x2F;github.com&#x2F;Mia-Xylia"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>链环</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友達</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>链接</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/03/26/computer-science/python/notepad/pytorch3/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/03/26/computer-science/java/notepad/%E5%9F%BA%E7%A1%801/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/18/computer-science/python/notepad/han6/" title="排序和查找">排序和查找</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/04/02/computer-science/java/notepad/%E5%9F%BA%E7%A1%804/" title="控制结构">控制结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/java/notepad/%E5%9F%BA%E7%A1%801/" title="java基本概述">java基本概述</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/java/notepad/%E5%9F%BA%E7%A1%803/" title="运算符">运算符</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/19/computer-science/python/notepad/han8/" title="面向对象编程">面向对象编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/17/computer-science/python/notepad/han5/" title="数据容器">数据容器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/python/notepad/han3/" title="程序控制结构">程序控制结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/03/25/computer-science/python/notepad/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/12/computer-science/python/notepad/han1/" title="变量">变量</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xylia @ 鱼塘</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">96k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:27</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/03/26/computer-science/python/notepad/pytorch2/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//fastly.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
