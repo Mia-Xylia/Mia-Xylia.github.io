@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="笔记,python基础" />
+  <meta name="keywords" content="python基础,笔记" />
 
 
 <link rel="canonical" href="http://example.com/2025/05/18/computer-science/python/notepad/han6/">
@@ -167,8 +167,8 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">import</span> <span class="string">random</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 随机生成10个整数（1~100）保存到列表</span></span><br><span class="line"><span class="comment"># 使用冒泡排序，进行从大到小排序</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成随机数并存入列表的函数</span></span><br><span class="line"><span class="attr">def random_list(num):</span></span><br><span class="line">    <span class="string">my_list</span> <span class="string">=</span> []</span><br><span class="line">    <span class="attr">for i in range(num):</span></span><br><span class="line">        <span class="string">my_list.append(random.randint(1,</span> <span class="number">100</span><span class="string">))</span></span><br><span class="line"></span><br><span class="line">    <span class="string">return</span> <span class="string">my_list</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">def bubble_sort(mylist):</span></span><br><span class="line">    <span class="attr">for i in range(len(mylist) - 1):</span></span><br><span class="line">        <span class="attr">for j in range(len(mylist) - i - 1):</span></span><br><span class="line">            <span class="string">if</span> <span class="string">mylist[j]</span> <span class="string">&lt;</span> <span class="string">mylist[j</span> <span class="string">+</span> <span class="number">1</span><span class="string">]:</span></span><br><span class="line">                <span class="string">mylist[j],</span> <span class="string">mylist[j</span> <span class="string">+</span> <span class="number">1</span><span class="string">]</span> <span class="string">=</span> <span class="string">mylist[j</span> <span class="string">+</span> <span class="number">1</span><span class="string">],</span> <span class="string">mylist[j]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在第二题的基础上，使用二分查找是否有8，返回对应下标，如果没有，返回-1</span></span><br><span class="line"><span class="string">def</span> <span class="string">binary_sort(mylist,</span> <span class="attr">find):</span></span><br><span class="line">    <span class="string">find_index</span> <span class="string">=</span> <span class="number">-1</span></span><br><span class="line">    <span class="string">start_index</span> <span class="string">=</span> <span class="number">0</span></span><br><span class="line">    <span class="string">end_index</span> <span class="string">=</span> <span class="string">len(mylist)</span> <span class="bullet">-</span> <span class="number">1</span></span><br><span class="line">    <span class="string">while</span> <span class="string">start_index</span> <span class="string">&lt;=</span> <span class="attr">end_index:</span></span><br><span class="line">        <span class="string">mid_index</span> <span class="string">=</span> <span class="string">(start_index</span> <span class="string">+</span> <span class="string">end_index)</span> <span class="string">//</span> <span class="number">2</span></span><br><span class="line">        <span class="string">if</span> <span class="string">mylist[mid_index]</span> <span class="string">&gt;</span> <span class="attr">find:</span></span><br><span class="line">            <span class="string">start_index</span> <span class="string">=</span> <span class="string">mid_index</span> <span class="string">+</span> <span class="number">1</span></span><br><span class="line">        <span class="string">elif</span> <span class="string">mylist[mid_index]</span> <span class="string">&lt;</span> <span class="attr">find:</span></span><br><span class="line">            <span class="string">end_index</span> <span class="string">=</span> <span class="string">mid_index</span> <span class="bullet">-</span> <span class="number">1</span></span><br><span class="line">        <span class="attr">else:</span></span><br><span class="line">            <span class="string">find_index</span> <span class="string">=</span> <span class="string">mid_index</span></span><br><span class="line">            <span class="string">break</span></span><br><span class="line">    <span class="string">return</span> <span class="string">find_index</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">my_list</span> <span class="string">=</span> <span class="string">random_list(10)</span></span><br><span class="line"><span class="string">bubble_sort(my_list)</span></span><br><span class="line"><span class="string">print(my_list)</span></span><br><span class="line"></span><br><span class="line"><span class="string">find</span> <span class="string">=</span> <span class="number">8</span></span><br><span class="line"><span class="string">find_index</span> <span class="string">=</span> <span class="string">binary_sort(my_list,</span> <span class="string">find)</span></span><br><span class="line"><span class="string">if</span> <span class="string">find_index</span> <span class="string">==</span> <span class="number">-1</span><span class="string">:</span></span><br><span class="line">    <span class="string">print(f&quot;没有找到&#123;find&#125;这个数&quot;)</span></span><br><span class="line"><span class="attr">else:</span></span><br><span class="line">    <span class="string">print(f&quot;存在&#123;find&#125;，下标是&#123;find_index&#125;&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
 
       <div class="tags">
-          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
           <a href="/tags/python%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> python基础</a>
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
       </div>
   </div>
 
@@ -261,7 +261,7 @@
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2025/03/23/computer-science/python/notepad/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li><a href="/2025/03/25/computer-science/python/notepad/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch3/" rel="bookmark" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/13/computer-science/python/notepad/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li><a href="/2025/05/14/computer-science/python/notepad/han4/" rel="bookmark" title="函数">函数</a></li><li><a href="/2025/05/17/computer-science/python/notepad/han5/" rel="bookmark" title="数据容器">数据容器</a></li><li class="active"><a href="/2025/05/18/computer-science/python/notepad/han6/" rel="bookmark" title="排序和查找">排序和查找</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han7/" rel="bookmark" title="断点调试/模块和包">断点调试/模块和包</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han8/" rel="bookmark" title="面向对象编程">面向对象编程</a></li>
+          <li><a href="/2025/03/23/computer-science/python/notepad/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li><a href="/2025/03/25/computer-science/python/notepad/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch3/" rel="bookmark" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/13/computer-science/python/notepad/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li><a href="/2025/05/14/computer-science/python/notepad/han4/" rel="bookmark" title="函数">函数</a></li><li><a href="/2025/05/17/computer-science/python/notepad/han5/" rel="bookmark" title="数据容器">数据容器</a></li><li class="active"><a href="/2025/05/18/computer-science/python/notepad/han6/" rel="bookmark" title="排序和查找">排序和查找</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han7/" rel="bookmark" title="断点调试/模块和包">断点调试/模块和包</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han8/" rel="bookmark" title="面向对象编程">面向对象编程</a></li><li><a href="/2025/06/06/computer-science/python/notepad/han9/" rel="bookmark" title="面向对象编程进阶">面向对象编程进阶</a></li><li><a href="/2025/06/10/computer-science/python/notepad/han_Housing_Rental_System/" rel="bookmark" title="房屋出租系统">房屋出租系统</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -275,7 +275,7 @@
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">21</span>
+        <span class="count">23</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -389,19 +389,7 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/05/12/computer-science/python/notepad/han0/" title="python语言的概述">python语言的概述</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
+    <span><a href="/2025/05/19/computer-science/python/notepad/han8/" title="面向对象编程">面向对象编程</a></span>
   </li>
 
       
@@ -436,12 +424,14 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/poetry/" title="分类于 随笔">随笔</a>
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/poetry/original/" title="分类于 原创">原创</a>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/04/14/poetry/original/2025.4/" title="未命名">未命名</a></span>
+    <span><a href="/2025/05/12/computer-science/python/notepad/han1/" title="变量">变量</a></span>
   </li>
 
       
@@ -455,7 +445,7 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/python/notepad/han4/" title="函数">函数</a></span>
+    <span><a href="/2025/05/18/computer-science/python/notepad/han6/" title="排序和查找">排序和查找</a></span>
   </li>
 
       
@@ -469,7 +459,21 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/05/19/computer-science/python/notepad/han8/" title="面向对象编程">面向对象编程</a></span>
+    <span><a href="/2025/05/17/computer-science/python/notepad/han5/" title="数据容器">数据容器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/04/24/computer-science/java/notepad/%E5%9F%BA%E7%A1%806/" title="面向对象编程">面向对象编程</a></span>
   </li>
 
       
@@ -490,14 +494,12 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<a href="/categories/poetry/" title="分类于 随笔">随笔</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 python">python</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+<a href="/categories/poetry/original/" title="分类于 原创">原创</a>
 </div>
 
-    <span><a href="/2025/05/19/computer-science/python/notepad/han7/" title="断点调试&#x2F;模块和包">断点调试/模块和包</a></span>
+    <span><a href="/2025/04/14/poetry/original/2025.4/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -506,12 +508,12 @@
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 java">java</a>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/04/24/computer-science/java/notepad/%E5%9F%BA%E7%A1%806/" title="面向对象编程">面向对象编程</a></span>
+    <span><a href="/2025/05/12/computer-science/python/notepad/han0/" title="python语言的概述">python语言的概述</a></span>
   </li>
 
   </ul>
@@ -536,13 +538,13 @@
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">96k 字</span>
+    <span title="站点总字数">107k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:27</span>
+    <span title="站点阅读时长">1:38</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
