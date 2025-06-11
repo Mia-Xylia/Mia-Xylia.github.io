@@ -27,12 +27,12 @@
   <meta name="keywords" content="python基础,笔记" />
 
 
-<link rel="canonical" href="http://example.com/2025/05/19/computer-science/python/notepad/han7/">
+<link rel="canonical" href="http://example.com/2025/06/11/computer-science/python/notepad/han10/">
 
 
 
   <title>
-断点调试/模块和包 - 课程笔记 - python - 计算机科学 |
+错误和异常 - 课程笔记 - python - 计算机科学 |
 鱼塘 = </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">断点调试/模块和包
+  <h1 itemprop="name headline">错误和异常
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2025-05-19 00:00:00">
+  <span class="item" title="创建时间：2025-06-11 00:00:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-05-19T00:00:00+08:00">2025-05-19</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-11T00:00:00+08:00">2025-06-11</time>
   </span>
 </div>
 
@@ -137,7 +137,7 @@
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/19/computer-science/python/notepad/han7/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/11/computer-science/python/notepad/han10/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/Mia-Xylia/Mia-Xylia.github.io@latest/images/avatar.jpg">
@@ -152,39 +152,32 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="断点调试"><a class="markdownIt-Anchor" href="#断点调试">#</a> 断点调试</h1>
-<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxOTExMTUyMi5wbmc=">基本情况</span></p>
-<ul>
-<li>快捷键<br>
- F7：跳入方法<br>
- F8：逐行执行代码<br>
- shift +F8：跳出方法<br>
- F9：跳入下一个断点</li>
-</ul>
-<h1 id="模块"><a class="markdownIt-Anchor" href="#模块">#</a> 模块</h1>
-<p>模块可以定义函数，类和变量，也可能包含可执行的代码</p>
-<h2 id="模块的作用"><a class="markdownIt-Anchor" href="#模块的作用">#</a> 模块的作用</h2>
-<p>1. 当函数，类和变量很多时，可以很好的进行管理<br>
- 2. 把同一类型的功能代码，写入到一个模块文件中，既方便管理，也方便调用<br>
- 3. 一个模块就是一个工具包</p>
-<h2 id="导入模块import"><a class="markdownIt-Anchor" href="#导入模块import">#</a> 导入模块 import</h2>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line">[<span class="string">from</span> <span class="string">模块名</span>] <span class="string">import</span> <span class="string">(（函数|类|变量|*)as</span> [<span class="string">别名</span>]</span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
-<h2 id="自定义模块"><a class="markdownIt-Anchor" href="#自定义模块">#</a> 自定义模块</h2>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="comment"># --name</span></span><br><span class="line"><span class="string">if</span> <span class="string">__name__</span> <span class="string">==</span> <span class="attr">&quot;__main__&quot;:</span></span><br><span class="line"><span class="comment"># __all__使用后，其他文件使用from module import *只能导入all规定的功能</span></span><br><span class="line"><span class="string">__all__</span> <span class="string">=</span> [<span class="string">&#x27;ok&#x27;</span>]</span><br><span class="line"><span class="comment"># import module时可以使用</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
-<h1 id="包"><a class="markdownIt-Anchor" href="#包">#</a> 包</h1>
-<p>模块越来越多，放在一起不好管理，包是模块集合<br>
-<span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxOTE2NTUxNC5wbmc=">包的结构示意图</span><br>
- from 包名 import 模块名<br>
- import 包名。模块名<br>
- from 包名。模块名 import 函数 | 类 | 变量</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="comment"># __all__使用后，其他文件使用from 包 import module只能导入all规定的功能</span></span><br><span class="line"><span class="string">__all__</span> <span class="string">=</span> [<span class="string">&#x27;module&#x27;</span>]</span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
-<p>包可以有多个层级<br>
- alt + enter/shift + alt + enter</p>
-<h1 id="第三方库"><a class="markdownIt-Anchor" href="#第三方库">#</a> 第三方库</h1>
-<h2 id="pip"><a class="markdownIt-Anchor" href="#pip">#</a> pip</h2>
-<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDUxOTE3MTIxMS5wbmc=">pip 基本命令</span></p>
-<h3 id="pip源"><a class="markdownIt-Anchor" href="#pip源">#</a> pip 源</h3>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="string">清华：https://pypi.tuna.tsinghua.edu.cn/simple/</span></span><br><span class="line"><span class="string">阿里云：https://mirrors.aliyun.com/pypi/simple/</span></span><br><span class="line"><span class="string">中国科技大学：https://pypi.mirrors.ustc.edu.cn/simple/</span></span><br><span class="line"><span class="string">华为云：</span> <span class="string">https://repo.huaweicloud.com/repository/pypi/simple/</span></span><br><span class="line"><span class="string">腾讯云：https://mirrors.cloud.tencent.com/pypi/simple/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法</span></span><br><span class="line"><span class="string">pip</span> <span class="string">install</span> <span class="string">&lt;安装包&gt;</span> <span class="string">-i</span> <span class="string">&lt;镜像源&gt;</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+    <p>python 有两种不同的错误：语法错误（句法错误 / 解析错误）/ 异常<br>
+ Ctrl + H 查看异常的层级关系</p>
+<h1 id="内置异常"><a class="markdownIt-Anchor" href="#内置异常">#</a> 内置异常</h1>
+<p>IndexError：序列超出范围<br>
+ KeyError: 集合中找不到指定的映射<br>
+ NameError: 全局或者局部名称未找到<br>
+ TypeError: 操作或函数使用了类型不恰当的对象<br>
+ ValueError: 操作或函数接收到了正确类型但值不适合的参数<br>
+ ZeroDivisionError: 除数为 0<br>
+FileNotError：文件不存在<br>
+ AttributeError: 属性引用或赋值</p>
+<h1 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理">#</a> 异常处理</h1>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="attr">try:</span></span><br><span class="line">    <span class="string">可能出现异常的代码</span></span><br><span class="line"><span class="string">except</span> [<span class="string">（异常1，异常2，异常3……）</span> <span class="string">as</span> <span class="string">别名</span>]<span class="string">:</span></span><br><span class="line">    <span class="string">发生异常时，对异常处理的代码</span></span><br><span class="line">[<span class="string">else:</span>]</span><br><span class="line">    <span class="string">没有发生异常，执行的代码</span></span><br><span class="line">[<span class="string">finally:</span>]</span><br><span class="line">    <span class="string">不管有没有异常，都要执行的代码</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="使用细节"><a class="markdownIt-Anchor" href="#使用细节">#</a> 使用细节</h1>
+<p>1. 异常发生，后面的代码不会执行，直接进入 except 子句<br>
+ 2. 如果一场没有发生，顺序执行 try 代码块，except 不会执行<br>
+ 3. 可以有多个不同的 except 子句，基类异常写后面，具体的写前面<br>
+ 4. 一个 except 可以捕获多个异常</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="attr">while True:</span></span><br><span class="line">    <span class="attr">try:</span></span><br><span class="line">        <span class="string">num</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入一个整数：&quot;))</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line">    <span class="attr">except Exception as e:</span></span><br><span class="line">        <span class="string">print(f&quot;输入的不是整数，出现异常&#123;e&#125;，请重新输入&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="string">print(num)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="主动触发异常"><a class="markdownIt-Anchor" href="#主动触发异常">#</a> 主动触发异常</h1>
+<p>raise 支持强制触发异常</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="attr">try:</span></span><br><span class="line">    <span class="string">raise</span> <span class="string">ZeroDivisionError(&quot;主动触发异常&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
+<h1 id="异常传递"><a class="markdownIt-Anchor" href="#异常传递">#</a> 异常传递</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01pYS1YeWxpYS9NaWEtWHlsaWEtcGljdHVyZXNAbWFzdGVyL2ltZy8yMDI1MDYxMTE4NDgzNC5wbmc=">异常传递</span></p>
+<h1 id="自定义异常"><a class="markdownIt-Anchor" href="#自定义异常">#</a> 自定义异常</h1>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">```</span></span><br><span class="line"><span class="attr">class AgeError(Exception):</span></span><br><span class="line">    <span class="string">pass</span></span><br><span class="line"></span><br><span class="line"><span class="attr">while True:</span></span><br><span class="line">    <span class="attr">try:</span></span><br><span class="line">        <span class="string">age</span> <span class="string">=</span> <span class="string">int(input(&quot;请输入年龄（18-120）：&quot;))</span></span><br><span class="line">        <span class="string">if</span> <span class="string">not</span> <span class="string">(18&lt;=age&lt;120):</span></span><br><span class="line">            <span class="string">raise</span> <span class="string">AgeError(&quot;年龄需要在18-120之间&quot;)</span></span><br><span class="line">        <span class="string">break</span></span><br><span class="line">    <span class="attr">except ValueError as e:</span></span><br><span class="line">        <span class="string">print(f&quot;&#123;e&#125;&quot;)</span></span><br><span class="line">    <span class="attr">except AgeError as e:</span></span><br><span class="line">        <span class="string">print(f&quot;&#123;e&#125;&quot;)</span></span><br><span class="line"><span class="string">```</span></span><br></pre></td></tr></table></figure>
       <div class="tags">
           <a href="/tags/python%E5%9F%BA%E7%A1%80/" rel="tag"><i class="ic i-tag"></i> python基础</a>
           <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
@@ -199,7 +192,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-05-19 17:30:26" itemprop="dateModified" datetime="2025-05-19T17:30:26+08:00">2025-05-19</time>
+    <time title="修改时间：2025-06-11 19:02:48" itemprop="dateModified" datetime="2025-06-11T19:02:48+08:00">2025-06-11</time>
   </span>
 </div>
 
@@ -225,7 +218,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2025/05/19/computer-science/python/notepad/han7/" title="断点调试&#x2F;模块和包">http://example.com/2025/05/19/computer-science/python/notepad/han7/</a>
+    <a href="http://example.com/2025/06/11/computer-science/python/notepad/han10/" title="错误和异常">http://example.com/2025/06/11/computer-science/python/notepad/han10/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -244,22 +237,14 @@
     <div class="item left">
       
 
-  <a href="/2025/05/19/computer-science/python/notepad/han8/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="面向对象编程">
+  <a href="/2025/06/11/computer-science/python/notepad/han11/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="文件处理">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 课程笔记</span>
-  <h3>面向对象编程</h3>
+  <h3>文件处理</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2025/06/06/computer-science/python/notepad/han9/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;fastly.jsdelivr.net&#x2F;gh&#x2F;Mia-Xylia&#x2F;Mia-Xylia.github.io@latest&#x2F;assets&#x2F;wallpaper-2572384.jpg" title="面向对象编程进阶">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 课程笔记</span>
-  <h3>面向对象编程进阶</h3>
-  </a>
-
     </div>
 </div>
 
@@ -276,11 +261,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text"> 断点调试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text"> 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text"> 模块的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97import"><span class="toc-number">2.2.</span> <span class="toc-text"> 导入模块 import</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97"><span class="toc-number">2.3.</span> <span class="toc-text"> 自定义模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%85"><span class="toc-number">3.</span> <span class="toc-text"> 包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93"><span class="toc-number">4.</span> <span class="toc-text"> 第三方库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pip"><span class="toc-number">4.1.</span> <span class="toc-text"> pip</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pip%E6%BA%90"><span class="toc-number">4.1.1.</span> <span class="toc-text"> pip 源</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E5%BC%82%E5%B8%B8"><span class="toc-number">1.</span> <span class="toc-text"> 内置异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text"> 异常处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82"><span class="toc-number">3.</span> <span class="toc-text"> 使用细节</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E5%8A%A8%E8%A7%A6%E5%8F%91%E5%BC%82%E5%B8%B8"><span class="toc-number">4.</span> <span class="toc-text"> 主动触发异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E4%BC%A0%E9%80%92"><span class="toc-number">5.</span> <span class="toc-text"> 异常传递</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="toc-number">6.</span> <span class="toc-text"> 自定义异常</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2025/03/23/computer-science/python/notepad/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li><a href="/2025/03/25/computer-science/python/notepad/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch3/" rel="bookmark" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/13/computer-science/python/notepad/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li><a href="/2025/05/14/computer-science/python/notepad/han4/" rel="bookmark" title="函数">函数</a></li><li><a href="/2025/05/17/computer-science/python/notepad/han5/" rel="bookmark" title="数据容器">数据容器</a></li><li><a href="/2025/05/18/computer-science/python/notepad/han6/" rel="bookmark" title="排序和查找">排序和查找</a></li><li class="active"><a href="/2025/05/19/computer-science/python/notepad/han7/" rel="bookmark" title="断点调试/模块和包">断点调试/模块和包</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han8/" rel="bookmark" title="面向对象编程">面向对象编程</a></li><li><a href="/2025/06/06/computer-science/python/notepad/han9/" rel="bookmark" title="面向对象编程进阶">面向对象编程进阶</a></li><li><a href="/2025/06/10/computer-science/python/notepad/han_Housing_Rental_System/" rel="bookmark" title="房屋出租系统">房屋出租系统</a></li><li><a href="/2025/06/11/computer-science/python/notepad/han10/" rel="bookmark" title="错误和异常">错误和异常</a></li><li><a href="/2025/06/11/computer-science/python/notepad/han11/" rel="bookmark" title="文件处理">文件处理</a></li>
+          <li><a href="/2025/03/23/computer-science/python/notepad/pytorch0/" rel="bookmark" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></li><li><a href="/2025/03/25/computer-science/python/notepad/pytorch1/" rel="bookmark" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch3/" rel="bookmark" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></li><li><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" rel="bookmark" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han1/" rel="bookmark" title="变量">变量</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han0/" rel="bookmark" title="python语言的概述">python语言的概述</a></li><li><a href="/2025/05/12/computer-science/python/notepad/han2/" rel="bookmark" title="运算符">运算符</a></li><li><a href="/2025/05/13/computer-science/python/notepad/han3/" rel="bookmark" title="程序控制结构">程序控制结构</a></li><li><a href="/2025/05/14/computer-science/python/notepad/han4/" rel="bookmark" title="函数">函数</a></li><li><a href="/2025/05/17/computer-science/python/notepad/han5/" rel="bookmark" title="数据容器">数据容器</a></li><li><a href="/2025/05/18/computer-science/python/notepad/han6/" rel="bookmark" title="排序和查找">排序和查找</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han7/" rel="bookmark" title="断点调试/模块和包">断点调试/模块和包</a></li><li><a href="/2025/05/19/computer-science/python/notepad/han8/" rel="bookmark" title="面向对象编程">面向对象编程</a></li><li><a href="/2025/06/06/computer-science/python/notepad/han9/" rel="bookmark" title="面向对象编程进阶">面向对象编程进阶</a></li><li><a href="/2025/06/10/computer-science/python/notepad/han_Housing_Rental_System/" rel="bookmark" title="房屋出租系统">房屋出租系统</a></li><li class="active"><a href="/2025/06/11/computer-science/python/notepad/han10/" rel="bookmark" title="错误和异常">错误和异常</a></li><li><a href="/2025/06/11/computer-science/python/notepad/han11/" rel="bookmark" title="文件处理">文件处理</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -374,12 +359,10 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/05/19/computer-science/python/notepad/han8/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/06/06/computer-science/python/notepad/han9/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -408,7 +391,21 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/03/26/computer-science/python/notepad/pytorch2/" title="笔记：PyTorch(2)">笔记：PyTorch(2)</a></span>
+    <span><a href="/2025/03/26/computer-science/python/notepad/pytorch3/" title="笔记：PyTorch(3)">笔记：PyTorch(3)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/python/notepad/han3/" title="程序控制结构">程序控制结构</a></span>
   </li>
 
       
@@ -422,7 +419,33 @@
 <a href="/categories/computer-science/java/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/04/20/computer-science/java/notepad/%E5%9F%BA%E7%A1%805/" title="数组，排序和查找">数组，排序和查找</a></span>
+    <span><a href="/2025/04/24/computer-science/java/notepad/%E5%9F%BA%E7%A1%806/" title="面向对象编程">面向对象编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 python">python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
+</div>
+
+    <span><a href="/2025/05/19/computer-science/python/notepad/han7/" title="断点调试&#x2F;模块和包">断点调试/模块和包</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/poetry/" title="分类于 随笔">随笔</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/poetry/original/" title="分类于 原创">原创</a>
+</div>
+
+    <span><a href="/2025/04/14/poetry/original/2025.4/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -450,7 +473,7 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/05/18/computer-science/python/notepad/han6/" title="排序和查找">排序和查找</a></span>
+    <span><a href="/2025/05/12/computer-science/python/notepad/han1/" title="变量">变量</a></span>
   </li>
 
       
@@ -464,7 +487,7 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/python/notepad/han4/" title="函数">函数</a></span>
+    <span><a href="/2025/05/19/computer-science/python/notepad/han8/" title="面向对象编程">面向对象编程</a></span>
   </li>
 
       
@@ -478,7 +501,7 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/python/notepad/han3/" title="程序控制结构">程序控制结构</a></span>
+    <span><a href="/2025/05/12/computer-science/python/notepad/han0/" title="python语言的概述">python语言的概述</a></span>
   </li>
 
       
@@ -492,47 +515,7 @@
 <a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
 </div>
 
-    <span><a href="/2025/03/25/computer-science/python/notepad/pytorch1/" title="笔记：PyTorch(1)">笔记：PyTorch(1)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/crawler/" title="分类于 爬虫">爬虫</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/crawler/1/" title="爬取今日菜价：2025.3.23云南蔬菜市场综合菜价">爬取今日菜价：2025.3.23云南蔬菜市场综合菜价</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 python">python</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/python/notepad/pytorch0/" title="笔记：PyTorch(0)">笔记：PyTorch(0)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/" title="分类于 python">python</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/python/notepad/" title="分类于 课程笔记">课程笔记</a>
-</div>
-
-    <span><a href="/2025/06/11/computer-science/python/notepad/han10/" title="错误和异常">错误和异常</a></span>
+    <span><a href="/2025/06/11/computer-science/python/notepad/han11/" title="文件处理">文件处理</a></span>
   </li>
 
   </ul>
@@ -575,7 +558,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/05/19/computer-science/python/notepad/han7/',
+    path: '2025/06/11/computer-science/python/notepad/han10/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
